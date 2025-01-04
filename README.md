@@ -1,5 +1,5 @@
 # GraphLoRA
-Implementation of GraphLoRA.
+This is an official implementation of KDD 25 paper GraphLoRA: Structure-Aware Contrastive Low-Rank Adaptation for Cross-Graph Transfer Learning.
 
 ## Requirements
 ```
