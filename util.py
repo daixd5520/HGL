@@ -6,6 +6,8 @@ import torch_geometric.transforms as T
 from torch_geometric.datasets import Planetoid, Amazon
 from torch_geometric.utils import to_dense_adj
 import numpy as np
+import yaml
+from yaml import SafeLoader
 
 
 def mkdir(path):
@@ -190,3 +192,26 @@ def get_few_shot_mask(data, shot, dataname, device):
         val_mask[index[:int(len(index) * 0.2)]] = True
         test_mask[index[int(len(index) * 0.2):]] = True
     return train_mask, val_mask, test_mask
+
+
+def get_parameter(args):
+    config = yaml.load(open(args.para_config), Loader=SafeLoader)
+    if args.few:
+        if args.shot == 10:
+            setting = '10shot'
+        else:
+            setting = '5shot'
+    else:
+        setting = 'public'
+    args.wd1 = float(config[setting][args.test_dataset]['wd1'])
+    args.wd2 = float(config[setting][args.test_dataset]['wd2'])
+    args.wd3 = float(config[setting][args.test_dataset]['wd3'])
+    args.lr1 = float(config[setting][args.test_dataset]['lr1'])
+    args.lr2 = float(config[setting][args.test_dataset]['lr2'])
+    args.lr3 = float(config[setting][args.test_dataset]['lr3'])
+    args.l1 = float(config[setting][args.test_dataset]['l1'])
+    args.l2 = float(config[setting][args.test_dataset]['l2'])
+    args.l3 = float(config[setting][args.test_dataset]['l3'])
+    args.l4 = float(config[setting][args.test_dataset]['l4'])
+    args.num_epochs = config[setting][args.test_dataset]['num_epochs']
+    return args
