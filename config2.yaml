@@ -1,0 +1,183 @@
+public:
+  PubMed:
+    wd1: 1e-1
+    wd2: 5e-4
+    wd3: 1e-1
+    lr1: 1e-2
+    lr2: 5e-2
+    lr3: 1e-5
+    l1: 0.5
+    l2: 10
+    l3: 2
+    l4: 0.5
+    num_epochs: 100
+  CiteSeer:
+    wd1: 1e-2
+    wd2: 2e-3
+    wd3: 1e-1
+    lr1: 1e-2
+    lr2: 2e-2
+    lr3: 1e-5
+    l1: 1
+    l2: 2
+    l3: 0.5
+    l4: 5
+    num_epochs: 200
+  Cora:
+    wd1: 1e-2
+    wd2: 1e-3
+    wd3: 1e-1
+    lr1: 1e-3
+    lr2: 1e-1
+    lr3: 1e-5
+    l1: 1
+    l2: 2
+    l3: 0.5
+    l4: 5
+    num_epochs: 200
+  Photo:
+    wd1: 1e-4
+    wd2: 1e-7
+    wd3: 1e-1
+    lr1: 2e-2
+    lr2: 1e-1
+    lr3: 1e-5
+    l1: 1
+    l2: 1
+    l3: 0.2
+    l4: 0.2
+    num_epochs: 200
+  Computers:
+    wd1: 1e-4
+    wd2: 0
+    wd3: 1e-1
+    lr1: 1e-2
+    lr2: 2e-1
+    lr3: 1e-5
+    l1: 2
+    l2: 1
+    l3: 0.2
+    l4: 0.2
+    num_epochs: 500
+10shot:
+  PubMed:
+    wd1: 1e-1
+    wd2: 5e-4
+    wd3: 1e-1
+    lr1: 2e-2
+    lr2: 5e-2
+    lr3: 1e-5
+    l1: 0.5
+    l2: 5
+    l3: 1
+    l4: 0.1
+    num_epochs: 100
+  CiteSeer:
+    wd1: 1e-2
+    wd2: 2e-3
+    wd3: 1e-1
+    lr1: 1e-2
+    lr2: 1e-2
+    lr3: 1e-5
+    l1: 0.5
+    l2: 1
+    l3: 2
+    l4: 10
+    num_epochs: 200
+  Cora:
+    wd1: 1e-2
+    wd2: 1e-4
+    wd3: 1e-1
+    lr1: 5e-3
+    lr2: 1e-1
+    lr3: 1e-5
+    l1: 1
+    l2: 1
+    l3: 1
+    l4: 2
+    num_epochs: 100
+  Photo:
+    wd1: 5e-5
+    wd2: 1e-5
+    wd3: 1e-1
+    lr1: 1e-2
+    lr2: 1e-2
+    lr3: 1e-3
+    l1: 1
+    l2: 1
+    l3: 0.2
+    l4: 0.1
+    num_epochs: 200
+  Computers:
+    wd1: 1e-4
+    wd2: 1e-5
+    wd3: 1e-1
+    lr1: 1e-2
+    lr2: 1e-2
+    lr3: 1e-5
+    l1: 2
+    l2: 1
+    l3: 1
+    l4: 0.2
+    num_epochs: 500
+5shot:
+  PubMed:
+    wd1: 1e-1
+    wd2: 1e-5
+    wd3: 1e-1
+    lr1: 2e-2
+    lr2: 1e-2
+    lr3: 1e-5
+    l1: 0.5
+    l2: 2.5
+    l3: 1
+    l4: 0.5
+    num_epochs: 100
+  CiteSeer:
+    wd1: 1e-2
+    wd2: 2e-3
+    wd3: 1e-1
+    lr1: 1e-2
+    lr2: 1e-2
+    lr3: 1e-5
+    l1: 0.7
+    l2: 0.5
+    l3: 1
+    l4: 5
+    num_epochs: 200
+  Cora:
+    wd1: 1e-2
+    wd2: 1e-4
+    wd3: 1e-1
+    lr1: 5e-3
+    lr2: 1e-1
+    lr3: 1e-5
+    l1: 1
+    l2: 1
+    l3: 1
+    l4: 2
+    num_epochs: 100
+  Photo:
+    wd1: 5e-5
+    wd2: 1e-5
+    wd3: 1e-1
+    lr1: 1e-2
+    lr2: 1e-2
+    lr3: 1e-3
+    l1: 1
+    l2: 1
+    l3: 0.2
+    l4: 0.1
+    num_epochs: 200
+  Computers:
+    wd1: 1e-4
+    wd2: 1e-5
+    wd3: 1e-1
+    lr1: 1e-2
+    lr2: 1e-2
+    lr3: 1e-5
+    l1: 2
+    l2: 1
+    l3: 1
+    l4: 0.2
+    num_epochs: 500
