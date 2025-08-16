@@ -23,6 +23,10 @@ if __name__ == '__main__':
     parser.add_argument('--tau', type=float, default=0.5)
     parser.add_argument('--sup_weight', type=float, default=0.2)
     parser.add_argument('--r', type=int, default=32)
+    ###Three new parameters for hyperbolic LoRA
+    parser.add_argument('--hyperbolic_lora', type=bool, default=True)
+    parser.add_argument('--curvature', type=float, default=1.0)
+    parser.add_argument('--lora_alpha', type=float, default=16.0)
     args = parser.parse_args()
     args = get_parameter(args)
 

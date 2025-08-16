@@ -1,4 +1,4 @@
-from model.GNN_model import GNN, GNNLoRA
+from model.GNN_model import GNN, GNNLoRA, HyperbolicLoRA
 import torch
 import torch.nn as nn
 import os
@@ -69,8 +69,56 @@ def transfer(args, config, gpu_id, is_reduction):
     for param in gnn.conv.parameters():
         param.requires_grad = False
 
-    gnn2 = GNNLoRA(pretrain_dataset.x.shape[1], config['output_dim'], act(config['activation']), gnn, config['gnn_type'], config['num_layers'], r=args.r)
+    # gnn2 = GNNLoRA(pretrain_dataset.x.shape[1], config['output_dim'], act(config['activation']), gnn, config['gnn_type'], config['num_layers'], r=args.r)
+    
+    gnn2 = GNNLoRA(
+        pretrain_dataset.x.shape[1],
+        config['output_dim'],
+        act(config['activation']),
+        gnn, config['gnn_type'], config['num_layers'],
+        r=args.r,
+        hyperbolic=args.hyperbolic_lora,
+        lora_alpha=args.lora_alpha,
+        curvature=args.curvature
+    )
+    
+    def print_lora_summary(model):
+        import torch.nn as nn
+        from model.GNN_model import HyperbolicLoRA  # 确保路径一致
+
+        h_count, e_count = 0, 0
+        for m in model.modules():
+            if isinstance(m, HyperbolicLoRA):
+                h_count += 1
+            # 欧氏 LoRA 的特征：nn.Sequential(Linear(in, r), Linear(r, out))
+            if isinstance(m, nn.Sequential) and len(m) == 2:
+                if all(hasattr(m[i], "weight") for i in (0, 1)):
+                    e_count += 1
+
+        print(f"[LoRA summary] HyperbolicLoRA: {h_count}, Euclidean-Sequential: {e_count}")
+        for n, p in model.named_parameters():
+            if "A.weight" in n or "B.weight" in n:
+                print(f"  {n}: shape={tuple(p.shape)}, requires_grad={p.requires_grad}")
+
+    # 例：你的 LoRA 分支是 gnn2
+    print_lora_summary(gnn2)
+    
     gnn2.to(device)
+    
+    def attach_hyperbolic_hooks(model, every=200):
+        step = {"i": 0}
+        def hook(mod, inp, out):
+            step["i"] += 1
+            if step["i"] % every == 0:
+                x = inp[0].detach()
+                print(f"[Hook/HyperbolicLoRA] step={step['i']}, in_norm={x.norm(dim=-1).mean().item():.4f}, out_norm={out.detach().norm(dim=-1).mean().item():.4f}, c={mod.c}")
+        for m in model.modules():
+            if isinstance(m, HyperbolicLoRA):
+                m.register_forward_hook(hook)
+
+    attach_hyperbolic_hooks(gnn2, every=100)
+    
+    
     gnn2.train()
 
     SMMD = SMMDLoss().to(device)

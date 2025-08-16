@@ -215,3 +215,37 @@ def get_parameter(args):
     args.l4 = float(config[setting][args.test_dataset]['l4'])
     args.num_epochs = config[setting][args.test_dataset]['num_epochs']
     return args
+
+# ===== Hyperbolic (Lorentz model) ops =====
+import math
+
+def lorentz_expmap0(v: torch.Tensor, c: float = 1.0, eps: float = 1e-15) -> torch.Tensor:
+    """
+    v: [N, d]  tangent at origin -> point on hyperboloid H^d
+    Using a stable variant: t = sqrt(1 + c * ||v||^2), x = sqrt(c) * v
+    """
+    v2 = (v * v).sum(dim=-1, keepdim=True).clamp_min(eps)
+    t = torch.sqrt(1.0 + c * v2)
+    x = math.sqrt(c) * v
+    return torch.cat([t, x], dim=-1)  # [N, 1+d]
+
+def lorentz_logmap0(p: torch.Tensor, c: float = 1.0, eps: float = 1e-15) -> torch.Tensor:
+    """
+    p: [N, 1+d] point on hyperboloid -> tangent at origin
+    v = x / sqrt(c) * acosh(t) / sqrt(t^2 - 1)
+    """
+    t, x = p[:, :1], p[:, 1:]
+    denom = (t * t - 1.0).clamp_min(eps).sqrt_()
+    acosh = (t + (t * t - 1.0).clamp_min(eps).sqrt()).log()
+    coef = acosh / denom
+    v = (1.0 / math.sqrt(c)) * coef * x
+    return v  # [N, d]
+
+def lorentz_recompute_time(space: torch.Tensor, c: float = 1.0, eps: float = 1e-15) -> torch.Tensor:
+    """
+    给定空间分量 s: [N, d]，重建 time 分量 t = sqrt(1 + c * ||s||^2)
+    返回 [N, 1+d]
+    """
+    t = torch.sqrt(1.0 + c * (space * space).sum(dim=-1, keepdim=True).clamp_min(eps))
+    return torch.cat([t, space], dim=-1)
+
