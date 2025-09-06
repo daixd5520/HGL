@@ -23,6 +23,12 @@ Computers:
   epoch1: 100
   epoch2: 10000
   decay_epoch: 1000
+  hyperbolic_backbone: true   # 预训练主干在 H^d
+  curvature: 1.0              # 全局曲率 c（LoRA 与主干共用）
+  learnable_curvature: true  # 设为可训练
+  # 可选稳定参数：
+  min_curvature: 1.0e-4
+  max_curvature: 10.0
 Cora:
   learning_rate: 0.0001
   output_dim: 256
@@ -41,6 +47,12 @@ Cora:
   epoch1: 100
   epoch2: 10000
   decay_epoch: 1000
+  hyperbolic_backbone: true   # 预训练主干在 H^d
+  curvature: 1.0              # 全局曲率 c（LoRA 与主干共用）
+  learnable_curvature: true  # 设为可训练
+  # 可选稳定参数：
+  min_curvature: 1.0e-4
+  max_curvature: 10.0
 PubMed:
   learning_rate: 0.0001
   output_dim: 256
@@ -59,6 +71,12 @@ PubMed:
   epoch1: 100
   epoch2: 10000
   decay_epoch: 1000
+  hyperbolic_backbone: true   # 预训练主干在 H^d
+  curvature: 1.0              # 全局曲率 c（LoRA 与主干共用）
+  learnable_curvature: true  # 设为可训练
+  # 可选稳定参数：
+  min_curvature: 1.0e-4
+  max_curvature: 10.0
 CiteSeer:
   learning_rate: 0.0001
   output_dim: 256
@@ -77,6 +95,12 @@ CiteSeer:
   epoch1: 100
   epoch2: 10000
   decay_epoch: 1000
+  hyperbolic_backbone: true   # 预训练主干在 H^d
+  curvature: 1.0              # 全局曲率 c（LoRA 与主干共用）
+  learnable_curvature: true  # 设为可训练
+  # 可选稳定参数：
+  min_curvature: 1.0e-4
+  max_curvature: 10.0
 Photo:
   learning_rate: 0.0001
   output_dim: 256
@@ -95,6 +119,12 @@ Photo:
   epoch1: 100
   epoch2: 10000
   decay_epoch: 1000
+  hyperbolic_backbone: true   # 预训练主干在 H^d
+  curvature: 1.0              # 全局曲率 c（LoRA 与主干共用）
+  learnable_curvature: true  # 设为可训练
+  # 可选稳定参数：
+  min_curvature: 1.0e-4
+  max_curvature: 10.0
 transfer:
   hidden_dim: 64
   output_dim: 256
@@ -120,4 +150,8 @@ transfer:
   checkpoint_interval: 10
   lr2: 0.01
   wd2: 0.000001
-
+  curvature: 1.0              # 全局曲率 c（LoRA 与主干共用）
+  learnable_curvature: true  # 设为可训练
+  # 可选稳定参数：
+  min_curvature: 1.0e-4
+  max_curvature: 10.0

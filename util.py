@@ -152,6 +152,7 @@ def batched_gct_loss(z1: torch.Tensor, z2: torch.Tensor, batch_size: int, mask, 
 
 
 def batched_smmd_loss(z1: torch.Tensor, z2, MMD, ppr_weight, batch_size):
+# 每次循环里都重新构造了一个迭代器 iter(z2)，然后 next(...) 只会取同一份第一批数据。这会让 SMMD 只对齐到 z2 的“那一小撮样本”，对齐严重偏置，对齐失败或过拟合到这小批；
     device = z1.device
     num_nodes = z1.size(0)
     num_batches = (num_nodes - 1) // batch_size + 1

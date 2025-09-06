@@ -3,3 +3,5 @@ Few: False, r: 32, PubMed to CiteSeer: val_acc: 0.746000, test_acc: 0.731000
 Few: False, r: 32, PubMed to CiteSeer: val_acc: 0.738000, test_acc: 0.727000
 Few: False, r: 32, PubMed to CiteSeer: val_acc: 0.746000, test_acc: 0.733000
 Few: False, r: 32, PubMed to CiteSeer: val_acc: 0.744000, test_acc: 0.732000
+Few: False, r: 32, PubMed to CiteSeer: val_acc: 0.738000, test_acc: 0.722000
+Few: False, r: 32, PubMed to CiteSeer: val_acc: 0.738000, test_acc: 0.714000

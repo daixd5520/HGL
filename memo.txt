@@ -11,3 +11,5 @@ main.py：加 3 个命令行参数（是否启用双曲 LoRA、曲率 c、LoRA �
 要用俩GPU，不然报device assersion USE_DSA啥的错误
 
 python main.py --is_transfer True
+
+python main.py --is_transfer True --hyperbolic_lora True

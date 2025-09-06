@@ -27,6 +27,9 @@ if __name__ == '__main__':
     parser.add_argument('--hyperbolic_lora', type=bool, default=True)
     parser.add_argument('--curvature', type=float, default=1.0)
     parser.add_argument('--lora_alpha', type=float, default=16.0)
+    # ###learnable curvature
+    # parser.add_argument('--learnable_curvature', type=bool, default=False)
+    # parser.add_argument('--k_init', type=float, default=None)
     args = parser.parse_args()
     args = get_parameter(args)
 
