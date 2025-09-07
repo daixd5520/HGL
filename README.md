@@ -15,7 +15,9 @@ You can easily run our code by
 ```
 # Pre-training
 python main.py --is_pretrain True
+# python main.py --is_pretrain True --hyperbolic_lora True
 
 # Fine-tuning
 python main.py --is_transfer True
+python main.py --is_transfer True --hyperbolic_lora True
 ```
