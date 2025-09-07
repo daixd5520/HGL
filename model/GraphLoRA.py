@@ -38,13 +38,6 @@ class LogReg(nn.Module):
 
 
 def transfer(args, config, gpu_id, is_reduction):
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open("result/GraphLoRA.txt", "a") as f:
-        f.write("\n" + "="*80 + "\n")
-        f.write(f"[{timestamp}] New Experiment\n")
-        f.write(f"Args: {vars(args)}\n")
-        f.write(f"Config: {config}\n")
-        f.write("="*80 + "\n")
     device = torch.device('cuda:{}'.format(gpu_id) if torch.cuda.is_available() else 'cpu')
 
     # ---- load data ----
@@ -71,6 +64,19 @@ def transfer(args, config, gpu_id, is_reduction):
     min_c = float(getattr(args, 'min_curvature', 1e-4))
     max_c = float(getattr(args, 'max_curvature', 10.0))
     curv_param = CurvatureParam(init_c=init_c, min_c=min_c, max_c=max_c, learnable=learnable_c).to(device)
+    
+    # 判断曲率参数是否可训练，用于日志记录
+    c_trainable = curv_param.raw_c.requires_grad
+    
+    # 输出实验日志
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    c_status = ": c trainable during transfer" if c_trainable else ": c not trainable during transfer"
+    with open("result/GraphLoRA.txt", "a") as f:
+        f.write("\n" + "="*80 + "\n")
+        f.write(f"[{timestamp}] New Experiment{c_status}\n")
+        f.write(f"Args: {vars(args)}\n")
+        f.write(f"Config: {config}\n")
+        f.write("="*80 + "\n")
 
     # ---- backbone (load pretrained) ----
     gnn = GNN(pretrain_dataset.x.shape[1], config['output_dim'], act(config['activation']),
@@ -158,7 +164,6 @@ def transfer(args, config, gpu_id, is_reduction):
     pretrain_graph_loader = DataLoader(pretrain_dataset.x, batch_size=128, shuffle=True)
 
     max_acc, max_test_acc, max_epoch = 0.0, 0.0, 0
-
     for epoch in range(0, args.num_epochs):
         logreg.train(); projector.train(); gnn2.train()
 
