@@ -11,6 +11,7 @@ from util import get_dataset, act, SMMDLoss, mkdir, get_ppr_weight
 from util import get_few_shot_mask, batched_smmd_loss, batched_gct_loss
 from model.GNN_model import GNN, GNNLoRA, HyperbolicLoRA, CurvatureParam
 
+import datetime
 
 class Projector(nn.Module):
     def __init__(self, input_size, output_size):
@@ -37,6 +38,13 @@ class LogReg(nn.Module):
 
 
 def transfer(args, config, gpu_id, is_reduction):
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open("result/GraphLoRA.txt", "a") as f:
+        f.write("\n" + "="*80 + "\n")
+        f.write(f"[{timestamp}] New Experiment\n")
+        f.write(f"Args: {vars(args)}\n")
+        f.write(f"Config: {config}\n")
+        f.write("="*80 + "\n")
     device = torch.device('cuda:{}'.format(gpu_id) if torch.cuda.is_available() else 'cpu')
 
     # ---- load data ----
@@ -209,3 +217,10 @@ def transfer(args, config, gpu_id, is_reduction):
             max_acc, max_test_acc, max_epoch = val_acc, test_acc, epoch
 
     print(f"=== Best @ epoch {max_epoch}: val={max_acc:.4f}, test={max_test_acc:.4f} ===")
+    # 在训练结束后也写一次最佳结果
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        
+    result_info = f"Few: {args.few}, r: {args.r}, {args.pretrain_dataset} to {args.test_dataset}:"
+    with open("result/GraphLoRA.txt", "a") as f:
+        f.write(f"[{timestamp}] {result_info} Best @ epoch {max_epoch}: "
+                f"val={max_acc:.4f}, test={max_test_acc:.4f} ===\n")

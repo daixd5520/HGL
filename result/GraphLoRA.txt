@@ -5,3 +5,38 @@ Few: False, r: 32, PubMed to CiteSeer: val_acc: 0.746000, test_acc: 0.733000
 Few: False, r: 32, PubMed to CiteSeer: val_acc: 0.744000, test_acc: 0.732000
 Few: False, r: 32, PubMed to CiteSeer: val_acc: 0.738000, test_acc: 0.722000
 Few: False, r: 32, PubMed to CiteSeer: val_acc: 0.738000, test_acc: 0.714000
+
+================================================================================
+[2025-09-07 15:58:43] New Experiment
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 1, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': False, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.02, 'lr3': 1e-05, 'l1': 1.0, 'l2': 2.0, 'l3': 0.5, 'l4': 5.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+[2025-09-07 15:59:08] Few: False, r: 32, PubMed to CiteSeer: Best @ epoch 172: val=0.7639, test=0.7447 ===
+
+================================================================================
+[2025-09-07 16:00:55] New Experiment
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 1, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': False, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.02, 'lr3': 1e-05, 'l1': 1.0, 'l2': 2.0, 'l3': 0.5, 'l4': 5.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+[2025-09-07 16:01:20] Few: False, r: 32, PubMed to CiteSeer: Best @ epoch 139: val=0.7759, test=0.7763 ===
+
+================================================================================
+[2025-09-07 16:01:27] New Experiment
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 1, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': False, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.02, 'lr3': 1e-05, 'l1': 1.0, 'l2': 2.0, 'l3': 0.5, 'l4': 5.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+[2025-09-07 16:01:53] Few: False, r: 32, PubMed to CiteSeer: Best @ epoch 175: val=0.7504, test=0.7613 ===
+
+================================================================================
+[2025-09-07 16:03:42] New Experiment
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 1, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': False, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.02, 'lr3': 1e-05, 'l1': 1.0, 'l2': 2.0, 'l3': 0.5, 'l4': 5.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+[2025-09-07 16:04:07] Few: False, r: 32, PubMed to CiteSeer: Best @ epoch 123: val=0.7805, test=0.7492 ===
+
+================================================================================
+[2025-09-07 16:04:19] New Experiment
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 1, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': False, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.02, 'lr3': 1e-05, 'l1': 1.0, 'l2': 2.0, 'l3': 0.5, 'l4': 5.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+[2025-09-07 16:04:45] Few: False, r: 32, PubMed to CiteSeer: Best @ epoch 135: val=0.7519, test=0.7658 ===
