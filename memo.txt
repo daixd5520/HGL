@@ -6,10 +6,14 @@ GraphLoRA.py：在 transfer() 里实例化 GNNLoRA 时把新开关与超参数�
 
 main.py：加 3 个命令行参数（是否启用双曲 LoRA、曲率 c、LoRA 的 alpha 缩放），并自然透传（现在已经把 r/tau/sup_weight 这样传下去了）。
 
-（need?）把 Projector 也换成双曲 Projector，默认先不开，先把 LoRA 路径双曲化；Projector 现在是纯线性层（欧氏）。
+//（need?）把 Projector 也换成双曲 Projector，默认先不开，先把 LoRA 路径双曲化；Projector 现在是纯线性层（欧氏）。
 
 要用俩GPU，不然报device assersion USE_DSA啥的错误
 
 python main.py --is_transfer True
 
 python main.py --is_transfer True --hyperbolic_lora True
+
+250909
+
+“全双曲主干 + 全双曲 LoRA + 超曲融合”；目前分类头还不是超曲
