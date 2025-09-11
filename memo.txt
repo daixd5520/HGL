@@ -13,11 +13,16 @@ main.py：加 3 个命令行参数（是否启用双曲 LoRA、曲率 c、LoRA �
 python main.py --is_transfer True
 
 python main.py --is_transfer True --hyperbolic_lora True
+250909
 
+<<<<<<< HEAD
 250909
 
 “全双曲主干 + 全双曲 LoRA + 超曲融合”；目前分类头还不是超曲
 
+=======
+“全双曲主干 + 全双曲 LoRA + 超曲融合”；目前分类头还不是超曲
+>>>>>>> b4c0caf (pretrained model with timestamp)
 python main.py --is_pretrain True --is_transfer False
 
 
