@@ -27,8 +27,8 @@ Computers:
   curvature: 1.0              # 全局曲率 c（LoRA 与主干共用）
   learnable_curvature: true  # 设为可训练
   # 可选稳定参数：
-  min_curvature: 1.0e-4
-  max_curvature: 10.0
+  min_curvature: 0.7
+  max_curvature: 2.0
 Cora:
   learning_rate: 0.0001
   output_dim: 256
@@ -51,8 +51,8 @@ Cora:
   curvature: 1.0              # 全局曲率 c（LoRA 与主干共用）
   learnable_curvature: true  # 设为可训练
   # 可选稳定参数：
-  min_curvature: 1.0e-4
-  max_curvature: 10.0
+  min_curvature: 0.7
+  max_curvature: 2.0
 PubMed:
   learning_rate: 0.0001
   output_dim: 256
@@ -75,8 +75,8 @@ PubMed:
   curvature: 1.0              # 全局曲率 c（LoRA 与主干共用）
   learnable_curvature: true  # 设为可训练
   # 可选稳定参数：
-  min_curvature: 1.0e-4
-  max_curvature: 10.0
+  min_curvature: 0.7
+  max_curvature: 2.0
 CiteSeer:
   learning_rate: 0.0001
   output_dim: 256
@@ -99,8 +99,8 @@ CiteSeer:
   curvature: 1.0              # 全局曲率 c（LoRA 与主干共用）
   learnable_curvature: true  # 设为可训练
   # 可选稳定参数：
-  min_curvature: 1.0e-4
-  max_curvature: 10.0
+  min_curvature: 0.7
+  max_curvature: 2.0
 Photo:
   learning_rate: 0.0001
   output_dim: 256
@@ -123,8 +123,8 @@ Photo:
   curvature: 1.0              # 全局曲率 c（LoRA 与主干共用）
   learnable_curvature: true  # 设为可训练
   # 可选稳定参数：
-  min_curvature: 1.0e-4
-  max_curvature: 10.0
+  min_curvature: 0.7
+  max_curvature: 2.0
 transfer:
   hidden_dim: 64
   output_dim: 256

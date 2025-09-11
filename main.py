@@ -27,6 +27,12 @@ if __name__ == '__main__':
     parser.add_argument('--hyperbolic_lora', type=bool, default=True)
     parser.add_argument('--curvature', type=float, default=1.0)
     parser.add_argument('--lora_alpha', type=float, default=16.0)
+    
+    # --- 新增参数：指定预训练模型文件名 ---
+    parser.add_argument('--pretrained_model_name', type=str, default=None, 
+                        help='Filename of the pretrained model to load for transfer learning (e.g., "PubMed.GRACE.GAT.hyp_True.False.20250910-013000.pth")')
+    # --- 修改结束 ---
+    
     # ###learnable curvature
     # parser.add_argument('--learnable_curvature', type=bool, default=False)
     # parser.add_argument('--k_init', type=float, default=None)
@@ -41,5 +47,9 @@ if __name__ == '__main__':
         pretrain(args.pretrain_dataset, args.pretext, config_pretrain, args.gpu_id, args.is_reduction)
     
     if args.is_transfer:
+        # --- 修改部分：增加检查，确保在迁移时提供了模型文件名 ---
+        if args.pretrained_model_name is None:
+            raise ValueError("For transfer learning (`--is_transfer=True`), you must specify a model file using `--pretrained_model_name`.")
+        # --- 修改结束 ---
         config_transfer = yaml.load(open(args.config), Loader=SafeLoader)['transfer']
         transfer(args, config_transfer, args.gpu_id, args.is_reduction)

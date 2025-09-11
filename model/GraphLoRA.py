@@ -59,16 +59,14 @@ def transfer(args, config, gpu_id, is_reduction):
     weight_tensor[weight_mask] = pos_weight / 10.0
 
     # ---- curvature (shared & learnable) ----
-    init_c = float(args.curvature)              # 以命令行/外层配置作为初值
+    init_c = float(args.curvature)
     learnable_c = True
     min_c = float(getattr(args, 'min_curvature', 1e-4))
     max_c = float(getattr(args, 'max_curvature', 10.0))
     curv_param = CurvatureParam(init_c=init_c, min_c=min_c, max_c=max_c, learnable=learnable_c).to(device)
     
-    # 判断曲率参数是否可训练，用于日志记录
     c_trainable = curv_param.raw_c.requires_grad
     
-    # 输出实验日志
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     c_status = ": c trainable during transfer" if c_trainable else ": c not trainable during transfer"
     with open("result/GraphLoRA.txt", "a") as f:
@@ -78,14 +76,30 @@ def transfer(args, config, gpu_id, is_reduction):
         f.write(f"Config: {config}\n")
         f.write("="*80 + "\n")
 
-    # ---- backbone (load pretrained) ----
+    # --- 修改部分：从文件名解析双曲状态并加载指定模型 ---
+    # 1. 从文件名解析 backbone 是否为双曲
+    try:
+        parts = args.pretrained_model_name.split('.')
+        hyp_part = next(p for p in parts if p.startswith('hyp_'))
+        is_hyperbolic_backbone = (hyp_part.split('_')[1] == 'True')
+        print(f"Parsed from filename: Pretrained backbone is {'Hyperbolic' if is_hyperbolic_backbone else 'Euclidean'}.")
+    except (StopIteration, IndexError) as e:
+        raise ValueError(f"Filename '{args.pretrained_model_name}' is not in the expected format. "
+                         f"Could not parse hyperbolic status (e.g., 'hyp_True'). Error: {e}")
+
+    # 2. 使用解析出的状态初始化 GNN backbone
     gnn = GNN(pretrain_dataset.x.shape[1], config['output_dim'], act(config['activation']),
               config['gnn_type'], config['num_layers'],
-              hyperbolic=bool(config.get('hyperbolic_backbone', True)), curv=curv_param).to(device)
+              hyperbolic=is_hyperbolic_backbone, curv=curv_param).to(device)
 
-    model_path = "./pre_trained_gnn/{}.{}.{}.{}.pth".format(args.pretrain_dataset, args.pretext, config['gnn_type'], args.is_reduction)
+    # 3. 加载由命令行参数指定的模型
+    model_path = os.path.join("./pre_trained_gnn/", args.pretrained_model_name)
+    if not os.path.exists(model_path):
+        raise FileNotFoundError(f"The specified pretrained model file does not exist: {model_path}")
+        
     state = torch.load(model_path, map_location=device)
-    gnn.load_state_dict(state, strict=False)  # 若预训练阶段未含 raw_c 等，strict=False 更稳
+    gnn.load_state_dict(state, strict=False)
+    # --- 修改结束 ---
 
     gnn.eval()
     for p in gnn.conv.parameters():
@@ -99,7 +113,7 @@ def transfer(args, config, gpu_id, is_reduction):
         act(config['activation']),
         gnn, config['gnn_type'], config['num_layers'],
         r=args.r,
-        hyperbolic=bool(args.hyperbolic_lora),   # 建议 True：全双曲
+        hyperbolic=bool(args.hyperbolic_lora),
         lora_alpha=args.lora_alpha,
         curv=curv_param
     ).to(device)
@@ -131,7 +145,7 @@ def transfer(args, config, gpu_id, is_reduction):
 
     ppr_weight = get_ppr_weight(test_dataset)
 
-    # 构造监督图的同类索引 mask（用于对比损失）
+    # 构造监督图的同类索引 mask
     idx_a, idx_b = torch.tensor([], device=device), torch.tensor([], device=device)
     train_idx = torch.nonzero(train_mask, as_tuple=False).squeeze()
     train_label = test_dataset.y[train_idx]
@@ -148,7 +162,7 @@ def transfer(args, config, gpu_id, is_reduction):
     ).to_dense()
     mask = args.sup_weight * (mask - torch.diag_embed(torch.diag(mask))) + torch.eye(test_dataset.x.shape[0], device=device)
 
-    # ---- optimizer（给曲率更小 LR） ----
+    # ---- optimizer ----
     params_proj   = list(projector.parameters())
     params_logreg = list(logreg.parameters())
     params_gnn2   = [p for n, p in gnn2.named_parameters() if ('raw_c' not in n)]
@@ -168,15 +182,11 @@ def transfer(args, config, gpu_id, is_reduction):
         logreg.train(); projector.train(); gnn2.train()
 
         feature_map = projector(test_dataset.x)
-
-        # 并联模型返回 (emb, emb_main, emb_lora)，均在切空间
         emb, emb1, emb2 = gnn2(feature_map, test_dataset.edge_index, return_euclid=True)
 
         optimizer.zero_grad()
 
         smmd_loss_f = batched_smmd_loss(feature_map, pretrain_graph_loader, SMMD, ppr_weight, 128)
-
-        # 你原有的 GCT（两向）对比损失
         ct_loss = 0.5 * (
             batched_gct_loss(emb1, emb2, 1000, mask, args.tau) +
             batched_gct_loss(emb2, emb1, 1000, mask, args.tau)
@@ -187,7 +197,6 @@ def transfer(args, config, gpu_id, is_reduction):
         train_labels = test_dataset.y[train_mask]
         cls_loss = loss_fn(train_logits, train_labels)
 
-        # 结构重构损失（保持你原先逻辑）
         target_adj = to_dense_adj(test_dataset.edge_index)[0]
         rec_adj = torch.sigmoid(torch.matmul(torch.softmax(logits, dim=1), torch.softmax(logits, dim=1).T))
         pos_weight = float(target_adj.shape[0] * target_adj.shape[0] - test_dataset.edge_index.shape[1]) / max(1, test_dataset.edge_index.shape[1])
@@ -200,7 +209,6 @@ def transfer(args, config, gpu_id, is_reduction):
         loss.backward()
         optimizer.step()
 
-        # 评估（示例，按你现有流程替换/补充）
         with torch.no_grad():
             logreg.eval(); projector.eval(); gnn2.eval()
             emb_eval, _, _ = gnn2(projector(test_dataset.x), test_dataset.edge_index, return_euclid=True)
@@ -222,9 +230,8 @@ def transfer(args, config, gpu_id, is_reduction):
             max_acc, max_test_acc, max_epoch = val_acc, test_acc, epoch
 
     print(f"=== Best @ epoch {max_epoch}: val={max_acc:.4f}, test={max_test_acc:.4f} ===")
-    # 在训练结束后也写一次最佳结果
+    
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        
     result_info = f"Few: {args.few}, r: {args.r}, {args.pretrain_dataset} to {args.test_dataset}:"
     with open("result/GraphLoRA.txt", "a") as f:
         f.write(f"[{timestamp}] {result_info} Best @ epoch {max_epoch}: "

@@ -1,6 +1,6 @@
 import os
 from time import time
-
+import datetime  # 导入 datetime 模块
 import torch
 
 from util import get_dataset, act, mkdir
@@ -59,10 +59,24 @@ def pretrain(dataname, pretext, config, gpu, is_reduction=False):
     if hyperbolic_backbone:
         print(f'[Pretrain] Using Lorentz H^d with learnable curvature, init c={init_c}')
 
+    # --- 修改部分：生成唯一且信息丰富的模型文件名 ---
     pre_trained_model_path = './pre_trained_gnn/'
     mkdir(pre_trained_model_path)
-    model_path = os.path.join(pre_trained_model_path,
-                              "{}.{}.{}.{}.pth".format(dataname, pretext, gnn_type, is_reduction))
+    
+    # 1. 获取当前时间戳
+    timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    
+    # 2. 构建包含双曲信息和时间戳的新文件名
+    model_filename = "{}.{}.{}.hyp_{}.{}.{}.pth".format(
+        dataname, 
+        pretext, 
+        gnn_type, 
+        hyperbolic_backbone, 
+        is_reduction, 
+        timestamp
+    )
+    model_path = os.path.join(pre_trained_model_path, model_filename)
+    # --- 修改结束 ---
 
     # === 优化器（给曲率更小 LR 更稳） ===
     base_lr = learning_rate
@@ -93,6 +107,8 @@ def pretrain(dataname, pretext, config, gpu, is_reduction=False):
         if min_loss > loss.item():
             min_loss = loss.item()
             torch.save(pretrain_model.gnn.state_dict(), model_path)
-            print("+++ model saved ! {}.{}.{}.pth".format(dataname, pretext, gnn_type))
+            # --- 修改部分：打印保存的完整文件名 ---
+            print(f"+++ model saved ! {model_filename}")
+            # --- 修改结束 ---
 
     print("=== Final ===")

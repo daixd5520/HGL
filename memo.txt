@@ -17,3 +17,8 @@ python main.py --is_transfer True --hyperbolic_lora True
 250909
 
 “全双曲主干 + 全双曲 LoRA + 超曲融合”；目前分类头还不是超曲
+
+python main.py --is_pretrain True --is_transfer False
+
+
+python main.py --is_transfer True --pretrained_model_name /mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/PubMed.GRACE.GAT.hyp_True.True.20250911-161024.pth --lora_alpha 32 --r 16
