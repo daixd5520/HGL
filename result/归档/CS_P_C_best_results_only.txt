@@ -1,0 +1,28 @@
+[2025-09-20 00:40:04] Public, r: 32, CiteSeer to Photo: Best @ epoch 155: val=0.9314, test=0.9275 ===
+[2025-09-20 00:40:05] Public, r: 32, CiteSeer to Photo: Best @ epoch 199: val=0.9294, test=0.9301 ===
+[2025-09-20 00:40:06] Public, r: 32, CiteSeer to Photo: Best @ epoch 120: val=0.9392, test=0.9261 ===
+[2025-09-20 00:40:09] Public, r: 32, CiteSeer to Photo: Best @ epoch 165: val=0.9353, test=0.9203 ===
+[2025-09-20 00:40:09] Public, r: 32, CiteSeer to Photo: Best @ epoch 165: val=0.9386, test=0.9281 ===
+[2025-09-20 00:40:11] Public, r: 32, CiteSeer to Photo: Best @ epoch 112: val=0.9340, test=0.9294 ===
+[2025-09-20 00:42:12] Few(5), r: 32, CiteSeer to Photo: Best @ epoch 44: val=0.8975, test=0.8921 ===
+[2025-09-20 00:42:15] Few(5), r: 32, CiteSeer to Photo: Best @ epoch 185: val=0.8909, test=0.8826 ===
+[2025-09-20 00:42:18] Few(5), r: 32, CiteSeer to Photo: Best @ epoch 54: val=0.8830, test=0.8822 ===
+[2025-09-20 00:42:23] Few(5), r: 32, CiteSeer to Photo: Best @ epoch 176: val=0.8863, test=0.8775 ===
+[2025-09-20 00:42:28] Few(5), r: 32, CiteSeer to Photo: Best @ epoch 46: val=0.8817, test=0.8803 ===
+[2025-09-20 00:42:29] Few(5), r: 32, CiteSeer to Photo: Best @ epoch 88: val=0.8863, test=0.8855 ===
+[2025-09-20 00:44:17] Few(10), r: 32, CiteSeer to Photo: Best @ epoch 43: val=0.8983, test=0.9009 ===
+[2025-09-20 00:44:18] Few(10), r: 32, CiteSeer to Photo: Best @ epoch 126: val=0.8897, test=0.9008 ===
+[2025-09-20 00:44:25] Few(10), r: 32, CiteSeer to Photo: Best @ epoch 153: val=0.8890, test=0.8991 ===
+[2025-09-20 00:44:29] Few(10), r: 32, CiteSeer to Photo: Best @ epoch 59: val=0.9016, test=0.9107 ===
+[2025-09-20 00:44:34] Few(10), r: 32, CiteSeer to Photo: Best @ epoch 99: val=0.8989, test=0.9090 ===
+[2025-09-20 00:44:41] Few(10), r: 32, CiteSeer to Photo: Best @ epoch 54: val=0.9029, test=0.9108 ===
+[2025-09-20 00:54:21] Public, r: 32, CiteSeer to Computers: Best @ epoch 470: val=0.8956, test=0.9022 ===
+[2025-09-20 00:54:28] Public, r: 32, CiteSeer to Computers: Best @ epoch 408: val=0.9051, test=0.8953 ===
+[2025-09-20 00:54:46] Public, r: 32, CiteSeer to Computers: Best @ epoch 463: val=0.9015, test=0.9011 ===
+[2025-09-20 00:54:49] Public, r: 32, CiteSeer to Computers: Best @ epoch 451: val=0.9018, test=0.8964 ===
+[2025-09-20 00:54:50] Public, r: 32, CiteSeer to Computers: Best @ epoch 378: val=0.9022, test=0.8895 ===
+[2025-09-20 00:54:59] Public, r: 32, CiteSeer to Computers: Best @ epoch 275: val=0.9025, test=0.9029 ===
+Public, r: 32, CiteSeer to Photo: 92.82±0.16
+Few(5), r: 32, CiteSeer to Photo: 88.45±0.46
+Few(10), r: 32, CiteSeer to Photo: 90.64±0.52
+Public, r: 32, CiteSeer to Computers: 89.96±0.35

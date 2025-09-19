@@ -1,0 +1,147 @@
+
+[2025-09-19 21:26:14] Public, r: 32, CiteSeer to PubMed: Best @ epoch 52: val=0.8382, test=0.8347 ===
+[2025-09-19 21:43:50] Public, r: 32, CiteSeer to PubMed: Best @ epoch 31: val=0.8473, test=0.8382 ===
+[2025-09-19 21:43:56] Public, r: 32, CiteSeer to PubMed: Best @ epoch 31: val=0.8341, test=0.8385 ===
+[2025-09-19 21:43:57] Public, r: 32, CiteSeer to PubMed: Best @ epoch 46: val=0.8397, test=0.8387 ===
+[2025-09-19 21:43:59] Public, r: 32, CiteSeer to PubMed: Best @ epoch 43: val=0.8463, test=0.8377 ===
+[2025-09-19 21:44:01] Public, r: 32, CiteSeer to PubMed: Best @ epoch 42: val=0.8438, test=0.8342 ===
+[2025-09-19 21:44:14] Public, r: 32, CiteSeer to PubMed: Best @ epoch 44: val=0.8400, test=0.8370 ===
+
+[2025-09-19 21:46:51] Few(5), r: 32, CiteSeer to PubMed: Best @ epoch 77: val=0.7120, test=0.7040 ===
+[2025-09-19 21:47:13] Few(5), r: 32, CiteSeer to PubMed: Best @ epoch 49: val=0.7240, test=0.7100 ===
+[2025-09-19 21:47:13] Few(5), r: 32, CiteSeer to PubMed: Best @ epoch 37: val=0.7280, test=0.7170 ===
+[2025-09-19 21:47:17] Few(5), r: 32, CiteSeer to PubMed: Best @ epoch 43: val=0.7160, test=0.7210 ===
+[2025-09-19 21:47:21] Few(5), r: 32, CiteSeer to PubMed: Best @ epoch 34: val=0.7140, test=0.7030 ===
+[2025-09-19 21:47:42] Few(5), r: 32, CiteSeer to PubMed: Best @ epoch 88: val=0.7240, test=0.7080 ===
+
+[2025-09-19 21:50:07] Few(10), r: 32, CiteSeer to PubMed: Best @ epoch 92: val=0.8180, test=0.7580 ===
+[2025-09-19 21:50:19] Few(10), r: 32, CiteSeer to PubMed: Best @ epoch 65: val=0.8220, test=0.7680 ===
+[2025-09-19 21:50:29] Few(10), r: 32, CiteSeer to PubMed: Best @ epoch 18: val=0.8180, test=0.7650 ===
+[2025-09-19 21:50:31] Few(10), r: 32, CiteSeer to PubMed: Best @ epoch 13: val=0.8280, test=0.7710 ===
+[2025-09-19 21:50:36] Few(10), r: 32, CiteSeer to PubMed: Best @ epoch 84: val=0.8200, test=0.7690 ===
+[2025-09-19 21:50:55] Few(10), r: 32, CiteSeer to PubMed: Best @ epoch 59: val=0.8260, test=0.7760 ===
+
+[2025-09-19 21:51:18] Public, r: 32, CiteSeer to CiteSeer: Best @ epoch 54: val=0.7594, test=0.7703 ===
+[2025-09-19 21:51:35] Public, r: 32, CiteSeer to CiteSeer: Best @ epoch 197: val=0.7805, test=0.7673 ===
+[2025-09-19 21:51:45] Public, r: 32, CiteSeer to CiteSeer: Best @ epoch 108: val=0.7820, test=0.7898 ===
+[2025-09-19 21:51:48] Public, r: 32, CiteSeer to CiteSeer: Best @ epoch 151: val=0.7609, test=0.7432 ===
+[2025-09-19 21:51:53] Public, r: 32, CiteSeer to CiteSeer: Best @ epoch 31: val=0.7940, test=0.7973 ===
+[2025-09-19 21:52:11] Public, r: 32, CiteSeer to CiteSeer: Best @ epoch 60: val=0.7789, test=0.7583 ===
+
+[2025-09-19 21:52:23] Few(5), r: 32, CiteSeer to CiteSeer: Best @ epoch 31: val=0.7620, test=0.7390 ===
+[2025-09-19 21:52:40] Few(5), r: 32, CiteSeer to CiteSeer: Best @ epoch 27: val=0.7220, test=0.7160 ===
+[2025-09-19 21:52:53] Few(5), r: 32, CiteSeer to CiteSeer: Best @ epoch 183: val=0.7100, test=0.7180 ===
+[2025-09-19 21:52:54] Few(5), r: 32, CiteSeer to CiteSeer: Best @ epoch 33: val=0.7600, test=0.7390 ===
+[2025-09-19 21:53:00] Few(5), r: 32, CiteSeer to CiteSeer: Best @ epoch 40: val=0.7500, test=0.7370 ===
+[2025-09-19 21:53:15] Few(5), r: 32, CiteSeer to CiteSeer: Best @ epoch 39: val=0.7420, test=0.7360 ===
+
+[2025-09-19 21:53:28] Few(10), r: 32, CiteSeer to CiteSeer: Best @ epoch 37: val=0.7480, test=0.7290 ===
+[2025-09-19 21:53:44] Few(10), r: 32, CiteSeer to CiteSeer: Best @ epoch 32: val=0.7360, test=0.7270 ===
+[2025-09-19 21:53:58] Few(10), r: 32, CiteSeer to CiteSeer: Best @ epoch 38: val=0.7380, test=0.7310 ===
+[2025-09-19 21:53:58] Few(10), r: 32, CiteSeer to CiteSeer: Best @ epoch 33: val=0.7400, test=0.7300 ===
+[2025-09-19 21:54:05] Few(10), r: 32, CiteSeer to CiteSeer: Best @ epoch 33: val=0.7600, test=0.7390 ===
+[2025-09-19 21:54:20] Few(10), r: 32, CiteSeer to CiteSeer: Best @ epoch 39: val=0.7360, test=0.7190 ===
+
+[2025-09-19 21:54:27] Public, r: 32, CiteSeer to Cora: Best @ epoch 38: val=0.9041, test=0.8893 ===
+[2025-09-19 21:54:48] Public, r: 32, CiteSeer to Cora: Best @ epoch 36: val=0.8672, test=0.8708 ===
+[2025-09-19 21:55:02] Public, r: 32, CiteSeer to Cora: Best @ epoch 69: val=0.8930, test=0.8561 ===
+[2025-09-19 21:55:05] Public, r: 32, CiteSeer to Cora: Best @ epoch 32: val=0.8819, test=0.8856 ===
+[2025-09-19 21:55:08] Public, r: 32, CiteSeer to Cora: Best @ epoch 33: val=0.8875, test=0.8856 ===
+[2025-09-19 21:55:21] Public, r: 32, CiteSeer to Cora: Best @ epoch 87: val=0.8616, test=0.8745 ===
+
+[2025-09-19 21:54:57] Few(5), r: 32, CiteSeer to Cora: Best @ epoch 50: val=0.7400, test=0.7540 ===
+[2025-09-19 21:55:23] Few(5), r: 32, CiteSeer to Cora: Best @ epoch 13: val=0.7200, test=0.7260 ===
+[2025-09-19 21:55:35] Few(5), r: 32, CiteSeer to Cora: Best @ epoch 28: val=0.7340, test=0.7580 ===
+[2025-09-19 21:55:36] Few(5), r: 32, CiteSeer to Cora: Best @ epoch 53: val=0.7440, test=0.7540 ===
+[2025-09-19 21:55:40] Few(5), r: 32, CiteSeer to Cora: Best @ epoch 74: val=0.7400, test=0.7500 ===
+[2025-09-19 21:55:51] Few(5), r: 32, CiteSeer to Cora: Best @ epoch 77: val=0.7260, test=0.7290 ===
+
+[2025-09-19 21:55:25] Few(10), r: 32, CiteSeer to Cora: Best @ epoch 13: val=0.7680, test=0.7420 ===
+[2025-09-19 21:55:53] Few(10), r: 32, CiteSeer to Cora: Best @ epoch 18: val=0.7640, test=0.7380 ===
+[2025-09-19 21:56:07] Few(10), r: 32, CiteSeer to Cora: Best @ epoch 97: val=0.7640, test=0.7670 ===
+[2025-09-19 21:56:10] Few(10), r: 32, CiteSeer to Cora: Best @ epoch 75: val=0.7300, test=0.7670 ===
+[2025-09-19 21:56:11] Few(10), r: 32, CiteSeer to Cora: Best @ epoch 52: val=0.7600, test=0.7410 ===
+[2025-09-19 21:56:21] Few(10), r: 32, CiteSeer to Cora: Best @ epoch 15: val=0.7520, test=0.7290 ===
+
+[2025-09-19 21:59:35] Public, r: 32, Cora to PubMed: Best @ epoch 35: val=0.8377, test=0.8294 ===
+[2025-09-19 21:59:43] Public, r: 32, Cora to PubMed: Best @ epoch 35: val=0.8301, test=0.8357 ===
+[2025-09-19 21:59:43] Public, r: 32, Cora to PubMed: Best @ epoch 39: val=0.8313, test=0.8403 ===
+[2025-09-19 22:00:19] Public, r: 32, Cora to PubMed: Best @ epoch 66: val=0.8387, test=0.8398 ===
+[2025-09-19 22:00:22] Public, r: 32, Cora to PubMed: Best @ epoch 34: val=0.8435, test=0.8433 ===
+[2025-09-19 22:00:30] Public, r: 32, Cora to PubMed: Best @ epoch 53: val=0.8303, test=0.8377 ===
+
+[2025-09-19 22:02:34] Few(5), r: 32, Cora to PubMed: Best @ epoch 92: val=0.7220, test=0.7100 ===
+[2025-09-19 22:02:41] Few(5), r: 32, Cora to PubMed: Best @ epoch 49: val=0.7380, test=0.7100 ===
+[2025-09-19 22:02:49] Few(5), r: 32, Cora to PubMed: Best @ epoch 53: val=0.7460, test=0.7290 ===
+[2025-09-19 22:03:02] Few(5), r: 32, Cora to PubMed: Best @ epoch 58: val=0.7360, test=0.7140 ===
+[2025-09-19 22:03:16] Few(5), r: 32, Cora to PubMed: Best @ epoch 47: val=0.7260, test=0.7160 ===
+[2025-09-19 22:03:30] Few(5), r: 32, Cora to PubMed: Best @ epoch 70: val=0.7260, test=0.7070 ===
+
+[2025-09-19 22:05:54] Few(10), r: 32, Cora to PubMed: Best @ epoch 35: val=0.8240, test=0.7610 ===
+[2025-09-19 22:05:55] Few(10), r: 32, Cora to PubMed: Best @ epoch 18: val=0.8300, test=0.7700 ===
+[2025-09-19 22:06:10] Few(10), r: 32, Cora to PubMed: Best @ epoch 19: val=0.8360, test=0.7690 ===
+[2025-09-19 22:06:11] Few(10), r: 32, Cora to PubMed: Best @ epoch 19: val=0.8400, test=0.7690 ===
+[2025-09-19 22:06:26] Few(10), r: 32, Cora to PubMed: Best @ epoch 40: val=0.8240, test=0.7530 ===
+[2025-09-19 22:06:40] Few(10), r: 32, Cora to PubMed: Best @ epoch 20: val=0.8340, test=0.7600 ===
+
+[2025-09-19 22:07:04] Public, r: 32, Cora to CiteSeer: Best @ epoch 39: val=0.7549, test=0.7673 ===
+[2025-09-19 22:07:12] Public, r: 32, Cora to CiteSeer: Best @ epoch 50: val=0.7444, test=0.7508 ===
+[2025-09-19 22:07:20] Public, r: 32, Cora to CiteSeer: Best @ epoch 171: val=0.7474, test=0.7688 ===
+[2025-09-19 22:07:34] Public, r: 32, Cora to CiteSeer: Best @ epoch 50: val=0.7714, test=0.7628 ===
+[2025-09-19 22:07:41] Public, r: 32, Cora to CiteSeer: Best @ epoch 168: val=0.7714, test=0.7943 ===
+[2025-09-19 22:07:53] Public, r: 32, Cora to CiteSeer: Best @ epoch 199: val=0.7865, test=0.7538 ===
+
+[2025-09-19 22:08:17] Few(5), r: 32, Cora to CiteSeer: Best @ epoch 138: val=0.7080, test=0.7060 ===
+[2025-09-19 22:08:19] Few(5), r: 32, Cora to CiteSeer: Best @ epoch 36: val=0.7060, test=0.7050 ===
+[2025-09-19 22:08:23] Few(5), r: 32, Cora to CiteSeer: Best @ epoch 39: val=0.7560, test=0.7460 ===
+[2025-09-19 22:08:44] Few(5), r: 32, Cora to CiteSeer: Best @ epoch 160: val=0.6980, test=0.6950 ===
+[2025-09-19 22:08:45] Few(5), r: 32, Cora to CiteSeer: Best @ epoch 45: val=0.7440, test=0.7300 ===
+[2025-09-19 22:08:58] Few(5), r: 32, Cora to CiteSeer: Best @ epoch 37: val=0.7480, test=0.7440 ===
+
+[2025-09-19 22:09:20] Few(10), r: 32, Cora to CiteSeer: Best @ epoch 28: val=0.7320, test=0.7300 ===
+[2025-09-19 22:09:27] Few(10), r: 32, Cora to CiteSeer: Best @ epoch 136: val=0.7260, test=0.7410 ===
+[2025-09-19 22:09:28] Few(10), r: 32, Cora to CiteSeer: Best @ epoch 41: val=0.7400, test=0.7280 ===
+[2025-09-19 22:09:46] Few(10), r: 32, Cora to CiteSeer: Best @ epoch 38: val=0.7640, test=0.7480 ===
+[2025-09-19 22:09:48] Few(10), r: 32, Cora to CiteSeer: Best @ epoch 30: val=0.7300, test=0.7200 ===
+[2025-09-19 22:09:57] Few(10), r: 32, Cora to CiteSeer: Best @ epoch 38: val=0.7300, test=0.7250 ===
+
+[2025-09-19 22:10:22] Public, r: 32, Cora to Cora: Best @ epoch 33: val=0.8967, test=0.8561 ===
+[2025-09-19 22:10:27] Public, r: 32, Cora to Cora: Best @ epoch 104: val=0.8948, test=0.8672 ===
+[2025-09-19 22:10:38] Public, r: 32, Cora to Cora: Best @ epoch 146: val=0.8745, test=0.8358 ===
+[2025-09-19 22:10:49] Public, r: 32, Cora to Cora: Best @ epoch 173: val=0.8819, test=0.8745 ===
+[2025-09-19 22:10:50] Public, r: 32, Cora to Cora: Best @ epoch 41: val=0.8727, test=0.8875 ===
+[2025-09-19 22:10:57] Public, r: 32, Cora to Cora: Best @ epoch 147: val=0.8690, test=0.8653 ===
+
+[2025-09-19 22:10:56] Few(5), r: 32, Cora to Cora: Best @ epoch 22: val=0.7380, test=0.7440 ===
+[2025-09-19 22:10:58] Few(5), r: 32, Cora to Cora: Best @ epoch 65: val=0.7240, test=0.7410 ===
+[2025-09-19 22:11:07] Few(5), r: 32, Cora to Cora: Best @ epoch 59: val=0.7420, test=0.7450 ===
+[2025-09-19 22:11:19] Few(5), r: 32, Cora to Cora: Best @ epoch 45: val=0.7520, test=0.7560 ===
+[2025-09-19 22:11:21] Few(5), r: 32, Cora to Cora: Best @ epoch 93: val=0.7340, test=0.7450 ===
+[2025-09-19 22:11:26] Few(5), r: 32, Cora to Cora: Best @ epoch 25: val=0.7040, test=0.6990 ===
+
+[2025-09-19 22:11:25] Few(10), r: 32, Cora to Cora: Best @ epoch 68: val=0.7440, test=0.7610 ===
+[2025-09-19 22:11:29] Few(10), r: 32, Cora to Cora: Best @ epoch 19: val=0.7820, test=0.7600 ===
+[2025-09-19 22:11:35] Few(10), r: 32, Cora to Cora: Best @ epoch 21: val=0.7700, test=0.7520 ===
+[2025-09-19 22:11:47] Few(10), r: 32, Cora to Cora: Best @ epoch 64: val=0.7380, test=0.7350 ===
+[2025-09-19 22:11:49] Few(10), r: 32, Cora to Cora: Best @ epoch 19: val=0.7780, test=0.7610 ===
+[2025-09-19 22:11:53] Few(10), r: 32, Cora to Cora: Best @ epoch 21: val=0.7720, test=0.7690 ===
+
+去掉一个最低处理结果（每组保留test值最高的5个结果）：
+    Few(10), r: 32, CiteSeer to CiteSeer: 73.12±0.46
+    Few(10), r: 32, CiteSeer to Cora: 75.10±1.47
+    Few(10), r: 32, CiteSeer to PubMed: 76.98±0.41
+    Few(10), r: 32, Cora to CiteSeer: 73.44±0.97
+    Few(10), r: 32, Cora to Cora: 76.06±0.60
+    Few(10), r: 32, Cora to PubMed: 76.58±0.49
+    Few(5), r: 32, CiteSeer to CiteSeer: 73.38±0.89
+    Few(5), r: 32, CiteSeer to Cora: 74.90±1.15
+    Few(5), r: 32, CiteSeer to PubMed: 71.20±0.69
+    Few(5), r: 32, Cora to CiteSeer: 72.62±1.99
+    Few(5), r: 32, Cora to Cora: 74.62±0.57
+    Few(5), r: 32, Cora to PubMed: 71.58±0.78
+    Public, r: 32, CiteSeer to CiteSeer: 77.66±1.63
+    Public, r: 32, CiteSeer to Cora: 88.12±0.80
+    Public, r: 32, CiteSeer to PubMed: 83.80±0.07
+    Public, r: 32, Cora to CiteSeer: 76.94±1.51
+    Public, r: 32, Cora to Cora: 87.01±1.17
+    Public, r: 32, Cora to PubMed: 83.94±0.29

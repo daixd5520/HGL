@@ -76,8 +76,8 @@ def transfer(args, config, gpu_id, is_reduction):
         f.write(f"Config: {config}\n")
         f.write("="*80 + "\n")
 
-    # --- 修改部分：从文件名解析双曲状态并加载指定模型 ---
-    # 1. 从文件名解析 backbone 是否为双曲
+    # --- 修改部分：从文件名解析信息并对齐预训练配置 ---
+    # 1) 从文件名解析 backbone 是否为双曲
     try:
         parts = args.pretrained_model_name.split('.')
         hyp_part = next(p for p in parts if p.startswith('hyp_'))
@@ -87,18 +87,40 @@ def transfer(args, config, gpu_id, is_reduction):
         raise ValueError(f"Filename '{args.pretrained_model_name}' is not in the expected format. "
                          f"Could not parse hyperbolic status (e.g., 'hyp_True'). Error: {e}")
 
-    # 2. 使用解析出的状态初始化 GNN backbone
+    # 2) 从文件名解析源数据集（如 'Cora.GRACE....pth' -> 'Cora'），若与 args.pretrain_dataset 不一致则对齐
+    try:
+        filename_base = os.path.basename(args.pretrained_model_name)
+        src_dataset = filename_base.split('.')[0]
+        if src_dataset and src_dataset != args.pretrain_dataset:
+            print(f"Pretrain dataset overridden by checkpoint: {args.pretrain_dataset} -> {src_dataset}")
+            args.pretrain_dataset = src_dataset
+            pretrian_datapath = os.path.join('./datasets', args.pretrain_dataset)
+            pretrain_dataset = get_dataset(pretrian_datapath, args.pretrain_dataset)[0]
+            pretrain_dataset.edge_index = add_remaining_self_loops(pretrain_dataset.edge_index)[0]
+            pretrain_dataset = pretrain_dataset.to(device)
+    except Exception as e:
+        raise ValueError(f"Failed to parse source dataset from '{args.pretrained_model_name}': {e}")
+
+    # 3) 使用解析出的状态初始化 GNN backbone
     gnn = GNN(pretrain_dataset.x.shape[1], config['output_dim'], act(config['activation']),
               config['gnn_type'], config['num_layers'],
               hyperbolic=is_hyperbolic_backbone, curv=curv_param).to(device)
 
-    # 3. 加载由命令行参数指定的模型
+    # 4) 加载由命令行参数指定的模型：过滤掉与模型形状不匹配的权重，避免 size mismatch
     model_path = os.path.join("./pre_trained_gnn/", args.pretrained_model_name)
     if not os.path.exists(model_path):
         raise FileNotFoundError(f"The specified pretrained model file does not exist: {model_path}")
         
     state = torch.load(model_path, map_location=device)
-    gnn.load_state_dict(state, strict=False)
+    model_state = gnn.state_dict()
+    filtered_state = {k: v for k, v in state.items() if k in model_state and model_state[k].shape == v.shape}
+    missing_keys = [k for k in model_state.keys() if k not in filtered_state]
+    unexpected_keys = [k for k in state.keys() if k not in model_state]
+    if missing_keys:
+        print(f"load_state_dict: skipped {len(missing_keys)} keys due to shape/key mismatch")
+    if unexpected_keys:
+        print(f"load_state_dict: {len(unexpected_keys)} unexpected keys in checkpoint")
+    gnn.load_state_dict(filtered_state, strict=False)
     # --- 修改结束 ---
 
     gnn.eval()
@@ -145,6 +167,18 @@ def transfer(args, config, gpu_id, is_reduction):
 
     ppr_weight = get_ppr_weight(test_dataset)
 
+    # 统计并输出划分规模，便于核验 few/public 模式
+    num_train = int(train_mask.sum().item())
+    num_val   = int(val_mask.sum().item())
+    num_test  = int(test_mask.sum().item())
+    split_info = (
+        f"Split sizes | train={num_train}, val={num_val}, test={num_test} "
+        f"(mode={'few' if args.few else 'public'}, shot={args.shot if args.few else 'N/A'})"
+    )
+    print(split_info)
+    with open("result/GraphLoRA.txt", "a") as f:
+        f.write(split_info + "\n")
+
     # 构造监督图的同类索引 mask
     idx_a, idx_b = torch.tensor([], device=device), torch.tensor([], device=device)
     train_idx = torch.nonzero(train_mask, as_tuple=False).squeeze()
@@ -175,7 +209,7 @@ def transfer(args, config, gpu_id, is_reduction):
         {"params": params_c,      "lr": max(args.lr3 * 0.1, 1e-5), "weight_decay": 0.0},
     ])
 
-    pretrain_graph_loader = DataLoader(pretrain_dataset.x, batch_size=128, shuffle=True)
+    pretrain_graph_loader = DataLoader(pretrain_dataset.x, batch_size=32, shuffle=True)
 
     max_acc, max_test_acc, max_epoch = 0.0, 0.0, 0
     for epoch in range(0, args.num_epochs):
@@ -186,7 +220,7 @@ def transfer(args, config, gpu_id, is_reduction):
 
         optimizer.zero_grad()
 
-        smmd_loss_f = batched_smmd_loss(feature_map, pretrain_graph_loader, SMMD, ppr_weight, 128)
+        smmd_loss_f = batched_smmd_loss(feature_map, pretrain_graph_loader, SMMD, ppr_weight, 32)
         ct_loss = 0.5 * (
             batched_gct_loss(emb1, emb2, 1000, mask, args.tau) +
             batched_gct_loss(emb2, emb1, 1000, mask, args.tau)
@@ -232,7 +266,8 @@ def transfer(args, config, gpu_id, is_reduction):
     print(f"=== Best @ epoch {max_epoch}: val={max_acc:.4f}, test={max_test_acc:.4f} ===")
     
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    result_info = f"Few: {args.few}, r: {args.r}, {args.pretrain_dataset} to {args.test_dataset}:"
+    mode_label = f"Few({args.shot})" if args.few else "Public"
+    result_info = f"{mode_label}, r: {args.r}, {args.pretrain_dataset} to {args.test_dataset}:"
     with open("result/GraphLoRA.txt", "a") as f:
         f.write(f"[{timestamp}] {result_info} Best @ epoch {max_epoch}: "
                 f"val={max_acc:.4f}, test={max_test_acc:.4f} ===\n")

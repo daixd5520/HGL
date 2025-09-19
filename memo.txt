@@ -36,3 +36,9 @@ python main.py --is_pretrain True --is_transfer False --pretrain_dataset Cora
 python main.py --is_pretrain True --is_transfer False --pretrain_dataset Photo
 
 python main.py --is_pretrain True --is_transfer False --pretrain_dataset Computer
+
+
+bash shell.sh
+
+
+grep "Best @ epoch.*val=.*test=" /mnt/data1/Graph/HypGraphLoRA/result/GraphLoRA.txt > /mnt/data1/Graph/HypGraphLoRA/result/best_epoch_results.txt

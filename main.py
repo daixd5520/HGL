@@ -18,7 +18,19 @@ if __name__ == '__main__':
     parser.add_argument('--is_pretrain', type=bool, default=False)
     parser.add_argument('--is_transfer', type=bool, default=True)
     parser.add_argument('--is_reduction', type=bool, default=True)
-    parser.add_argument('--few', type=bool, default=False)
+
+    # 兼容 "--few True/False" 的布尔解析
+    def str2bool(v):
+        if isinstance(v, bool):
+            return v
+        s = str(v).strip().lower()
+        if s in ('yes', 'true', 't', 'y', '1'):
+            return True
+        if s in ('no', 'false', 'f', 'n', '0'):
+            return False
+        raise argparse.ArgumentTypeError('Boolean value expected for --few (e.g., True/False).')
+
+    parser.add_argument('--few', type=str2bool, default=False)
     parser.add_argument('--shot', type=int, default=10)
     parser.add_argument('--tau', type=float, default=0.5)
     parser.add_argument('--sup_weight', type=float, default=0.2)

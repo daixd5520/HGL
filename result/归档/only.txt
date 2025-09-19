@@ -1,0 +1,7 @@
+[2025-09-20 02:00:27] Few(5), r: 32, CiteSeer to Computers: Best @ epoch 233: val=0.7661, test=0.7482 ===
+[2025-09-20 02:00:41] Few(5), r: 32, CiteSeer to Computers: Best @ epoch 340: val=0.7591, test=0.7482 ===
+[2025-09-20 02:00:44] Few(5), r: 32, CiteSeer to Computers: Best @ epoch 421: val=0.7712, test=0.7619 ===
+[2025-09-20 02:00:45] Few(5), r: 32, CiteSeer to Computers: Best @ epoch 62: val=0.7858, test=0.7780 ===
+[2025-09-20 02:00:53] Few(5), r: 32, CiteSeer to Computers: Best @ epoch 222: val=0.7701, test=0.7562 ===
+[2025-09-20 02:00:58] Few(5), r: 32, CiteSeer to Computers: Best @ epoch 426: val=0.7467, test=0.7399 ===
+Public, r: 32, CiteSeer to Computers: 75.85±1.23
