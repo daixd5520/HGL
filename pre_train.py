@@ -20,7 +20,15 @@ def pretrain(dataname, pretext, config, gpu, is_reduction=False):
     #     feature_reduce = SVDFeatureReduction(out_channels=100)
     #     data = feature_reduce(data)
 
-    device = torch.device('cuda:{}'.format(gpu) if torch.cuda.is_available() else 'cpu')
+    if torch.cuda.is_available():
+        num_visible = torch.cuda.device_count()
+        if num_visible >= 1:
+            gpu = 0 if num_visible == 1 else int(gpu)
+            device = torch.device(f'cuda:{gpu}')
+        else:
+            device = torch.device('cpu')
+    else:
+        device = torch.device('cpu')
     data = data.to(device)
 
     # === 读取配置 ===

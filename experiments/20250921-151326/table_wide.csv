@@ -1,0 +1,4 @@
+test_dataset,CiteSeer,CiteSeer,CiteSeer,Computers,Computers,Computers,Cora,Cora,Cora,Photo,Photo,Photo,PubMed,PubMed,PubMed
+few_label,10shot,5shot,Public,10shot,5shot,Public,10shot,5shot,Public,10shot,5shot,Public,10shot,5shot,Public
+row_label,,,,,,,,,,,,,,,
+HGL-P,0.7166 ± 0.0181,0.6990 ± 0.0388,0.7459 ± 0.0189,0.7604 ± 0.0102,0.7623 ± 0.0186,0.8884 ± 0.0053,0.7260 ± 0.0263,0.6358 ± 0.0486,0.8531 ± 0.0137,0.8972 ± 0.0042,0.8732 ± 0.0147,0.9239 ± 0.0043,0.7618 ± 0.0105,0.7448 ± 0.0176,0.8382 ± 0.0065

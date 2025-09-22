@@ -1,0 +1,11 @@
+{
+  "models": [
+    "/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth"
+  ],
+  "tests": [
+    "Computers"
+  ],
+  "runs": 5,
+  "gpus": 5,
+  "out": "./experiments/20250922-013554"
+}

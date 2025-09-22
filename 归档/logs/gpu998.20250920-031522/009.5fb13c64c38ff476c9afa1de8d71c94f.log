@@ -1,0 +1,9 @@
+[2025-09-20 07:14:23] START attempt 1: python main.py --is_transfer True --test_dataset PubMed --pretrained_model_name /mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Photo.GRACE.GAT.hyp_True.True.20250912-232537.pth --few True --shot 10 --gpu_id 0
+bash: line 1: python: command not found
+[2025-09-20 07:14:23] END attempt 1: exit_code=127
+[2025-09-20 07:14:33] START attempt 2: python main.py --is_transfer True --test_dataset PubMed --pretrained_model_name /mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Photo.GRACE.GAT.hyp_True.True.20250912-232537.pth --few True --shot 10 --gpu_id 0
+bash: line 1: python: command not found
+[2025-09-20 07:14:33] END attempt 2: exit_code=127
+[2025-09-20 07:14:43] START attempt 3: python main.py --is_transfer True --test_dataset PubMed --pretrained_model_name /mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Photo.GRACE.GAT.hyp_True.True.20250912-232537.pth --few True --shot 10 --gpu_id 0
+bash: line 1: python: command not found
+[2025-09-20 07:14:43] END attempt 3: exit_code=127

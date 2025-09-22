@@ -42,3 +42,12 @@ bash shell.sh
 
 
 grep "Best @ epoch.*val=.*test=" /mnt/data1/Graph/HypGraphLoRA/result/GraphLoRA.txt > /mnt/data1/Graph/HypGraphLoRA/result/best_epoch_results.txt
+
+bash run5.sh python main.py --is_transfer True --pretrained_model_name /mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/PubMed.GRACE.GAT.hyp_True.True.20250911-161024.pth --lora_alpha 32 --r 16
+
+----------------------这个能够生成表格
+python exp_multicard.py \
+--models /mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth \
+--tests Computers \
+--runs 5 \
+--gpus 5

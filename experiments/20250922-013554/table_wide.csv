@@ -1,0 +1,4 @@
+test_dataset,Computers,Computers,Computers
+few_label,10shot,5shot,Public
+row_label,,,
+HGL-Com,0.7601 ± 0.0102,0.7440 ± 0.0201,0.8897 ± 0.0076

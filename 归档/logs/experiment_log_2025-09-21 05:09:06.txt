@@ -1,0 +1,15 @@
+Experiment Computer-/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Photo.GRACE.GAT.hyp_True.True.20250912-232537.pth-True-10-4 - 2025-09-21 05:09:06:
+Running experiment Computer-/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Photo.GRACE.GAT.hyp_True.True.20250912-232537.pth-True-10-4...
+Experiment Computer-/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Photo.GRACE.GAT.hyp_True.True.20250912-232537.pth-True-10-4 output:
+
+Experiment Computer-/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Photo.GRACE.GAT.hyp_True.True.20250912-232537.pth-True-10-4 error:
+Traceback (most recent call last):
+  File "/mnt/data1/Graph/HypGraphLoRA/main.py", line 52, in <module>
+    args = get_parameter(args)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data1/Graph/HypGraphLoRA/util.py", line 208, in get_parameter
+    args.wd1 = float(config[setting][args.test_dataset]['wd1'])
+                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'Computer'
+
+==================================================

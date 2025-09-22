@@ -1,0 +1,16 @@
+{
+  "cmd": "python main.py --is_transfer True --test_dataset Photo --pretrained_model_name /mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Photo.GRACE.GAT.hyp_True.True.20250912-232537.pth --few True --shot 10",
+  "gpu_id": 2,
+  "few": true,
+  "shot": 10,
+  "test_dataset": "Photo",
+  "pretrained_model_path": "/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Photo.GRACE.GAT.hyp_True.True.20250912-232537.pth",
+  "exit_code": 0,
+  "duration_sec": 127.09604334831238,
+  "parsed_val_acc": 0.8956,
+  "parsed_test_acc": 0.9003,
+  "stdout_path": "./experiments/20250921-151326/logs/HGL-P/Photo/HGL-P__test-Photo__few-10shot__run3.stdout.txt",
+  "stderr_path": "./experiments/20250921-151326/logs/HGL-P/Photo/HGL-P__test-Photo__few-10shot__run3.stderr.txt",
+  "time": "2025-09-21T15:33:21",
+  "stopped": false
+}

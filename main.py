@@ -11,7 +11,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--pretrain_dataset', type=str, default='PubMed')
     parser.add_argument('--test_dataset', type=str, default='CiteSeer')
-    parser.add_argument('--gpu_id', type=int, default=1)
+    parser.add_argument('--gpu_id', type=int, default=0)
     parser.add_argument('--pretext', type=str, default='GRACE')
     parser.add_argument('--config', type=str, default='./config.yaml')
     parser.add_argument('--para_config', type=str, default='./config2.yaml')
@@ -51,8 +51,17 @@ if __name__ == '__main__':
     args = parser.parse_args()
     args = get_parameter(args)
 
-    assert args.gpu_id in range(0, 2)
-    torch.cuda.set_device(args.gpu_id)
+    # 更稳妥的单卡/多卡选择：若仅一张可见卡则强制使用 0
+    if torch.cuda.is_available():
+        num_visible = torch.cuda.device_count()
+        if num_visible == 0:
+            pass
+        elif num_visible == 1:
+            args.gpu_id = 0
+            torch.cuda.set_device(0)
+        else:
+            args.gpu_id = max(0, min(args.gpu_id, num_visible - 1))
+            torch.cuda.set_device(args.gpu_id)
 
     if args.is_pretrain:
         config_pretrain = yaml.load(open(args.config), Loader=SafeLoader)[args.pretrain_dataset]

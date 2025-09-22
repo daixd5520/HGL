@@ -1,0 +1,6 @@
+run,test_acc,val_acc,epoch,duration_sec,log_file
+1,0.7250,0.7180,65,50.78,experiment_log_2025-09-21 06:22:56.txt
+2,0.7310,0.7240,49,45.82,experiment_log_2025-09-21 06:23:41.txt
+3,0.6820,0.6680,65,49.86,experiment_log_2025-09-21 06:24:31.txt
+4,0.7260,0.7220,73,55.50,experiment_log_2025-09-21 06:25:27.txt
+5,0.7100,0.7200,48,47.46,experiment_log_2025-09-21 06:26:14.txt

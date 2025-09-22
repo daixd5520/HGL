@@ -38,7 +38,16 @@ class LogReg(nn.Module):
 
 
 def transfer(args, config, gpu_id, is_reduction):
-    device = torch.device('cuda:{}'.format(gpu_id) if torch.cuda.is_available() else 'cpu')
+    # 当仅有一张可见卡时，统一回落至 cuda:0；否则按传入 gpu_id 选择
+    if torch.cuda.is_available():
+        num_visible = torch.cuda.device_count()
+        if num_visible >= 1:
+            selected = 0 if num_visible == 1 else int(gpu_id)
+            device = torch.device(f'cuda:{selected}')
+        else:
+            device = torch.device('cpu')
+    else:
+        device = torch.device('cpu')
 
     # ---- load data ----
     pretrian_datapath = os.path.join('./datasets', args.pretrain_dataset)
