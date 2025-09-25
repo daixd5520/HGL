@@ -19,4 +19,11 @@ You can easily run our code by
 # Fine-tuning
 python main.py --is_transfer True --pretrained_model_name /mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/PubMed.GRACE.GAT.hyp_True.True.20250911-161024.pth --lora_alpha 32 --r 16
 
+# ----------------------这个能够生成表格
+python exp_multicard.py \
+--models /mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/PubMed.GRACE.GAT.hyp_True.True.20250911-161024.pth \
+--tests PubMed Cora Photo \
+--runs 5 \
+--gpus 5
+
 ```
