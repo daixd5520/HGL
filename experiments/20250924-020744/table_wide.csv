@@ -1,0 +1,4 @@
+test_dataset,Cora,Cora,Cora,Photo,Photo,Photo,PubMed,PubMed,PubMed
+few_label,10shot,5shot,Public,10shot,5shot,Public,10shot,5shot,Public
+row_label,,,,,,,,,
+HGL-PM,0.7340 ± 0.0186,0.6832 ± 0.0232,0.8782 ± 0.0162,0.8832 ± 0.0081,0.8649 ± 0.0033,0.9362 ± 0.0053,0.7308 ± 0.0214,0.7026 ± 0.0053,0.8265 ± 0.0051

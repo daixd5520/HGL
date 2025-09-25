@@ -15,12 +15,22 @@ if __name__ == '__main__':
     parser.add_argument('--pretext', type=str, default='GRACE')
     parser.add_argument('--config', type=str, default='./config.yaml')
     parser.add_argument('--para_config', type=str, default='./config2.yaml')
-    parser.add_argument('--is_pretrain', type=bool, default=False)
-    parser.add_argument('--is_transfer', type=bool, default=True)
-    parser.add_argument('--is_reduction', type=bool, default=True)
-
     # 兼容 "--few True/False" 的布尔解析
     def str2bool(v):
+        if isinstance(v, bool):
+            return v
+        s = str(v).strip().lower()
+        if s in ('yes', 'true', 't', 'y', '1'):
+            return True
+        if s in ('no', 'false', 'f', 'n', '0'):
+            return False
+        raise argparse.ArgumentTypeError('Boolean value expected for --few (e.g., True/False).')
+
+    parser.add_argument('--is_pretrain', type=str2bool, default=False)
+    parser.add_argument('--is_transfer', type=str2bool, default=True)
+    parser.add_argument('--is_reduction', type=str2bool, default=True)
+
+    def str2bool_duplicate(v):
         if isinstance(v, bool):
             return v
         s = str(v).strip().lower()

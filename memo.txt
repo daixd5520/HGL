@@ -47,7 +47,7 @@ bash run5.sh python main.py --is_transfer True --pretrained_model_name /mnt/data
 
 ----------------------这个能够生成表格
 python exp_multicard.py \
---models /mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth \
---tests Computers \
+--models /mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/PubMed.GRACE.GAT.hyp_True.True.20250911-161024.pth \
+--tests PubMed Cora Photo \
 --runs 5 \
 --gpus 5

@@ -218,6 +218,76 @@ def get_parameter(args):
     args.num_epochs = config[setting][args.test_dataset]['num_epochs']
     return args
 
+
+def get_adaptive_loss_weights(args, num_train_samples):
+    """Adaptive loss weighting for few-shot learning"""
+    base_weights = {'l1': args.l1, 'l2': args.l2, 'l3': args.l3, 'l4': args.l4}
+
+    if args.few and num_train_samples < 100:  # Very few samples
+        # Increase classification and contrastive, reduce domain alignment and reconstruction
+        return {
+            'l1': base_weights['l1'] * 1.5,      # More classification focus
+            'l2': base_weights['l2'] * 0.7,      # Less domain alignment
+            'l3': base_weights['l3'] * 1.3,      # More contrastive learning
+            'l4': base_weights['l4'] * 0.8       # Less reconstruction
+        }
+    return base_weights
+
+
+def augment_few_shot_features(x, train_mask, noise_std=0.1):
+    """Add small gaussian noise to training features in few-shot settings"""
+    if train_mask.sum() < 100:  # Only for few-shot
+        x_aug = x.clone()
+        noise = torch.randn_like(x[train_mask]) * noise_std
+        x_aug[train_mask] += noise
+        return x_aug
+    return x
+
+
+def compute_split_quality(data, train_mask, val_mask, test_mask):
+    """Compute quality score for few-shot splits based on class balance and connectivity"""
+    y = data.y
+    edge_index = data.edge_index
+
+    # Class balance score
+    train_labels = y[train_mask]
+    class_counts = torch.bincount(train_labels)
+    balance_score = torch.var(class_counts.float()).item()
+
+    # Connectivity score - prefer training nodes with more connections
+    train_indices = torch.nonzero(train_mask, as_tuple=False).squeeze()
+    connectivity_score = 0
+    if len(train_indices) > 0:
+        adj = torch.zeros(len(y), len(y), device=y.device)
+        adj[edge_index[0], edge_index[1]] = 1
+        train_degrees = adj[train_indices].sum(dim=1)
+        connectivity_score = -train_degrees.mean().item()  # Negative because we want higher connectivity
+
+    # Validation set size penalty (prefer reasonable val/test split)
+    val_ratio = val_mask.sum().float() / len(y)
+    test_ratio = test_mask.sum().float() / len(y)
+    split_penalty = abs(val_ratio - 0.2) + abs(test_ratio - 0.6)  # Target 20% val, 60% test
+
+    return balance_score + connectivity_score + split_penalty * 10
+
+
+def get_balanced_few_shot_mask(data, shot, dataname, device, num_trials=5):
+    """Try multiple random splits and pick the most balanced one"""
+    best_masks = None
+    best_score = float('inf')
+
+    for trial in range(num_trials):
+        np.random.seed(trial * 42)  # Different seeds per trial
+        train_mask, val_mask, test_mask = get_few_shot_mask(data, shot, dataname, device)
+
+        # Score based on class balance and connectivity
+        score = compute_split_quality(data, train_mask, val_mask, test_mask)
+        if score < best_score:
+            best_score = score
+            best_masks = (train_mask, val_mask, test_mask)
+
+    return best_masks
+
 # ===== Hyperbolic (Lorentz model) ops =====
 import math
 

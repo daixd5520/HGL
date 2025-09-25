@@ -1,0 +1,13 @@
+{
+  "models": [
+    "/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/PubMed.GRACE.GAT.hyp_True.True.20250911-161024.pth"
+  ],
+  "tests": [
+    "PubMed",
+    "Cora",
+    "Photo"
+  ],
+  "runs": 5,
+  "gpus": 5,
+  "out": "./experiments/20250924-020744"
+}

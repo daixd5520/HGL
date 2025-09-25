@@ -9,6 +9,7 @@ from torch_geometric.loader import DataLoader
 
 from util import get_dataset, act, SMMDLoss, mkdir, get_ppr_weight
 from util import get_few_shot_mask, batched_smmd_loss, batched_gct_loss
+from util import get_adaptive_loss_weights, augment_few_shot_features, get_balanced_few_shot_mask
 from model.GNN_model import GNN, GNNLoRA, HyperbolicLoRA, CurvatureParam
 
 import datetime
@@ -35,6 +36,30 @@ class LogReg(nn.Module):
 
     def initialize(self):
         torch.nn.init.xavier_uniform_(self.fc.weight)
+
+
+class TemperatureScaling(nn.Module):
+    """Temperature scaling for calibration in few-shot learning"""
+    def __init__(self, initial_temp=1.0):
+        super().__init__()
+        self.temperature = nn.Parameter(torch.tensor(initial_temp, dtype=torch.float32))
+
+    def forward(self, logits):
+        return logits / self.temperature.clamp(min=0.01)  # Prevent division by zero
+
+
+def get_few_shot_scheduler(optimizer, num_epochs):
+    """Progressive learning rate scheduler for few-shot learning"""
+    warmup_epochs = min(20, num_epochs // 4)
+    scheduler1 = torch.optim.lr_scheduler.LinearLR(
+        optimizer, start_factor=0.1, total_iters=warmup_epochs
+    )
+    scheduler2 = torch.optim.lr_scheduler.CosineAnnealingLR(
+        optimizer, T_max=num_epochs - warmup_epochs
+    )
+    return torch.optim.lr_scheduler.SequentialLR(
+        optimizer, [scheduler1, scheduler2], milestones=[warmup_epochs]
+    )
 
 
 def transfer(args, config, gpu_id, is_reduction):
@@ -158,7 +183,8 @@ def transfer(args, config, gpu_id, is_reduction):
 
     # ---- few-shot masks ----
     if args.few:
-        train_mask, val_mask, test_mask = get_few_shot_mask(test_dataset, args.shot, args.test_dataset, device)
+        # Use enhanced balanced sampling for few-shot
+        train_mask, val_mask, test_mask = get_balanced_few_shot_mask(test_dataset, args.shot, args.test_dataset, device)
     else:
         N = test_dataset.x.shape[0]
         index = np.arange(N)
@@ -174,6 +200,11 @@ def transfer(args, config, gpu_id, is_reduction):
     test_dataset.val_mask = val_mask
     test_dataset.test_mask = test_mask
 
+    # Temperature scaling for few-shot calibration
+    temp_scale = None
+    if args.few:
+        temp_scale = TemperatureScaling().to(device)
+
     ppr_weight = get_ppr_weight(test_dataset)
 
     # 统计并输出划分规模，便于核验 few/public 模式
@@ -187,6 +218,9 @@ def transfer(args, config, gpu_id, is_reduction):
     print(split_info)
     with open("result/GraphLoRA.txt", "a") as f:
         f.write(split_info + "\n")
+
+    # Adaptive loss weights for few-shot learning
+    adaptive_weights = get_adaptive_loss_weights(args, num_train)
 
     # 构造监督图的同类索引 mask
     idx_a, idx_b = torch.tensor([], device=device), torch.tensor([], device=device)
@@ -211,20 +245,38 @@ def transfer(args, config, gpu_id, is_reduction):
     params_gnn2   = [p for n, p in gnn2.named_parameters() if ('raw_c' not in n)]
     params_c      = [curv_param.raw_c]
 
-    optimizer = torch.optim.Adam([
+    param_groups = [
         {"params": params_proj,   "lr": args.lr1, "weight_decay": args.wd1},
         {"params": params_logreg, "lr": args.lr2, "weight_decay": args.wd2},
         {"params": params_gnn2,   "lr": args.lr3, "weight_decay": args.wd3},
         {"params": params_c,      "lr": max(args.lr3 * 0.1, 1e-5), "weight_decay": 0.0},
-    ])
+    ]
+
+    # Add temperature scaling parameters for few-shot
+    if temp_scale is not None:
+        param_groups.append({"params": temp_scale.parameters(), "lr": args.lr2, "weight_decay": 0.0})
+
+    optimizer = torch.optim.Adam(param_groups)
+
+    # Learning rate scheduler for few-shot
+    scheduler = None
+    if args.few:
+        scheduler = get_few_shot_scheduler(optimizer, args.num_epochs)
 
     pretrain_graph_loader = DataLoader(pretrain_dataset.x, batch_size=32, shuffle=True)
 
     max_acc, max_test_acc, max_epoch = 0.0, 0.0, 0
     for epoch in range(0, args.num_epochs):
         logreg.train(); projector.train(); gnn2.train()
+        if temp_scale is not None:
+            temp_scale.train()
 
-        feature_map = projector(test_dataset.x)
+        # Feature augmentation for few-shot
+        input_features = test_dataset.x
+        if args.few:
+            input_features = augment_few_shot_features(test_dataset.x, train_mask)
+
+        feature_map = projector(input_features)
         emb, emb1, emb2 = gnn2(feature_map, test_dataset.edge_index, return_euclid=True)
 
         optimizer.zero_grad()
@@ -236,6 +288,11 @@ def transfer(args, config, gpu_id, is_reduction):
         ).mean()
 
         logits = logreg(emb)
+
+        # Apply temperature scaling for few-shot
+        if temp_scale is not None:
+            logits = temp_scale(logits)
+
         train_logits = logits[train_mask]
         train_labels = test_dataset.y[train_mask]
         cls_loss = loss_fn(train_logits, train_labels)
@@ -248,14 +305,30 @@ def transfer(args, config, gpu_id, is_reduction):
         weight_tensor[weight_mask] = pos_weight
         loss_rec = F.binary_cross_entropy(rec_adj.view(-1), target_adj.view(-1), weight=weight_tensor)
 
-        loss = args.l1 * cls_loss + args.l2 * smmd_loss_f + args.l3 * ct_loss + args.l4 * loss_rec
+        # Use adaptive loss weights
+        loss = (adaptive_weights['l1'] * cls_loss +
+                adaptive_weights['l2'] * smmd_loss_f +
+                adaptive_weights['l3'] * ct_loss +
+                adaptive_weights['l4'] * loss_rec)
         loss.backward()
         optimizer.step()
 
+        # Learning rate scheduling for few-shot
+        if scheduler is not None:
+            scheduler.step()
+
         with torch.no_grad():
             logreg.eval(); projector.eval(); gnn2.eval()
+            if temp_scale is not None:
+                temp_scale.eval()
+
             emb_eval, _, _ = gnn2(projector(test_dataset.x), test_dataset.edge_index, return_euclid=True)
             logits_eval = logreg(emb_eval)
+
+            # Apply temperature scaling for evaluation
+            if temp_scale is not None:
+                logits_eval = temp_scale(logits_eval)
+
             pred = logits_eval.argmax(dim=1)
             def acc_of(mask):
                 if mask.sum() == 0: return 0.0
