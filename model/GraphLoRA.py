@@ -7,9 +7,10 @@ import torch.nn.functional as F
 from torch_geometric.utils import to_dense_adj, add_remaining_self_loops
 from torch_geometric.loader import DataLoader
 
-from util import get_dataset, act, SMMDLoss, mkdir, get_ppr_weight
-from util import get_few_shot_mask, batched_smmd_loss, batched_gct_loss
-from util import get_adaptive_loss_weights, augment_few_shot_features, get_balanced_few_shot_mask
+from util import (get_dataset, act, SMMDLoss, mkdir, get_ppr_weight,
+                  get_few_shot_mask, batched_smmd_loss, batched_gct_loss,
+                  get_adaptive_loss_weights, augment_few_shot_features,
+                  get_balanced_few_shot_mask, lorentz_expmap0, lorentz_distance)
 from model.GNN_model import GNN, GNNLoRA, HyperbolicLoRA, CurvatureParam
 
 import datetime
@@ -27,15 +28,37 @@ class Projector(nn.Module):
 
 
 class LogReg(nn.Module):
-    def __init__(self, hid_dim, out_dim):
+    def __init__(self, hid_dim, out_dim, hyperbolic: bool = False, curv: CurvatureParam | None = None):
         super().__init__()
-        self.fc = nn.Linear(hid_dim, out_dim)
-        self.initialize()
+        self.hyperbolic = bool(hyperbolic)
+        if self.hyperbolic:
+            if curv is None:
+                raise ValueError("Hyperbolic LogReg requires a shared curvature parameter.")
+            self.curv = curv
+            self.weight = nn.Parameter(torch.empty(out_dim, hid_dim))
+            self.bias = nn.Parameter(torch.zeros(out_dim))
+        else:
+            self.fc = nn.Linear(hid_dim, out_dim)
+        self.reset_parameters()
 
-    def forward(self, x): return self.fc(x)
+    def forward(self, x):
+        if not self.hyperbolic:
+            return self.fc(x)
 
-    def initialize(self):
-        torch.nn.init.xavier_uniform_(self.fc.weight)
+        c = self.curv.get()
+        p_x = lorentz_expmap0(x, c)
+        p_w = lorentz_expmap0(self.weight, c)
+        logits = -lorentz_distance(p_x.unsqueeze(1), p_w.unsqueeze(0), c)
+        return logits + self.bias
+
+    def reset_parameters(self):
+        if self.hyperbolic:
+            torch.nn.init.xavier_uniform_(self.weight)
+            torch.nn.init.zeros_(self.bias)
+        else:
+            torch.nn.init.xavier_uniform_(self.fc.weight)
+            if self.fc.bias is not None:
+                torch.nn.init.zeros_(self.fc.bias)
 
 
 class TemperatureScaling(nn.Module):
@@ -178,7 +201,13 @@ def transfer(args, config, gpu_id, is_reduction):
     SMMD = SMMDLoss().to(device)
     projector = Projector(test_dataset.x.shape[1], pretrain_dataset.x.shape[1]).to(device)
     num_classes = int(test_dataset.y.max().item() + 1)
-    logreg = LogReg(config['output_dim'], num_classes).to(device)
+    use_hyperbolic_classifier = bool(is_hyperbolic_backbone or args.hyperbolic_lora)
+    logreg = LogReg(
+        config['output_dim'],
+        num_classes,
+        hyperbolic=use_hyperbolic_classifier,
+        curv=curv_param
+    ).to(device)
     loss_fn = nn.CrossEntropyLoss()
 
     # ---- few-shot masks ----
