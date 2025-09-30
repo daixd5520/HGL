@@ -1,4 +1,6 @@
 import os
+from typing import Iterable, Iterator, Optional, Tuple
+
 import torch
 import torch.nn.functional as F
 import torch.nn as nn
@@ -152,21 +154,59 @@ def batched_gct_loss(z1: torch.Tensor, z2: torch.Tensor, batch_size: int, mask, 
     return torch.cat(losses)
 
 
-def batched_smmd_loss(z1: torch.Tensor, z2, MMD, ppr_weight, batch_size):
-# 每次循环里都重新构造了一个迭代器 iter(z2)，然后 next(...) 只会取同一份第一批数据。这会让 SMMD 只对齐到 z2 的“那一小撮样本”，对齐严重偏置，对齐失败或过拟合到这小批；
+def batched_smmd_loss(
+    z1: torch.Tensor,
+    z2: Iterable,
+    MMD,
+    ppr_weight,
+    batch_size,
+    iterator: Optional[Iterator[torch.Tensor]] = None,
+) -> Tuple[torch.Tensor, Iterator[torch.Tensor]]:
+    """Compute SMMD loss in batches while walking sequentially over z2.
+
+    Parameters
+    ----------
+    z1: torch.Tensor
+        Node embeddings to be aligned (shape ``[N, d]``).
+    z2: Iterable
+        Source batches to align against.  The function keeps consuming samples
+        from ``z2`` using the optionally provided ``iterator`` so successive
+        calls can continue where the previous one stopped instead of rewinding
+        to the first batch every time.
+    iterator: Optional[Iterator[torch.Tensor]]
+        Persistent iterator over ``z2``.  When ``None`` a fresh iterator is
+        created.  The updated iterator is returned together with the loss so
+        callers can maintain the state across epochs.
+    Returns
+    -------
+    Tuple[torch.Tensor, Iterator[torch.Tensor]]
+        The mean SMMD loss over all batches together with the iterator that
+        should be fed back on the next call to continue consuming ``z2``.
+    """
     device = z1.device
     num_nodes = z1.size(0)
     num_batches = (num_nodes - 1) // batch_size + 1
     indices = torch.arange(0, num_nodes).to(device)
     losses = []
 
+    data_iter = iterator if iterator is not None else iter(z2)
+
     for i in range(num_batches):
         mask = indices[i * batch_size:(i + 1) * batch_size]
         ppr = ppr_weight[mask][:, mask]
-        target = next(iter(z2))
+        try:
+            target = next(data_iter)
+        except StopIteration:
+            data_iter = iter(z2)
+            target = next(data_iter)
+
+        if isinstance(target, (list, tuple)):
+            target = target[0]
+
+        target = target.to(device, non_blocking=True)
         losses.append(MMD(z1[mask], target, ppr))
 
-    return torch.stack(losses).mean()
+    return torch.stack(losses).mean(), data_iter
 
 
 def get_few_shot_mask(data, shot, dataname, device):
