@@ -155,3 +155,5 @@ transfer:
   # 可选稳定参数：
   min_curvature: 1.0e-4
   max_curvature: 10.0
+  few_curv_mode: freeze       # 默认 few-shot 冻结曲率
+  few_curv_reg_lambda: 10.0   # regularize 模式下的正则系数

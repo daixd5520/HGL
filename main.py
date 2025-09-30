@@ -42,6 +42,25 @@ if __name__ == '__main__':
 
     parser.add_argument('--few', type=str2bool, default=False)
     parser.add_argument('--shot', type=int, default=10)
+    parser.add_argument(
+        '--few_curv_mode',
+        type=str,
+        default='auto',
+        choices=['auto', 'freeze', 'clone', 'regularize', 'none'],
+        help=(
+            "Few-shot curvature handling strategy. 'freeze' keeps the pretrained "
+            "curvature fixed, 'clone' freezes the backbone curvature but lets LoRA "
+            "optimize its own copy, 'regularize' keeps curvature trainable with a "
+            "quadratic penalty, and 'none' keeps the old behaviour. 'auto' falls "
+            "back to the value specified in config.yaml (default: freeze)."
+        )
+    )
+    parser.add_argument(
+        '--few_curv_reg_lambda',
+        type=float,
+        default=None,
+        help="Strength of the curvature regularization when --few_curv_mode=regularize."
+    )
     parser.add_argument('--tau', type=float, default=0.5)
     parser.add_argument('--sup_weight', type=float, default=0.2)
     parser.add_argument('--r', type=int, default=32)

@@ -98,7 +98,40 @@ def transfer(args, config, gpu_id, is_reduction):
     min_c = float(getattr(args, 'min_curvature', 1e-4))
     max_c = float(getattr(args, 'max_curvature', 10.0))
     curv_param = CurvatureParam(init_c=init_c, min_c=min_c, max_c=max_c, learnable=learnable_c).to(device)
-    
+
+    default_curv_mode = config.get('few_curv_mode', 'freeze')
+    default_curv_reg = float(config.get('few_curv_reg_lambda', 10.0))
+    few_curv_mode = getattr(args, 'few_curv_mode', 'auto')
+    if few_curv_mode == 'auto':
+        few_curv_mode = default_curv_mode
+    args.few_curv_mode = few_curv_mode
+    args.few_curv_reg_lambda = float(
+        getattr(args, 'few_curv_reg_lambda', default_curv_reg)
+        if getattr(args, 'few_curv_reg_lambda', None) is not None
+        else default_curv_reg
+    )
+
+    pretrained_c_value = curv_param.get().detach()
+    lora_curv_param = None
+
+    if args.few:
+        if few_curv_mode == 'freeze':
+            curv_param.raw_c.requires_grad_(False)
+        elif few_curv_mode == 'clone':
+            curv_param.raw_c.requires_grad_(False)
+            lora_curv_param = CurvatureParam(
+                init_c=float(pretrained_c_value.item()),
+                min_c=min_c,
+                max_c=max_c,
+                learnable=True
+            ).to(device)
+        elif few_curv_mode == 'regularize':
+            curv_param.raw_c.requires_grad_(True)
+        elif few_curv_mode == 'none':
+            pass
+        else:
+            raise ValueError(f"Unsupported few-shot curvature mode: {few_curv_mode}")
+
     c_trainable = curv_param.raw_c.requires_grad
     
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -107,6 +140,7 @@ def transfer(args, config, gpu_id, is_reduction):
         f.write("\n" + "="*80 + "\n")
         f.write(f"[{timestamp}] New Experiment{c_status}\n")
         f.write(f"Args: {vars(args)}\n")
+        f.write(f"Few-shot curvature mode: {few_curv_mode} (lambda={args.few_curv_reg_lambda})\n")
         f.write(f"Config: {config}\n")
         f.write("="*80 + "\n")
 
@@ -171,7 +205,8 @@ def transfer(args, config, gpu_id, is_reduction):
         r=args.r,
         hyperbolic=bool(args.hyperbolic_lora),
         lora_alpha=args.lora_alpha,
-        curv=curv_param
+        curv=curv_param,
+        curv_lora=lora_curv_param
     ).to(device)
 
     # ---- projector / classifier / losses ----
@@ -243,14 +278,24 @@ def transfer(args, config, gpu_id, is_reduction):
     params_proj   = list(projector.parameters())
     params_logreg = list(logreg.parameters())
     params_gnn2   = [p for n, p in gnn2.named_parameters() if ('raw_c' not in n)]
-    params_c      = [curv_param.raw_c]
+    curvature_params = []
+    if curv_param.raw_c.requires_grad:
+        curvature_params.append(curv_param.raw_c)
+    if lora_curv_param is not None and lora_curv_param.raw_c.requires_grad:
+        curvature_params.append(lora_curv_param.raw_c)
 
     param_groups = [
         {"params": params_proj,   "lr": args.lr1, "weight_decay": args.wd1},
         {"params": params_logreg, "lr": args.lr2, "weight_decay": args.wd2},
         {"params": params_gnn2,   "lr": args.lr3, "weight_decay": args.wd3},
-        {"params": params_c,      "lr": max(args.lr3 * 0.1, 1e-5), "weight_decay": 0.0},
     ]
+
+    if curvature_params:
+        param_groups.append({
+            "params": curvature_params,
+            "lr": max(args.lr3 * 0.1, 1e-5),
+            "weight_decay": 0.0
+        })
 
     # Add temperature scaling parameters for few-shot
     if temp_scale is not None:
@@ -310,6 +355,13 @@ def transfer(args, config, gpu_id, is_reduction):
                 adaptive_weights['l2'] * smmd_loss_f +
                 adaptive_weights['l3'] * ct_loss +
                 adaptive_weights['l4'] * loss_rec)
+
+        curv_reg_component = 0.0
+        if args.few and few_curv_mode == 'regularize':
+            curv_reg_loss = args.few_curv_reg_lambda * (curv_param.get() - pretrained_c_value).pow(2)
+            loss = loss + curv_reg_loss
+            curv_reg_component = curv_reg_loss.item()
+
         loss.backward()
         optimizer.step()
 
@@ -337,10 +389,18 @@ def transfer(args, config, gpu_id, is_reduction):
             val_acc   = acc_of(val_mask)
             test_acc  = acc_of(test_mask)
 
+        c_main_val = float(curv_param.get().detach().item())
+        curv_info = f"c={c_main_val:.6f}"
+        if lora_curv_param is not None:
+            c_lora_val = float(lora_curv_param.get().detach().item())
+            curv_info = f"c_main={c_main_val:.6f}, c_lora={c_lora_val:.6f}"
+        if args.few and few_curv_mode == 'regularize':
+            curv_info = f"{curv_info}, reg={curv_reg_component:.4f}"
+
         print(f"[Epoch {epoch:04d}] loss={loss.item():.4f} "
               f"cls={cls_loss.item():.4f} smmd={smmd_loss_f.item():.4f} ct={ct_loss.item():.4f} rec={loss_rec.item():.4f} "
               f"| train/val/test={train_acc:.3f}/{val_acc:.3f}/{test_acc:.3f} "
-              f"| c={curv_param.get().item():.6f}")
+              f"| {curv_info}")
 
         if val_acc > max_acc:
             max_acc, max_test_acc, max_epoch = val_acc, test_acc, epoch
@@ -351,5 +411,8 @@ def transfer(args, config, gpu_id, is_reduction):
     mode_label = f"Few({args.shot})" if args.few else "Public"
     result_info = f"{mode_label}, r: {args.r}, {args.pretrain_dataset} to {args.test_dataset}:"
     with open("result/GraphLoRA.txt", "a") as f:
+        summary_curv = f"c_main={curv_param.get().detach().item():.6f}"
+        if lora_curv_param is not None:
+            summary_curv += f", c_lora={lora_curv_param.get().detach().item():.6f}"
         f.write(f"[{timestamp}] {result_info} Best @ epoch {max_epoch}: "
-                f"val={max_acc:.4f}, test={max_test_acc:.4f} ===\n")
+                f"val={max_acc:.4f}, test={max_test_acc:.4f}, {summary_curv} ===\n")

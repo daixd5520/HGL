@@ -219,10 +219,13 @@ class GNNLoRA(nn.Module):
                  gnn_type: str = 'GAT', gnn_layer_num: int = 2,
                  r: int = 32, hyperbolic: bool = False, lora_alpha: float = 16.0,
                  curv: Optional[CurvatureParam] = None,
+                 curv_lora: Optional[CurvatureParam] = None,
                  heads: int = 1, dropout: float = 0.0):
         super().__init__()
         self.gnn = gnn
-        self.curv = curv
+        self.curv_main = curv
+        self.curv_branch = curv_lora if curv_lora is not None else curv
+        self.curv = self.curv_main
         self.hyperbolic = bool(hyperbolic)
         self.L = int(gnn_layer_num)
         self.gnn_type = gnn_type
@@ -242,9 +245,9 @@ class GNNLoRA(nn.Module):
                 # 在 GAT 的投影里注入 LoRA（欧氏/双曲包装由 HyperbolicWrapper 负责）
                 base = GATConv_lora(in_c, out_c, heads=self.heads, concat=False, dropout=dropout,
                                     r=r, hyperbolic=False,  # 投影处自身是欧氏序列；几何外包由 Wrapper 处理
-                                    lora_alpha=lora_alpha, curv=self.curv)
+                                    lora_alpha=lora_alpha, curv=self.curv_branch)
             if self.hyperbolic:
-                self.conv.append(HyperbolicWrapper(base, curv=self.curv, activation=act_name, dropout=dropout))
+                self.conv.append(HyperbolicWrapper(base, curv=self.curv_branch, activation=act_name, dropout=dropout))
             else:
                 self.conv.append(base)
 
@@ -262,19 +265,24 @@ class GNNLoRA(nn.Module):
             return fused, main_out, lora_out
 
         # 超曲并联
-        c = self.curv.get()
-        p_lora = lorentz_expmap0(x, c)
+        c_main = self.curv_main.get()
+        c_branch = self.curv_branch.get()
+        p_lora = lorentz_expmap0(x, c_branch)
         for i in range(self.L):
             p_lora = self.conv[i](p_lora, edge_index)
 
+        if self.curv_branch is not self.curv_main:
+            v_bridge = lorentz_logmap0(p_lora, c_branch)
+            p_lora = lorentz_expmap0(v_bridge, c_main)
+
         p_main = main_out                 # (N, 1+d)
         s_fused = p_main[:, 1:] + p_lora[:, 1:]
-        p_fused = lorentz_recompute_time(s_fused, c)
+        p_fused = lorentz_recompute_time(s_fused, c_main)
 
         if return_euclid:
-            v_fused = lorentz_logmap0(p_fused, c)
-            v_main  = lorentz_logmap0(p_main,  c)
-            v_lora  = lorentz_logmap0(p_lora,  c)
+            v_fused = lorentz_logmap0(p_fused, c_main)
+            v_main  = lorentz_logmap0(p_main,  c_main)
+            v_lora  = lorentz_logmap0(p_lora,  c_main)
             return v_fused, v_main, v_lora
         else:
             return p_fused, p_main, p_lora
