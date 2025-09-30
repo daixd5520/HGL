@@ -51,3 +51,34 @@ python exp_multicard.py \
 --tests PubMed Cora Photo \
 --runs 5 \
 --gpus 5
+
+# TODO: HGCN用了layerwise的 curvature, 要不要试试
+
+# 0929
+总览
+项目的双曲几何实现基于洛伦兹模型（Lorentz model）。核心运算（指数映射、对数映射和时间分量重算）在 util.py 中定义，并通过共享的可训练曲率参数 CurvatureParam 在主干 GNN 与 LoRA 分支之间复用。
+
+预训练阶段（GRACE）
+预训练时可选择双曲主干（hyperbolic_backbone=True），此时 backbone GNN 每层都会先将欧氏输入映射到超曲面，再执行图卷积并映回超曲面；如果不开启则完全在欧氏空间内运行。
+
+GRACE 预训练框架在双曲模式下会把 GNN 输出的超曲点先做 logmap 回切空间，再通过欧氏的全连接投影头（self.proj）和 InfoNCE 损失，因此投影头本身仍是欧氏操作。
+
+配置文件为不同数据集默认启用双曲 backbone，并指定曲率范围和是否可训练。
+
+迁移/LoRA 阶段
+迁移阶段会根据预训练权重文件名解析主干是否为双曲，然后初始化同样的几何设置，并重新加载参数；曲率对象继续共享且在迁移时可训练。
+
+并联 LoRA：
+
+若 hyperbolic_lora=True，LoRA 分支内部同样包上一层 HyperbolicWrapper：每层在切空间执行图算子、层间回到超曲面，最终与冻结主干在超曲面中按空间分量相加再重建时间分量，之后默认 logmap 回切空间供下游损失使用。
+
+如果关闭双曲 LoRA，则完全按欧氏 LoRA 处理。
+
+Projector 与分类头
+迁移阶段的 Projector 是一个欧氏线性层，用来把测试图节点特征映射到与预训练数据同维度的欧氏空间；其权重初始化也是标准的 Xavier。
+
+GNNLoRA(..., return_euclid=True) 会把融合后的表示映射回切空间（即欧氏向量）返回给后续模块，因此分类器 LogReg 以及计算 SMMD、对比损失、重构损失等都在欧氏空间进行。
+
+因此，Projector 与分类头均工作在欧氏空间；只有 GNN 主干及（可选的）LoRA 分支通过 HyperbolicWrapper/HyperbolicLoRA 在洛伦兹模型中运行。
+
+# 
