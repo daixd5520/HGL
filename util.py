@@ -152,58 +152,21 @@ def batched_gct_loss(z1: torch.Tensor, z2: torch.Tensor, batch_size: int, mask, 
     return torch.cat(losses)
 
 
-def batched_smmd_loss(z1: torch.Tensor, z2, MMD, ppr_weight, batch_size, data_iter=None):
-    """Compute SMMD loss in batches while iterating sequentially over z2.
-
-    Parameters
-    ----------
-    z1 : torch.Tensor
-        Node representations of the downstream graph.
-    z2 : Iterable or torch.utils.data.DataLoader
-        Pretraining representations that will be iterated over.
-    MMD : Callable
-        Loss function used to compute the SMMD objective.
-    ppr_weight : torch.Tensor
-        Personalized PageRank weights used for reweighting the loss.
-    batch_size : int
-        Batch size for iterating over ``z1``.
-    data_iter : iterator, optional
-        Persistent iterator over ``z2``. Passing back the iterator between
-        calls avoids reusing the first batch after every invocation.
-
-    Returns
-    -------
-    tuple[torch.Tensor, iterator]
-        The mean SMMD loss for this call and the (potentially updated)
-        iterator that should be reused on the next invocation.
-    """
-
+def batched_smmd_loss(z1: torch.Tensor, z2, MMD, ppr_weight, batch_size):
+# 每次循环里都重新构造了一个迭代器 iter(z2)，然后 next(...) 只会取同一份第一批数据。这会让 SMMD 只对齐到 z2 的“那一小撮样本”，对齐严重偏置，对齐失败或过拟合到这小批；
     device = z1.device
     num_nodes = z1.size(0)
     num_batches = (num_nodes - 1) // batch_size + 1
-    indices = torch.arange(0, num_nodes, device=device)
+    indices = torch.arange(0, num_nodes).to(device)
     losses = []
-
-    if data_iter is None:
-        data_iter = iter(z2)
 
     for i in range(num_batches):
         mask = indices[i * batch_size:(i + 1) * batch_size]
         ppr = ppr_weight[mask][:, mask]
-
-        try:
-            target = next(data_iter)
-        except StopIteration:
-            data_iter = iter(z2)
-            target = next(data_iter)
-
-        if isinstance(target, (list, tuple)):
-            target = target[0]
-
-        target = target.to(device, non_blocking=True)
+        target = next(iter(z2))
         losses.append(MMD(z1[mask], target, ppr))
 
-    return torch.stack(losses).mean(), data_iter
+    return torch.stack(losses).mean()
 
 
 def get_few_shot_mask(data, shot, dataname, device):

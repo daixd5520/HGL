@@ -264,7 +264,6 @@ def transfer(args, config, gpu_id, is_reduction):
         scheduler = get_few_shot_scheduler(optimizer, args.num_epochs)
 
     pretrain_graph_loader = DataLoader(pretrain_dataset.x, batch_size=32, shuffle=True)
-    pretrain_graph_iter = None
 
     max_acc, max_test_acc, max_epoch = 0.0, 0.0, 0
     for epoch in range(0, args.num_epochs):
@@ -282,14 +281,7 @@ def transfer(args, config, gpu_id, is_reduction):
 
         optimizer.zero_grad()
 
-        smmd_loss_f, pretrain_graph_iter = batched_smmd_loss(
-            feature_map,
-            pretrain_graph_loader,
-            SMMD,
-            ppr_weight,
-            32,
-            data_iter=pretrain_graph_iter,
-        )
+        smmd_loss_f = batched_smmd_loss(feature_map, pretrain_graph_loader, SMMD, ppr_weight, 32)
         ct_loss = 0.5 * (
             batched_gct_loss(emb1, emb2, 1000, mask, args.tau) +
             batched_gct_loss(emb2, emb1, 1000, mask, args.tau)
