@@ -281,7 +281,13 @@ def transfer(args, config, gpu_id, is_reduction):
 
         optimizer.zero_grad()
 
-        smmd_loss_f = batched_smmd_loss(feature_map, pretrain_graph_loader, SMMD, ppr_weight, 32)
+        smmd_loss_f = batched_smmd_loss(
+            feature_map,
+            pretrain_graph_loader,
+            SMMD,
+            ppr_weight,
+            32,
+        )
         ct_loss = 0.5 * (
             batched_gct_loss(emb1, emb2, 1000, mask, args.tau) +
             batched_gct_loss(emb2, emb1, 1000, mask, args.tau)
