@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from torch_geometric.utils import to_dense_adj, add_remaining_self_loops
+from torch_geometric.utils import to_dense_adj, add_remaining_self_loops, degree
 from torch_geometric.loader import DataLoader
 
 from util import get_dataset, act, SMMDLoss, mkdir, get_ppr_weight
@@ -46,6 +46,29 @@ class TemperatureScaling(nn.Module):
 
     def forward(self, logits):
         return logits / self.temperature.clamp(min=0.01)  # Prevent division by zero
+
+
+class TaskCurvatureAdapter(nn.Module):
+    """Predicts curvature offsets from support-set statistics."""
+
+    def __init__(self, input_dim: int, hidden_dim: int = 128, max_offset: float = 1.0):
+        super().__init__()
+        mid_dim = max(16, hidden_dim // 2)
+        self.net = nn.Sequential(
+            nn.Linear(input_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, mid_dim),
+            nn.ReLU(),
+            nn.Linear(mid_dim, 1)
+        )
+        self.max_offset = float(max_offset)
+
+    def forward(self, stats: torch.Tensor) -> torch.Tensor:
+        if stats.dim() == 1:
+            stats = stats.unsqueeze(0)
+        delta = self.net(stats)
+        delta = torch.tanh(delta) * self.max_offset
+        return delta.squeeze(-1)
 
 
 def get_few_shot_scheduler(optimizer, num_epochs):
@@ -98,6 +121,32 @@ def transfer(args, config, gpu_id, is_reduction):
     min_c = float(getattr(args, 'min_curvature', 1e-4))
     max_c = float(getattr(args, 'max_curvature', 10.0))
     curv_param = CurvatureParam(init_c=init_c, min_c=min_c, max_c=max_c, learnable=learnable_c).to(device)
+
+    def summarize_support_features(features: torch.Tensor, mask: torch.Tensor, edge_index: torch.Tensor) -> torch.Tensor:
+        if mask is None or mask.sum() == 0:
+            return torch.zeros(features.size(1) * 2 + 4, device=features.device)
+
+        support_x = features[mask]
+        mean_feat = support_x.mean(dim=0)
+        std_feat = support_x.std(dim=0, unbiased=False)
+
+        deg = degree(edge_index[0], num_nodes=features.size(0), dtype=features.dtype, device=features.device)
+        support_deg = deg[mask]
+        if support_deg.numel() == 0:
+            degree_stats = torch.zeros(4, device=features.device, dtype=features.dtype)
+        else:
+            deg_mean = support_deg.mean()
+            deg_std = support_deg.std(unbiased=False)
+            if not torch.isfinite(deg_std):
+                deg_std = torch.zeros_like(deg_mean)
+            deg_max = support_deg.max()
+            deg_min = support_deg.min()
+            degree_stats = torch.stack([deg_mean, deg_std, deg_max, deg_min])
+
+        return torch.cat([mean_feat, std_feat, degree_stats], dim=0)
+
+    curvature_adapter = None
+    support_summary = None
     
     c_trainable = curv_param.raw_c.requires_grad
     
@@ -200,10 +249,15 @@ def transfer(args, config, gpu_id, is_reduction):
     test_dataset.val_mask = val_mask
     test_dataset.test_mask = test_mask
 
-    # Temperature scaling for few-shot calibration
+    # Temperature scaling for few-shot calibration & curvature adapter
     temp_scale = None
     if args.few:
         temp_scale = TemperatureScaling().to(device)
+        support_summary = summarize_support_features(test_dataset.x, train_mask, test_dataset.edge_index)
+        summary_dim = support_summary.numel()
+        hidden_dim = min(256, max(32, summary_dim // 2))
+        curvature_adapter = TaskCurvatureAdapter(summary_dim, hidden_dim=hidden_dim).to(device)
+        support_summary = support_summary.to(device)
 
     ppr_weight = get_ppr_weight(test_dataset)
 
@@ -256,6 +310,11 @@ def transfer(args, config, gpu_id, is_reduction):
     if temp_scale is not None:
         param_groups.append({"params": temp_scale.parameters(), "lr": args.lr2, "weight_decay": 0.0})
 
+    if curvature_adapter is not None:
+        param_groups.append({"params": curvature_adapter.parameters(),
+                              "lr": max(args.lr3 * 0.5, 1e-5),
+                              "weight_decay": 1e-4})
+
     optimizer = torch.optim.Adam(param_groups)
 
     # Learning rate scheduler for few-shot
@@ -270,6 +329,8 @@ def transfer(args, config, gpu_id, is_reduction):
         logreg.train(); projector.train(); gnn2.train()
         if temp_scale is not None:
             temp_scale.train()
+        if curvature_adapter is not None:
+            curvature_adapter.train()
 
         # Feature augmentation for few-shot
         input_features = test_dataset.x
@@ -277,6 +338,15 @@ def transfer(args, config, gpu_id, is_reduction):
             input_features = augment_few_shot_features(test_dataset.x, train_mask)
 
         feature_map = projector(input_features)
+
+        if curvature_adapter is not None:
+            delta_c = curvature_adapter(support_summary)
+            curv_param.set_runtime_offset(delta_c)
+        else:
+            curv_param.clear_runtime_offset()
+
+        c_base = curv_param.base_curvature().detach().item()
+
         emb, emb1, emb2 = gnn2(feature_map, test_dataset.edge_index, return_euclid=True)
 
         optimizer.zero_grad()
@@ -317,10 +387,18 @@ def transfer(args, config, gpu_id, is_reduction):
         if scheduler is not None:
             scheduler.step()
 
+        if curvature_adapter is not None:
+            with torch.no_grad():
+                curv_param.set_runtime_offset(curvature_adapter(support_summary))
+        else:
+            curv_param.clear_runtime_offset()
+
         with torch.no_grad():
             logreg.eval(); projector.eval(); gnn2.eval()
             if temp_scale is not None:
                 temp_scale.eval()
+            if curvature_adapter is not None:
+                curvature_adapter.eval()
 
             emb_eval, _, _ = gnn2(projector(test_dataset.x), test_dataset.edge_index, return_euclid=True)
             logits_eval = logreg(emb_eval)
@@ -337,13 +415,20 @@ def transfer(args, config, gpu_id, is_reduction):
             val_acc   = acc_of(val_mask)
             test_acc  = acc_of(test_mask)
 
+        adapted_c = curv_param.get().detach().item()
+
         print(f"[Epoch {epoch:04d}] loss={loss.item():.4f} "
               f"cls={cls_loss.item():.4f} smmd={smmd_loss_f.item():.4f} ct={ct_loss.item():.4f} rec={loss_rec.item():.4f} "
               f"| train/val/test={train_acc:.3f}/{val_acc:.3f}/{test_acc:.3f} "
-              f"| c={curv_param.get().item():.6f}")
+              f"| c_base={c_base:.6f} c_adapted={adapted_c:.6f}")
+
+        with open("result/GraphLoRA.txt", "a") as f:
+            f.write(f"Epoch {epoch:04d}: c_base={c_base:.6f}, c_adapted={adapted_c:.6f}\n")
 
         if val_acc > max_acc:
             max_acc, max_test_acc, max_epoch = val_acc, test_acc, epoch
+
+        curv_param.clear_runtime_offset()
 
     print(f"=== Best @ epoch {max_epoch}: val={max_acc:.4f}, test={max_test_acc:.4f} ===")
     
