@@ -1,0 +1,2 @@
+Parsed from filename: Pretrained backbone is Hyperbolic.
+Pretrain dataset overridden by checkpoint: PubMed -> CiteSeer

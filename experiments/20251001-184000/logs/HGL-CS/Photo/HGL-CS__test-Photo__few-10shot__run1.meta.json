@@ -1,0 +1,16 @@
+{
+  "cmd": "python main.py --is_transfer True --test_dataset Photo --pretrained_model_name /mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Cora.GRACE.GAT.hyp_True.True.20250912-232536.pth/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/CiteSeer.GRACE.GAT.hyp_True.True.20250912-232342.pth --few True --shot 10",
+  "gpu_id": 0,
+  "few": true,
+  "shot": 10,
+  "test_dataset": "Photo",
+  "pretrained_model_path": "/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Cora.GRACE.GAT.hyp_True.True.20250912-232536.pth/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/CiteSeer.GRACE.GAT.hyp_True.True.20250912-232342.pth",
+  "exit_code": 1,
+  "duration_sec": 4.347355365753174,
+  "parsed_val_acc": null,
+  "parsed_test_acc": null,
+  "stdout_path": "./experiments/20251001-184000/logs/HGL-CS/Photo/HGL-CS__test-Photo__few-10shot__run1.stdout.txt",
+  "stderr_path": "./experiments/20251001-184000/logs/HGL-CS/Photo/HGL-CS__test-Photo__few-10shot__run1.stderr.txt",
+  "time": "2025-10-01T18:57:16",
+  "stopped": false
+}

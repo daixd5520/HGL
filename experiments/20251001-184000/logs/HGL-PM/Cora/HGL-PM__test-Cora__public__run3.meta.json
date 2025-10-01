@@ -1,0 +1,16 @@
+{
+  "cmd": "python main.py --is_transfer True --test_dataset Cora --pretrained_model_name /mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/PubMed.GRACE.GAT.hyp_True.True.20250911-161024.pth --few False ",
+  "gpu_id": 2,
+  "few": false,
+  "shot": 0,
+  "test_dataset": "Cora",
+  "pretrained_model_path": "/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/PubMed.GRACE.GAT.hyp_True.True.20250911-161024.pth",
+  "exit_code": 0,
+  "duration_sec": 64.12548041343689,
+  "parsed_val_acc": 0.8782,
+  "parsed_test_acc": 0.8745,
+  "stdout_path": "./experiments/20251001-184000/logs/HGL-PM/Cora/HGL-PM__test-Cora__public__run3.stdout.txt",
+  "stderr_path": "./experiments/20251001-184000/logs/HGL-PM/Cora/HGL-PM__test-Cora__public__run3.stderr.txt",
+  "time": "2025-10-01T18:41:04",
+  "stopped": false
+}

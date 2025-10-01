@@ -1,0 +1,4 @@
+test_dataset,CiteSeer,CiteSeer,CiteSeer
+few_label,10shot,5shot,Public
+row_label,,,
+HGL-Com,0.6790 ± 0.0473,0.7090 ± 0.0416,0.7574 ± 0.0101

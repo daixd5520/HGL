@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/mnt/data1/Graph/HypGraphLoRA/main.py", line 86, in <module>
+    transfer(args, config_transfer, args.gpu_id, args.is_reduction)
+  File "/mnt/data1/Graph/HypGraphLoRA/model/GraphLoRA.py", line 161, in transfer
+    raise FileNotFoundError(f"The specified pretrained model file does not exist: {model_path}")
+FileNotFoundError: The specified pretrained model file does not exist: /mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Cora.GRACE.GAT.hyp_True.True.20250912-232536.pth/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/CiteSeer.GRACE.GAT.hyp_True.True.20250912-232342.pth

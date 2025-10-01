@@ -1,0 +1,16 @@
+{
+  "cmd": "python main.py --is_transfer True --test_dataset Photo --pretrained_model_name /mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/CiteSeer.GRACE.GAT.hyp_True.True.20250912-232342.pth --few False ",
+  "gpu_id": 1,
+  "few": false,
+  "shot": 0,
+  "test_dataset": "Photo",
+  "pretrained_model_path": "/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/CiteSeer.GRACE.GAT.hyp_True.True.20250912-232342.pth",
+  "exit_code": 0,
+  "duration_sec": 118.26726818084717,
+  "parsed_val_acc": 0.9301,
+  "parsed_test_acc": 0.9392,
+  "stdout_path": "./experiments/20251001-200324/logs/HGL-CS/Photo/HGL-CS__test-Photo__public__run2.stdout.txt",
+  "stderr_path": "./experiments/20251001-200324/logs/HGL-CS/Photo/HGL-CS__test-Photo__public__run2.stderr.txt",
+  "time": "2025-10-01T20:22:57",
+  "stopped": false
+}

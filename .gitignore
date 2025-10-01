@@ -1,1 +1,5 @@
 datasets/
+node_modules/
+package-lock.json
+package.json
+models/__pycache__/
