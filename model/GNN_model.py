@@ -22,7 +22,7 @@ def _inverse_softplus(x: float) -> float:
 
 class CurvatureParam(nn.Module):
     """
-    可训练曲率 c：c = clamp(softplus(raw_c), min_c, max_c)
+    可训练曲率 c：c = clamp(softplus(raw_c) + Δc, min_c, max_c)
     把本对象实例传给主干与 LoRA，即可共享同一曲率。
     """
     def __init__(self, init_c: float = 1.0, min_c: float = 1e-4, max_c: float = 10.0, learnable: bool = True):
@@ -31,10 +31,28 @@ class CurvatureParam(nn.Module):
         self.raw_c = nn.Parameter(torch.tensor(raw_init, dtype=torch.float32), requires_grad=learnable)
         self.min_c = float(min_c)
         self.max_c = float(max_c)
+        self._runtime_offset: Tensor | None = None
+
+    def base_curvature(self) -> Tensor:
+        c = F.softplus(self.raw_c)
+        return torch.clamp(c, min=self.min_c, max=self.max_c)
+
+    def set_runtime_offset(self, delta: Tensor | float | None) -> None:
+        if delta is None:
+            self._runtime_offset = None
+        elif isinstance(delta, Tensor):
+            self._runtime_offset = delta
+        else:
+            self._runtime_offset = torch.tensor(delta, dtype=self.raw_c.dtype, device=self.raw_c.device)
+
+    def clear_runtime_offset(self) -> None:
+        self._runtime_offset = None
 
     def get(self) -> Tensor:
-        c = F.softplus(self.raw_c)
-        c = torch.clamp(c, min=self.min_c, max=self.max_c)
+        c = self.base_curvature()
+        if self._runtime_offset is not None:
+            c = c + self._runtime_offset
+            c = torch.clamp(c, min=self.min_c, max=self.max_c)
         return c
 
 
