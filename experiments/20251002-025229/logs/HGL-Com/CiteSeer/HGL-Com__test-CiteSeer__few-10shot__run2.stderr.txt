@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/mnt/data1/Graph/HypGraphLoRA/main.py", line 86, in <module>
+    transfer(args, config_transfer, args.gpu_id, args.is_reduction)
+  File "/mnt/data1/Graph/HypGraphLoRA/model/GraphLoRA.py", line 256, in transfer
+    support_summary = summarize_support_features(test_dataset.x, train_mask, test_dataset.edge_index)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data1/Graph/HypGraphLoRA/model/GraphLoRA.py", line 133, in summarize_support_features
+    deg = degree(edge_index[0], num_nodes=features.size(0), dtype=features.dtype, device=features.device)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: degree() got an unexpected keyword argument 'device'

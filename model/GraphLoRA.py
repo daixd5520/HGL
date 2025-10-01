@@ -130,7 +130,7 @@ def transfer(args, config, gpu_id, is_reduction):
         mean_feat = support_x.mean(dim=0)
         std_feat = support_x.std(dim=0, unbiased=False)
 
-        deg = degree(edge_index[0], num_nodes=features.size(0), dtype=features.dtype, device=features.device)
+        deg = degree(edge_index[0], num_nodes=features.size(0), dtype=features.dtype).to(features.device)
         support_deg = deg[mask]
         if support_deg.numel() == 0:
             degree_stats = torch.zeros(4, device=features.device, dtype=features.dtype)
