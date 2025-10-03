@@ -59,6 +59,18 @@ public:
     l3: 0.2
     l4: 0.2
     num_epochs: 500
+  Reddit:
+    wd1: 1e-4
+    wd2: 1e-4
+    wd3: 1e-1
+    lr1: 1e-2
+    lr2: 5e-2
+    lr3: 1e-5
+    l1: 1
+    l2: 5
+    l3: 1
+    l4: 0.5
+    num_epochs: 200
 10shot:
   PubMed:
     wd1: 1e-1
@@ -120,6 +132,18 @@ public:
     l3: 1
     l4: 0.2
     num_epochs: 500
+  Reddit:
+    wd1: 1e-4
+    wd2: 1e-4
+    wd3: 1e-1
+    lr1: 1e-2
+    lr2: 2e-2
+    lr3: 1e-5
+    l1: 1
+    l2: 2
+    l3: 1
+    l4: 0.5
+    num_epochs: 200
 5shot:
   PubMed:
     wd1: 1e-1
@@ -181,3 +205,15 @@ public:
     l3: 1
     l4: 0.2
     num_epochs: 500
+  Reddit:
+    wd1: 1e-4
+    wd2: 1e-5
+    wd3: 1e-1
+    lr1: 1e-2
+    lr2: 1e-2
+    lr3: 1e-5
+    l1: 0.7
+    l2: 1
+    l3: 1
+    l4: 0.5
+    num_epochs: 200

@@ -3,7 +3,7 @@ import torch
 import torch.nn.functional as F
 import torch.nn as nn
 import torch_geometric.transforms as T
-from torch_geometric.datasets import Planetoid, Amazon
+from torch_geometric.datasets import Planetoid, Amazon, Reddit
 from torch_geometric.utils import to_dense_adj
 import numpy as np
 import yaml
@@ -32,9 +32,11 @@ def act(act_type='leakyrelu'):
 
 
 def get_dataset(path, name):
-    assert name in ['Cora', 'CiteSeer', 'PubMed', 'Computers', 'Photo']
+    assert name in ['Cora', 'CiteSeer', 'PubMed', 'Computers', 'Photo', 'Reddit']
     if (name == 'Computers') | (name == 'Photo'):
         return Amazon(path, name, T.NormalizeFeatures())
+    elif name == 'Reddit':
+        return Reddit(path, T.NormalizeFeatures())
     else:
         return Planetoid(path, name, transform=T.NormalizeFeatures())
 
@@ -175,6 +177,15 @@ def get_few_shot_mask(data, shot, dataname, device):
     y = data.y.cpu()
     selected = []
     if dataname in ['PubMed', 'CiteSeer', 'Cora']:
+        train_mask = data.train_mask
+        val_mask = data.val_mask
+        test_mask = data.test_mask
+        for i in range(class_num):
+            selected.append(np.random.choice(torch.arange(len(y))[(y == i) & train_mask.cpu()], shot))
+        train_mask = torch.zeros(len(y)).bool().to(device)
+        train_mask[np.concatenate(selected)] = True
+    elif dataname == 'Reddit':
+        # Reddit has predefined train/val/test masks
         train_mask = data.train_mask
         val_mask = data.val_mask
         test_mask = data.test_mask
