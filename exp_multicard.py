@@ -22,6 +22,9 @@ FEW_SETTINGS = [
 
 # main.py 命令模板（你的 main 是单卡，不必传 --gpu_id；如果需要可在末尾加上 " --gpu_id 0"）
 CMD_TEMPLATE = (
+    # 先在子进程环境下检查 CUDA 是否可用（考虑到 CUDA_VISIBLE_DEVICES 已设置）
+    'python -c "import torch,sys; sys.exit(0 if torch.cuda.is_available() else 1)" '
+    '&& '
     "python main.py --is_transfer True "
     "--test_dataset {test_dataset} "
     "--pretrained_model_name {pretrained_model_path} "
@@ -88,7 +91,22 @@ def run_once(task, log_root, stop_event: Event):
             cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
             env=env, text=True, universal_newlines=True, bufsize=1, start_new_session=True
         )
-        out, err = proc.communicate()
+
+        # 轮询式读取，允许及时响应 stop_event（Ctrl+C）
+        while True:
+            try:
+                o, e = proc.communicate(timeout=1)
+                out = (o or ""); err = (e or "")
+                break
+            except subprocess.TimeoutExpired:
+                if stop_event.is_set():
+                    _terminate_proc_group(proc)
+                    try:
+                        o, e = proc.communicate(timeout=5)
+                        out = (o or ""); err = (e or "")
+                    except Exception:
+                        pass
+                    break
     except Exception as e:
         err = (err or "") + f"\n[auto.py] Exception while running: {e}\n"
     finally:
@@ -238,6 +256,13 @@ def main():
     ap.add_argument("--runs", type=int, default=5, help="每种设置重复次数（默认5）")
     ap.add_argument("--gpus", type=int, default=5, help="可用 GPU 数量（默认5，对应 0..gpus-1）")
     ap.add_argument("--out",  type=str, default=f"./experiments/{now_str()}", help="输出根目录")
+    ap.add_argument(
+        "--shots",
+        nargs="+",
+        choices=["public", "5", "10"],
+        default=["public", "5", "10"],
+        help="选择要跑的 shot 设置：public, 5, 10；可多选，默认全选",
+    )
     args = ap.parse_args()
 
     out_root = ensure_dir(args.out)
@@ -245,8 +270,18 @@ def main():
 
     # 生成任务
     tasks = []
+    # 基于 --shots 过滤 FEW_SETTINGS
+    selected_settings = []
+    shot_tokens = set(args.shots or [])
+    for s in FEW_SETTINGS:
+        if not s["few"] and "public" in shot_tokens:
+            selected_settings.append(s)
+        elif s["few"] and str(s["shot"]) in shot_tokens:
+            selected_settings.append(s)
+    if not selected_settings:
+        raise ValueError("--shots 选择结果为空，请从 {public,5,10} 中选择至少一个")
     for model_path, test_dataset in product(args.models, args.tests):
-        for s in FEW_SETTINGS:
+        for s in selected_settings:
             for r in range(1, args.runs+1):
                 tasks.append({
                     "pretrained_model_path": model_path,
@@ -255,7 +290,7 @@ def main():
                 })
 
     total = len(tasks)
-    print(f"[PLAN] models={len(args.models)}, tests={len(args.tests)}, few={len(FEW_SETTINGS)}, runs={args.runs} → total tasks={total}")
+    print(f"[PLAN] models={len(args.models)}, tests={len(args.tests)}, shots={args.shots}, runs={args.runs} → total tasks={total}")
     print(f"[OUT] {out_root}")
 
     # 停机事件 & 信号处理

@@ -1,0 +1,14 @@
+{
+  "models": [
+    "/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth"
+  ],
+  "tests": [
+    "CiteSeer"
+  ],
+  "runs": 5,
+  "gpus": 5,
+  "out": "./experiments/20251002-172747",
+  "shots": [
+    "10"
+  ]
+}

@@ -226,21 +226,15 @@ def get_adaptive_loss_weights(args, num_train_samples):
     if args.few and num_train_samples < 100:  # Very few samples
         # Increase classification and contrastive, reduce domain alignment and reconstruction
         return {
-            'l1': base_weights['l1'] * 1.5,      # More classification focus
-            'l2': base_weights['l2'] * 0.7,      # Less domain alignment
+            'l1': base_weights['l1'] * 1.3,      # More classification focus
+            'l2': base_weights['l2'] * 0.36,      # Less domain alignment
             'l3': base_weights['l3'] * 1.3,      # More contrastive learning
-            'l4': base_weights['l4'] * 0.8       # Less reconstruction
+            'l4': base_weights['l4'] * 0.4       # Less reconstruction
         }
     return base_weights
 
 
 def augment_few_shot_features(x, train_mask, noise_std=0.1):
-    """Add small gaussian noise to training features in few-shot settings"""
-    if train_mask.sum() < 100:  # Only for few-shot
-        x_aug = x.clone()
-        noise = torch.randn_like(x[train_mask]) * noise_std
-        x_aug[train_mask] += noise
-        return x_aug
     return x
 
 

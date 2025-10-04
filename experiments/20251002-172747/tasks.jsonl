@@ -1,0 +1,5 @@
+{"pretrained_model_path": "/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth", "test_dataset": "CiteSeer", "few": true, "shot": 10, "run_idx": 1}
+{"pretrained_model_path": "/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth", "test_dataset": "CiteSeer", "few": true, "shot": 10, "run_idx": 2}
+{"pretrained_model_path": "/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth", "test_dataset": "CiteSeer", "few": true, "shot": 10, "run_idx": 3}
+{"pretrained_model_path": "/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth", "test_dataset": "CiteSeer", "few": true, "shot": 10, "run_idx": 4}
+{"pretrained_model_path": "/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth", "test_dataset": "CiteSeer", "few": true, "shot": 10, "run_idx": 5}

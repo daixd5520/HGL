@@ -1,0 +1,16 @@
+{
+  "cmd": "python -c \"import torch,sys; sys.exit(0 if torch.cuda.is_available() else 1)\" && python main.py --is_transfer True --test_dataset CiteSeer --pretrained_model_name /mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth --few True --shot 10",
+  "gpu_id": 0,
+  "few": true,
+  "shot": 10,
+  "test_dataset": "CiteSeer",
+  "pretrained_model_path": "/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth",
+  "exit_code": 0,
+  "duration_sec": 43.70552849769592,
+  "parsed_val_acc": 0.464,
+  "parsed_test_acc": 0.449,
+  "stdout_path": "./experiments/20251002-171708/logs/HGL-Com/CiteSeer/HGL-Com__test-CiteSeer__few-10shot__run1.stdout.txt",
+  "stderr_path": "./experiments/20251002-171708/logs/HGL-Com/CiteSeer/HGL-Com__test-CiteSeer__few-10shot__run1.stderr.txt",
+  "time": "2025-10-02T17:17:51",
+  "stopped": false
+}

@@ -51,3 +51,11 @@ python exp_multicard.py \
 --tests PubMed Cora Photo \
 --runs 5 \
 --gpus 5
+
+----------------------这个能够生成表格,指定shot
+python exp_multicard.py \
+--models /mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth \
+--tests CiteSeer \
+--runs 5 \
+--shots 10 \
+--gpus 5

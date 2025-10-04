@@ -249,7 +249,7 @@ def transfer(args, config, gpu_id, is_reduction):
         {"params": params_proj,   "lr": args.lr1, "weight_decay": args.wd1},
         {"params": params_logreg, "lr": args.lr2, "weight_decay": args.wd2},
         {"params": params_gnn2,   "lr": args.lr3, "weight_decay": args.wd3},
-        {"params": params_c,      "lr": max(args.lr3 * 0.1, 1e-5), "weight_decay": 0.0},
+        {"params": params_c,      "lr": max(args.lr3 * 0.2, 1e-5), "weight_decay": 0.0},
     ]
 
     # Add temperature scaling parameters for few-shot

@@ -4385,3 +4385,325 @@ Split sizes | train=79, val=1514, test=6057 (mode=few, shot=10)
 [2025-09-24 02:25:03] Few(10), r: 32, PubMed to Photo: Best @ epoch 78: val=0.8818, test=0.8843 ===
 [2025-09-24 02:25:17] Few(10), r: 32, PubMed to Photo: Best @ epoch 94: val=0.8705, test=0.8810 ===
 [2025-09-24 02:25:20] Few(10), r: 32, PubMed to Photo: Best @ epoch 119: val=0.8923, test=0.8963 ===
+
+================================================================================
+[2025-10-02 17:02:28] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+
+================================================================================
+[2025-10-02 17:04:48] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:04:48] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:04:48] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:04:49] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:04:50] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+
+================================================================================
+[2025-10-02 17:17:12] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:17:12] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:17:12] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:17:12] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:17:12] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+[2025-10-02 17:17:51] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 16: val=0.4640, test=0.4490 ===
+[2025-10-02 17:17:51] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 20: val=0.4580, test=0.4420 ===
+[2025-10-02 17:17:52] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 18: val=0.5140, test=0.5340 ===
+[2025-10-02 17:17:52] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 17: val=0.4860, test=0.5030 ===
+[2025-10-02 17:17:55] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 15: val=0.6680, test=0.6400 ===
+
+================================================================================
+[2025-10-02 17:26:05] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:26:05] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:26:05] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:26:05] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:26:05] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+[2025-10-02 17:26:43] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 17: val=0.4620, test=0.4500 ===
+[2025-10-02 17:26:43] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 73: val=0.4960, test=0.4780 ===
+[2025-10-02 17:26:44] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 34: val=0.5140, test=0.4590 ===
+[2025-10-02 17:26:44] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 136: val=0.3860, test=0.3810 ===
+[2025-10-02 17:26:44] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 16: val=0.5480, test=0.5280 ===
+
+================================================================================
+[2025-10-02 17:27:52] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:27:52] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:27:52] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:27:52] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:27:52] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+[2025-10-02 17:28:31] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 16: val=0.4520, test=0.4160 ===
+[2025-10-02 17:28:32] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 66: val=0.5360, test=0.5150 ===
+[2025-10-02 17:28:32] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 64: val=0.5160, test=0.4840 ===
+[2025-10-02 17:28:32] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 17: val=0.5720, test=0.5420 ===
+[2025-10-02 17:28:32] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 19: val=0.4080, test=0.3820 ===
+
+================================================================================
+[2025-10-02 17:29:46] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:29:46] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:29:47] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:29:47] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:29:47] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+[2025-10-02 17:30:25] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 28: val=0.4800, test=0.4610 ===
+[2025-10-02 17:30:25] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 26: val=0.4860, test=0.4800 ===
+[2025-10-02 17:30:25] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 17: val=0.5780, test=0.5580 ===
+[2025-10-02 17:30:26] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 62: val=0.4320, test=0.3940 ===
+[2025-10-02 17:30:27] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 16: val=0.5080, test=0.4620 ===
+
+================================================================================
+[2025-10-02 17:30:42] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:30:42] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:30:42] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:30:42] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:30:42] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+[2025-10-02 17:31:20] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 65: val=0.7020, test=0.6800 ===
+[2025-10-02 17:31:20] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 62: val=0.6660, test=0.6590 ===
+[2025-10-02 17:31:21] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 72: val=0.6700, test=0.6650 ===
+[2025-10-02 17:31:21] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 63: val=0.7300, test=0.7110 ===
+[2025-10-02 17:31:22] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 45: val=0.6740, test=0.6740 ===
+
+================================================================================
+[2025-10-02 17:54:20] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:54:20] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:54:20] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:54:20] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:54:20] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+[2025-10-02 17:54:59] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 71: val=0.7200, test=0.7130 ===
+[2025-10-02 17:55:00] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 143: val=0.6860, test=0.6490 ===
+[2025-10-02 17:55:00] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 101: val=0.7140, test=0.6900 ===
+[2025-10-02 17:55:00] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 81: val=0.6960, test=0.6810 ===
+[2025-10-02 17:55:00] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 43: val=0.7220, test=0.7130 ===
+
+================================================================================
+[2025-10-02 17:56:06] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:56:07] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:56:07] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:56:07] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+
+================================================================================
+[2025-10-02 17:56:07] New Experiment: c trainable during transfer
+Args: {'pretrain_dataset': 'PubMed', 'test_dataset': 'CiteSeer', 'gpu_id': 0, 'pretext': 'GRACE', 'config': './config.yaml', 'para_config': './config2.yaml', 'is_pretrain': False, 'is_transfer': True, 'is_reduction': True, 'few': True, 'shot': 10, 'tau': 0.5, 'sup_weight': 0.2, 'r': 32, 'hyperbolic_lora': True, 'curvature': 1.0, 'lora_alpha': 16.0, 'pretrained_model_name': '/mnt/data1/Graph/HypGraphLoRA/pre_trained_gnn/Computers.GRACE.GAT.hyp_True.True.20250912-232538.pth', 'wd1': 0.01, 'wd2': 0.002, 'wd3': 0.1, 'lr1': 0.01, 'lr2': 0.01, 'lr3': 1e-05, 'l1': 0.5, 'l2': 1.0, 'l3': 2.0, 'l4': 10.0, 'num_epochs': 200}
+Config: {'hidden_dim': 64, 'output_dim': 256, 'activation': 'relu', 'gnn_type': 'GAT', 'num_layers': 2, 'learning_rate': 0.001, 'weight_decay': 0, 'epoch': 0, 'epoch1': 100, 'epoch2': 10000, 'decay_epoch': 1000, 'b1': 0.5, 'b2': 0.999, 'batch_size': 128, 'lambda_cyc': 15, 'lambda_anc': 5, 'lambda_cos': 0, 'lambda_dis': 5, 'lambda_str': 0, 'lambda_map': 5, 'lambda_id': 5, 'checkpoint_interval': 10, 'lr2': 0.01, 'wd2': 1e-06, 'curvature': 1.0, 'learnable_curvature': True, 'min_curvature': 0.0001, 'max_curvature': 10.0}
+================================================================================
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+Split sizes | train=50, val=500, test=1000 (mode=few, shot=10)
+[2025-10-02 17:56:46] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 23: val=0.7140, test=0.7080 ===
+[2025-10-02 17:56:46] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 58: val=0.6920, test=0.6700 ===
+[2025-10-02 17:56:47] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 96: val=0.7100, test=0.7090 ===
+[2025-10-02 17:56:47] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 48: val=0.7240, test=0.6940 ===
+[2025-10-02 17:56:48] Few(10), r: 32, Computers to CiteSeer: Best @ epoch 72: val=0.7060, test=0.6610 ===
