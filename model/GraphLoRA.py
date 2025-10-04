@@ -85,12 +85,10 @@ def transfer(args, config, gpu_id, is_reduction):
     pretrain_dataset = pretrain_dataset.to(device)
     test_dataset = test_dataset.to(device)
 
-    # ---- adjacency and weights ----
-    target_adj = to_dense_adj(test_dataset.edge_index)[0]
+    # ---- adjacency and weights (removed dense conversion for memory efficiency) ----
+    # For large graphs like Reddit, we skip the dense adjacency matrix computation
+    # pos_weight calculation remains for use in reconstruction loss if needed
     pos_weight = float(test_dataset.x.shape[0] * test_dataset.x.shape[0] - test_dataset.edge_index.shape[1]) / max(1, test_dataset.edge_index.shape[1])
-    weight_mask = target_adj.view(-1) == 1
-    weight_tensor = torch.ones(weight_mask.size(0), device=device)
-    weight_tensor[weight_mask] = pos_weight / 10.0
 
     # ---- curvature (shared & learnable) ----
     init_c = float(args.curvature)
@@ -297,13 +295,9 @@ def transfer(args, config, gpu_id, is_reduction):
         train_labels = test_dataset.y[train_mask]
         cls_loss = loss_fn(train_logits, train_labels)
 
-        target_adj = to_dense_adj(test_dataset.edge_index)[0]
-        rec_adj = torch.sigmoid(torch.matmul(torch.softmax(logits, dim=1), torch.softmax(logits, dim=1).T))
-        pos_weight = float(target_adj.shape[0] * target_adj.shape[0] - test_dataset.edge_index.shape[1]) / max(1, test_dataset.edge_index.shape[1])
-        weight_mask = target_adj.view(-1) == 1
-        weight_tensor = torch.ones(weight_mask.size(0), device=device)
-        weight_tensor[weight_mask] = pos_weight
-        loss_rec = F.binary_cross_entropy(rec_adj.view(-1), target_adj.view(-1), weight=weight_tensor)
+        # Reconstruction loss (disabled for large graphs to save memory)
+        # For large graphs like Reddit, dense adjacency matrix reconstruction is not feasible
+        loss_rec = torch.tensor(0.0, device=device)
 
         # Use adaptive loss weights
         loss = (adaptive_weights['l1'] * cls_loss +
