@@ -108,15 +108,15 @@ def get_ppr_matrix(dataset, alpha: float = 0.05):
 
 def get_ppr_weight(test_dataset, max_nodes=50000):
     """
-    Get PPR weight matrix. For large graphs (>max_nodes), return uniform weights to avoid OOM.
+    Get PPR weight matrix. For large graphs (>max_nodes), return None to skip PPR weighting.
     """
     num_nodes = test_dataset.x.shape[0]
     device = test_dataset.x.device
 
     if num_nodes > max_nodes:
-        # For large graphs, return uniform weights (identity-like behavior)
-        print(f"Graph too large ({num_nodes} nodes), using uniform PPR weights instead of exact computation")
-        return torch.ones(num_nodes, num_nodes, device=device) / num_nodes
+        # For large graphs, return None to indicate PPR should be skipped
+        print(f"Graph too large ({num_nodes} nodes), skipping PPR weight computation")
+        return None
 
     # Original PPR computation for small/medium graphs
     ppr_matrix = get_ppr_matrix(test_dataset)
@@ -167,7 +167,7 @@ def batched_gct_loss(z1: torch.Tensor, z2: torch.Tensor, batch_size: int, mask, 
 
 
 def batched_smmd_loss(z1: torch.Tensor, z2, MMD, ppr_weight, batch_size):
-# 每次循环里都重新构造了一个迭代器 iter(z2)，然后 next(...) 只会取同一份第一批数据。这会让 SMMD 只对齐到 z2 的“那一小撮样本”，对齐严重偏置，对齐失败或过拟合到这小批；
+# 每次循环里都重新构造了一个迭代器 iter(z2)，然后 next(...) 只会取同一份第一批数据。这会让 SMMD 只对齐到 z2 的"那一小撮样本"，对齐严重偏置，对齐失败或过拟合到这小批；
     device = z1.device
     num_nodes = z1.size(0)
     num_batches = (num_nodes - 1) // batch_size + 1
@@ -176,7 +176,8 @@ def batched_smmd_loss(z1: torch.Tensor, z2, MMD, ppr_weight, batch_size):
 
     for i in range(num_batches):
         mask = indices[i * batch_size:(i + 1) * batch_size]
-        ppr = ppr_weight[mask][:, mask]
+        # Handle case where ppr_weight is None (large graphs)
+        ppr = ppr_weight[mask][:, mask] if ppr_weight is not None else None
         target = next(iter(z2))
         losses.append(MMD(z1[mask], target, ppr))
 
