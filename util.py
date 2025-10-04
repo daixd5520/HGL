@@ -159,8 +159,15 @@ def batched_gct_loss(z1: torch.Tensor, z2: torch.Tensor, batch_size: int, mask, 
         refl_sim = f(sim(z1[idx], z1))  # [B, N]
         between_sim = f(sim(z1[idx], z2))  # [B, N]
 
+        # Handle case where mask is None (large graphs)
+        if mask is None:
+            # Use uniform weighting when mask is not available
+            numerator = between_sim.sum(1)
+        else:
+            numerator = (mask[i * batch_size:(i + 1) * batch_size] * between_sim).sum(1)
+
         losses.append(-torch.log(
-            (mask[i * batch_size:(i + 1) * batch_size] * between_sim).sum(1)
+            numerator
             / (refl_sim.sum(1) + between_sim.sum(1)
                - refl_sim[:, i * batch_size:(i + 1) * batch_size].diag())))
     return torch.cat(losses)

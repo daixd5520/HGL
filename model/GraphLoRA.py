@@ -221,21 +221,27 @@ def transfer(args, config, gpu_id, is_reduction):
     adaptive_weights = get_adaptive_loss_weights(args, num_train)
 
     # 构造监督图的同类索引 mask
-    idx_a, idx_b = torch.tensor([], device=device), torch.tensor([], device=device)
-    train_idx = torch.nonzero(train_mask, as_tuple=False).squeeze()
-    train_label = test_dataset.y[train_idx]
-    for c in range(num_classes):
-        idx_c = train_idx[train_label == c]
-        if idx_c.numel() == 0: 
-            continue
-        idx_a = torch.concat((idx_a, idx_c.repeat_interleave(len(idx_c))))
-        idx_b = torch.concat((idx_b, idx_c.repeat(len(idx_c))))
-    mask = torch.sparse_coo_tensor(
-        indices=torch.stack((idx_a.long(), idx_b.long())),
-        values=torch.ones(len(idx_a), device=device),
-        size=[test_dataset.x.shape[0], test_dataset.x.shape[0]]
-    ).to_dense()
-    mask = args.sup_weight * (mask - torch.diag_embed(torch.diag(mask))) + torch.eye(test_dataset.x.shape[0], device=device)
+    # For large graphs, we skip the dense mask construction to avoid OOM
+    num_nodes = test_dataset.x.shape[0]
+    if num_nodes > 50000:
+        print(f"Graph too large ({num_nodes} nodes), disabling contrastive loss mask")
+        mask = None  # Will be handled in batched_gct_loss
+    else:
+        idx_a, idx_b = torch.tensor([], device=device), torch.tensor([], device=device)
+        train_idx = torch.nonzero(train_mask, as_tuple=False).squeeze()
+        train_label = test_dataset.y[train_idx]
+        for c in range(num_classes):
+            idx_c = train_idx[train_label == c]
+            if idx_c.numel() == 0:
+                continue
+            idx_a = torch.concat((idx_a, idx_c.repeat_interleave(len(idx_c))))
+            idx_b = torch.concat((idx_b, idx_c.repeat(len(idx_c))))
+        mask = torch.sparse_coo_tensor(
+            indices=torch.stack((idx_a.long(), idx_b.long())),
+            values=torch.ones(len(idx_a), device=device),
+            size=[num_nodes, num_nodes]
+        ).to_dense()
+        mask = args.sup_weight * (mask - torch.diag_embed(torch.diag(mask))) + torch.eye(num_nodes, device=device)
 
     # ---- optimizer ----
     params_proj   = list(projector.parameters())
