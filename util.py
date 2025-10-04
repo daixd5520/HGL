@@ -106,7 +106,19 @@ def get_ppr_matrix(dataset, alpha: float = 0.05):
     return alpha * torch.linalg.inv(torch.eye(num_nodes).to(A_tilde.device) - (1 - alpha) * H)
 
 
-def get_ppr_weight(test_dataset):
+def get_ppr_weight(test_dataset, max_nodes=50000):
+    """
+    Get PPR weight matrix. For large graphs (>max_nodes), return uniform weights to avoid OOM.
+    """
+    num_nodes = test_dataset.x.shape[0]
+    device = test_dataset.x.device
+
+    if num_nodes > max_nodes:
+        # For large graphs, return uniform weights (identity-like behavior)
+        print(f"Graph too large ({num_nodes} nodes), using uniform PPR weights instead of exact computation")
+        return torch.ones(num_nodes, num_nodes, device=device) / num_nodes
+
+    # Original PPR computation for small/medium graphs
     ppr_matrix = get_ppr_matrix(test_dataset)
     ppr_matrix[ppr_matrix == 0] = ppr_matrix[ppr_matrix != 0].min()
     ppr_matrix = torch.log(1 + 1 / ppr_matrix)
