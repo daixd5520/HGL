@@ -1,4 +1,5 @@
 import os
+import copy
 import numpy as np
 import torch
 import torch.nn as nn
@@ -36,6 +37,89 @@ class LogReg(nn.Module):
 
     def initialize(self):
         torch.nn.init.xavier_uniform_(self.fc.weight)
+
+
+def _clone_state_dict(module: nn.Module):
+    return copy.deepcopy(module.state_dict())
+
+
+def _ensure_masks(data, device, seed: int = 0):
+    train_mask = getattr(data, 'train_mask', None)
+    val_mask = getattr(data, 'val_mask', None)
+    test_mask = getattr(data, 'test_mask', None)
+
+    if train_mask is not None and val_mask is not None and test_mask is not None:
+        train_mask = train_mask.to(device).bool()
+        val_mask = val_mask.to(device).bool()
+        test_mask = test_mask.to(device).bool()
+        if train_mask.numel() == data.x.shape[0]:
+            return train_mask, val_mask, test_mask
+
+    num_nodes = data.x.shape[0]
+    gen = torch.Generator()
+    gen.manual_seed(seed)
+    perm = torch.randperm(num_nodes, generator=gen)
+
+    train_cut = int(num_nodes * 0.6)
+    val_cut = int(num_nodes * 0.8)
+
+    train_mask = torch.zeros(num_nodes, dtype=torch.bool)
+    val_mask = torch.zeros(num_nodes, dtype=torch.bool)
+    test_mask = torch.zeros(num_nodes, dtype=torch.bool)
+
+    train_mask[perm[:train_cut]] = True
+    val_mask[perm[train_cut:val_cut]] = True
+    test_mask[perm[val_cut:]] = True
+
+    return train_mask.to(device), val_mask.to(device), test_mask.to(device)
+
+
+def _train_logreg_on_features(features, labels, train_mask, val_mask, test_mask, device,
+                              epochs: int = 200):
+    classifier = LogReg(features.size(1), int(labels.max().item() + 1)).to(device)
+    optimizer = torch.optim.Adam(classifier.parameters(), lr=0.01, weight_decay=0.0)
+    loss_fn = nn.CrossEntropyLoss()
+
+    best_val = -1.0
+    best_test = 0.0
+
+    for epoch in range(1, epochs + 1):
+        classifier.train()
+        optimizer.zero_grad()
+        logits = classifier(features)
+        loss = loss_fn(logits[train_mask], labels[train_mask])
+        loss.backward()
+        optimizer.step()
+
+        classifier.eval()
+        with torch.no_grad():
+            logits_eval = classifier(features)
+            preds = logits_eval.argmax(dim=1)
+
+            def _acc(mask):
+                if mask is None or mask.sum() == 0:
+                    return 0.0
+                return (preds[mask] == labels[mask]).float().mean().item()
+
+            val_acc = _acc(val_mask)
+            test_acc = _acc(test_mask)
+            if val_acc >= best_val:
+                best_val = val_acc
+                best_test = test_acc
+
+    return best_test
+
+
+def _evaluate_on_source_dataset(gnn2, pretrain_dataset, device, seed: int = 0):
+    train_mask, val_mask, test_mask = _ensure_masks(pretrain_dataset, device, seed=seed)
+    labels = pretrain_dataset.y.to(device)
+
+    gnn2.eval()
+    with torch.no_grad():
+        features, _, _ = gnn2(pretrain_dataset.x, pretrain_dataset.edge_index, return_euclid=True)
+
+    features = features.detach()
+    return _train_logreg_on_features(features, labels, train_mask, val_mask, test_mask, device)
 
 
 class TemperatureScaling(nn.Module):
@@ -266,6 +350,7 @@ def transfer(args, config, gpu_id, is_reduction):
     pretrain_graph_loader = DataLoader(pretrain_dataset.x, batch_size=32, shuffle=True)
 
     max_acc, max_test_acc, max_epoch = 0.0, 0.0, 0
+    best_states = None
     for epoch in range(0, args.num_epochs):
         logreg.train(); projector.train(); gnn2.train()
         if temp_scale is not None:
@@ -344,12 +429,40 @@ def transfer(args, config, gpu_id, is_reduction):
 
         if val_acc > max_acc:
             max_acc, max_test_acc, max_epoch = val_acc, test_acc, epoch
+            best_states = {
+                'gnn2': _clone_state_dict(gnn2),
+                'projector': _clone_state_dict(projector),
+                'logreg': _clone_state_dict(logreg),
+            }
+            if temp_scale is not None:
+                best_states['temp_scale'] = _clone_state_dict(temp_scale)
+
+    if best_states is not None:
+        gnn2.load_state_dict(best_states['gnn2'])
+        projector.load_state_dict(best_states['projector'])
+        logreg.load_state_dict(best_states['logreg'])
+        if temp_scale is not None and 'temp_scale' in best_states:
+            temp_scale.load_state_dict(best_states['temp_scale'])
 
     print(f"=== Best @ epoch {max_epoch}: val={max_acc:.4f}, test={max_test_acc:.4f} ===")
-    
+
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     mode_label = f"Few({args.shot})" if args.few else "Public"
     result_info = f"{mode_label}, r: {args.r}, {args.pretrain_dataset} to {args.test_dataset}:"
     with open("result/GraphLoRA.txt", "a") as f:
         f.write(f"[{timestamp}] {result_info} Best @ epoch {max_epoch}: "
                 f"val={max_acc:.4f}, test={max_test_acc:.4f} ===\n")
+
+    source_test_acc = None
+    if getattr(args, 'eval_on_source', False):
+        source_test_acc = _evaluate_on_source_dataset(gnn2, pretrain_dataset, device, seed=42)
+        print(f"=== SourceEval {args.pretrain_dataset}<-{args.test_dataset}: test={source_test_acc:.4f} ===")
+        with open("result/GraphLoRA.txt", "a") as f:
+            stamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            f.write(f"[{stamp}] SourceEval {args.pretrain_dataset}<-{args.test_dataset}: test={source_test_acc:.4f}\n")
+
+    return {
+        'best_test_acc': max_test_acc,
+        'source_test_acc': source_test_acc,
+        'best_epoch': max_epoch,
+    }
