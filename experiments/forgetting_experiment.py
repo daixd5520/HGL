@@ -11,12 +11,14 @@ import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, Optional
+from typing import Dict, List, Optional
 
 import pandas as pd
 import torch
 import torch.nn as nn
 import yaml
+from numpy import std as np_std
+from numpy import mean as np_mean
 from torch_geometric.utils import add_remaining_self_loops
 from yaml import SafeLoader
 
@@ -80,6 +82,12 @@ def parse_args() -> argparse.Namespace:
         type=int,
         default=200,
         help="Number of epochs for the direct logistic regression evaluation",
+    )
+    parser.add_argument(
+        "--repeats",
+        type=int,
+        default=5,
+        help="Number of independent repetitions to run for each configuration (default: 5)",
     )
     return parser.parse_args()
 
@@ -232,7 +240,13 @@ def direct_evaluation(pretrained_name: str, dataset: str, config_path: str, devi
     return train_logreg(features, labels, train_mask, val_mask, test_mask, torch_device, epochs=epochs)
 
 
-def run_transfer(dataset: str, gpu_id: int, args: argparse.Namespace, exp_dir: Path) -> Dict:
+def run_transfer(
+    dataset: str,
+    gpu_id: int,
+    args: argparse.Namespace,
+    exp_dir: Path,
+    repeat_idx: int,
+) -> Dict:
     env = os.environ.copy()
     env["CUDA_VISIBLE_DEVICES"] = str(gpu_id)
 
@@ -261,8 +275,8 @@ def run_transfer(dataset: str, gpu_id: int, args: argparse.Namespace, exp_dir: P
 
     process = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, env=env)
 
-    stdout_path = exp_dir / f"{dataset}_stdout.txt"
-    stderr_path = exp_dir / f"{dataset}_stderr.txt"
+    stdout_path = exp_dir / f"{dataset}_r{repeat_idx}_stdout.txt"
+    stderr_path = exp_dir / f"{dataset}_r{repeat_idx}_stderr.txt"
     stdout_path.write_text(process.stdout, encoding="utf-8")
     stderr_path.write_text(process.stderr, encoding="utf-8")
 
@@ -288,11 +302,13 @@ def run_transfer(dataset: str, gpu_id: int, args: argparse.Namespace, exp_dir: P
 
     return {
         "dataset": dataset,
+        "repeat": repeat_idx,
         "gpu_id": gpu_id,
         "source_acc": float(source_acc),
         "target_acc": target_acc,
         "stdout_path": str(stdout_path),
         "stderr_path": str(stderr_path),
+        "type": "transfer",
     }
 
 
@@ -329,39 +345,68 @@ def main():
     args.pretrained_name = pretrained_name
     args.source_dataset = source_dataset
 
-    print("[FORGETTING] Running direct evaluation on source dataset (no transfer)...")
-    direct_acc = direct_evaluation(pretrained_name, source_dataset, args.config, args.direct_device, args.direct_epochs)
-    print(f"[FORGETTING] Direct evaluation accuracy on {source_dataset}: {direct_acc:.4f}")
+    aggregated: Dict[str, List[float]] = {"direct": []}
+    for dataset in target_datasets:
+        aggregated[dataset] = []
 
-    gpu_cycle = (args.gpus * ((len(target_datasets) // max(1, len(args.gpus))) + 1))[: len(target_datasets)]
+    all_results: List[Dict] = []
 
-    results = []
-    with ThreadPoolExecutor(max_workers=len(args.gpus)) as executor:
-        futures = []
-        for dataset, gpu_id in zip(target_datasets, gpu_cycle):
-            futures.append(executor.submit(run_transfer, dataset, gpu_id, args, exp_dir))
+    for repeat_idx in range(1, args.repeats + 1):
+        print(f"[FORGETTING] === Repetition {repeat_idx}/{args.repeats} ===")
+        print("[FORGETTING] Running direct evaluation on source dataset (no transfer)...")
+        direct_acc = direct_evaluation(
+            pretrained_name,
+            source_dataset,
+            args.config,
+            args.direct_device,
+            args.direct_epochs,
+        )
+        print(f"[FORGETTING] Direct evaluation accuracy on {source_dataset}: {direct_acc:.4f}")
+        aggregated["direct"].append(direct_acc)
+        all_results.append(
+            {
+                "dataset": source_dataset,
+                "repeat": repeat_idx,
+                "gpu_id": args.direct_device,
+                "source_acc": direct_acc,
+                "target_acc": None,
+                "stdout_path": None,
+                "stderr_path": None,
+                "type": "direct",
+            }
+        )
 
-        for fut in as_completed(futures):
-            res = fut.result()
-            results.append(res)
-            print(
-                f"[FORGETTING] Finished transfer {args.source_dataset}->{res['dataset']} on GPU {res['gpu_id']}: "
-                f"source_acc={res['source_acc']:.4f}"
-            )
+        gpu_cycle = (args.gpus * ((len(target_datasets) // max(1, len(args.gpus))) + 1))[: len(target_datasets)]
 
-    results.sort(key=lambda x: target_datasets.index(x["dataset"]))
+        with ThreadPoolExecutor(max_workers=len(args.gpus)) as executor:
+            futures = []
+            for dataset, gpu_id in zip(target_datasets, gpu_cycle):
+                futures.append(
+                    executor.submit(run_transfer, dataset, gpu_id, args, exp_dir, repeat_idx)
+                )
 
-    matrix = {"direct": direct_acc}
-    for res in results:
-        matrix[res["dataset"]] = res["source_acc"]
+            for fut in as_completed(futures):
+                res = fut.result()
+                all_results.append(res)
+                aggregated[res["dataset"]].append(res["source_acc"])
+                print(
+                    f"[FORGETTING] Finished transfer {args.source_dataset}->{res['dataset']} (repeat {repeat_idx}) "
+                    f"on GPU {res['gpu_id']}: source_acc={res['source_acc']:.4f}"
+                )
 
-    df = pd.DataFrame([matrix], index=[source_dataset])
+    formatted_matrix = {}
+    for dataset, values in aggregated.items():
+        mean_val = np_mean(values)
+        std_val = np_std(values, ddof=1) if len(values) > 1 else 0.0
+        formatted_matrix[dataset] = f"{mean_val:.4f}±{std_val:.4f}"
+
+    df = pd.DataFrame([formatted_matrix], index=[source_dataset])
     csv_path = exp_dir / "forgetting_matrix.csv"
     df.to_csv(csv_path)
 
     detail_path = exp_dir / "runs.jsonl"
     with detail_path.open("w", encoding="utf-8") as f:
-        for res in results:
+        for res in all_results:
             f.write(json.dumps(res, ensure_ascii=False) + "\n")
 
     meta = {

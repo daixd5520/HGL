@@ -66,6 +66,9 @@ Key flags:
 - `--direct-device`: Device for the direct baseline evaluation (default `cpu`).
 - `--direct-epochs`: Epochs for the logistic-regression probe trained on the
   source representations (default `200`).
+- `--repeats`: Number of independent repetitions. Each repetition runs the
+  direct baseline plus every transfer and the script reports the mean ± standard
+  deviation across repetitions (default `5`).
 
 ### 3. Inspect the outputs
 
@@ -73,11 +76,14 @@ The script creates a timestamped directory under `experiments/forgetting/`
 containing:
 
 - `forgetting_matrix.csv`: Rows are source datasets, columns are `direct`
-  (no transfer) plus each fine-tuning target. Values are accuracies evaluated on
-  d1.
-- `runs.jsonl`: Per-target metadata including GPU allocation and raw scores.
-- `{dataset}_stdout.txt` / `{dataset}_stderr.txt`: Logs from each transfer run
-  (including the `SourceEval` metric parsed for the forgetting matrix).
+  (no transfer) plus each fine-tuning target. Every cell contains
+  `mean±std` (to four decimals) summarising accuracies on d1 over the configured
+  repetitions.
+- `runs.jsonl`: Per-run metadata including GPU allocation, raw scores, and a
+  `repeat` index.
+- `{dataset}_r{repeat}_stdout.txt` / `{dataset}_r{repeat}_stderr.txt`: Logs from
+  each transfer run in repetition `repeat` (including the `SourceEval` metric
+  parsed for the forgetting matrix).
 - `meta.json`: High-level configuration for reproducibility.
 
 You can rerun the command with a different `--pretrained-model` or `--d2` list
