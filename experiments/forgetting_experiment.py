@@ -7,6 +7,7 @@ import os
 import re
 import shutil
 import subprocess
+import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
@@ -18,6 +19,10 @@ import torch.nn as nn
 import yaml
 from torch_geometric.utils import add_remaining_self_loops
 from yaml import SafeLoader
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from model.GNN_model import CurvatureParam, GNN
 from model.GraphLoRA import LogReg
