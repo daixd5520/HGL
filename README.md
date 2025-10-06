@@ -88,3 +88,53 @@ containing:
 
 You can rerun the command with a different `--pretrained-model` or `--d2` list
 to extend the CSV with new experiments as needed.
+
+## Curvature Sweep Experiment
+
+To study how the initial manifold curvature impacts downstream transfer, use
+`experiments/curvature_sweep.py`. The script automatically:
+
+1. Pre-trains a fresh encoder for each curvature in the sweep (defaults span
+   `0.1 → 10.0`, covering very flat to highly curved manifolds on a log scale).
+2. Saves each checkpoint with a descriptive filename that now includes
+   `curv_<value>` plus the repetition tag for easy traceability.
+3. Evaluates the frozen encoder directly on the source dataset with a logistic
+   probe.
+4. Transfers the model to every requested target dataset, repeating the full
+   pipeline `--repeats` times and aggregating `mean±std` scores into a CSV.
+
+### Example usage
+
+```bash
+python experiments/curvature_sweep.py \
+  --dataset Cora \
+  --targets CiteSeer PubMed Photo \
+  --curvatures 0.1 0.3 1.0 3.0 10.0 \
+  --repeats 5 \
+  --pretrain-gpu 0 \
+  --transfer-gpus 0 1
+```
+
+Key options:
+
+- `--dataset`: Source dataset used for all pre-training runs.
+- `--targets`: List of datasets to fine-tune on. Defaults to every other
+  supported dataset if omitted.
+- `--curvatures`: Initial curvature values to sweep. You can provide any
+  positive floats; the defaults strike a balance between shallow (0.1),
+  moderate (1.0), and highly curved (10.0) manifolds.
+- `--repeats`: Number of independent repetitions per curvature setting (default
+  `5`).
+- `--pretrain-gpu`: GPU id for pre-training runs.
+- `--transfer-gpus`: GPUs to cycle through for transfer fine-tuning runs.
+- `--direct-device` / `--direct-epochs`: Control the logistic probe used for
+  direct evaluation of the frozen encoder.
+
+Each sweep creates a timestamped folder under `experiments/curvature/` with:
+
+- `curvature_matrix.csv`: Rows labelled `curv_<value>` and columns for `direct`
+  plus every target dataset, populated with `mean±std` accuracies.
+- `runs.jsonl`: Detailed logs for every pre-train, direct, and transfer run.
+- `{target}_r{repeat}_stdout.txt` / `{target}_r{repeat}_stderr.txt`: Raw logs
+  produced by `main.py` for each transfer.
+- `meta.json`: Captures the command, sweep parameters, and output paths.

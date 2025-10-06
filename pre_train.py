@@ -1,4 +1,5 @@
 import os
+import re
 from time import time
 import datetime  # 导入 datetime 模块
 import torch
@@ -10,7 +11,13 @@ from model.GRACE_model import GRACE
 # from torch_geometric.transforms import SVDFeatureReduction
 
 
-def pretrain(dataname, pretext, config, gpu, is_reduction=False):
+def _sanitize_tag(tag: str) -> str:
+    """将附加标签中的非法字符替换成破折号，避免生成不可用的文件名。"""
+
+    return re.sub(r"[^A-Za-z0-9_.-]+", "-", tag)
+
+
+def pretrain(dataname, pretext, config, gpu, is_reduction=False, model_tag=None):
     print(os.getcwd())
     path = os.path.join('./datasets', dataname)
     dataset = get_dataset(path, dataname)
@@ -74,15 +81,19 @@ def pretrain(dataname, pretext, config, gpu, is_reduction=False):
     # 1. 获取当前时间戳
     timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     
-    # 2. 构建包含双曲信息和时间戳的新文件名
-    model_filename = "{}.{}.{}.hyp_{}.{}.{}.pth".format(
-        dataname, 
-        pretext, 
-        gnn_type, 
-        hyperbolic_backbone, 
-        is_reduction, 
-        timestamp
-    )
+    # 2. 构建包含双曲信息、曲率与时间戳的新文件名
+    tags = [
+        dataname,
+        pretext,
+        gnn_type,
+        f"hyp_{hyperbolic_backbone}",
+        str(is_reduction),
+        f"curv_{init_c:.4g}",
+    ]
+    if model_tag:
+        tags.append(_sanitize_tag(str(model_tag)))
+    tags.append(timestamp)
+    model_filename = ".".join(tags) + ".pth"
     model_path = os.path.join(pre_trained_model_path, model_filename)
     # --- 修改结束 ---
 
@@ -120,3 +131,4 @@ def pretrain(dataname, pretext, config, gpu, is_reduction=False):
             # --- 修改结束 ---
 
     print("=== Final ===")
+    return model_filename
