@@ -73,6 +73,41 @@ def curvature_token(value: float) -> str:
     return f"curv_{sanitized}"
 
 
+def build_model_filename(
+    curvature: float,
+    pretrain_dataset: str,
+    pretext: str,
+    gnn_type: str,
+    hyperbolic: bool,
+    is_reduction: bool,
+    *,
+    reuse_existing: bool,
+) -> Tuple[str, str]:
+    """Create a descriptive checkpoint filename, optionally avoiding overwrites."""
+
+    base_name = ".".join(
+        [
+            pretrain_dataset,
+            pretext,
+            gnn_type,
+            curvature_token(curvature),
+            f"hyp_{hyperbolic}",
+            str(is_reduction),
+        ]
+    ) + ".pth"
+
+    base_path = os.path.join(PRETRAIN_DIR, base_name)
+    if reuse_existing:
+        return base_name, base_path
+
+    if os.path.exists(base_path):
+        stamp = dt.datetime.now().strftime("%Y%m%d-%H%M%S-%f")
+        stamped_name = base_name[:-4] + f".{stamp}.pth"
+        return stamped_name, os.path.join(PRETRAIN_DIR, stamped_name)
+
+    return base_name, base_path
+
+
 class GPUJob:
     """A single command scheduled onto one GPU."""
 
@@ -171,13 +206,62 @@ def extract_best_test(log_path: str) -> float:
         return test_acc
 
 
+def enqueue_transfer_jobs(
+    curvature: float,
+    model_filename: str,
+    args: argparse.Namespace,
+    queue: Deque[GPUJob],
+    test_datasets: Sequence[str],
+    logs_root: str,
+    results: Dict[Tuple[float, str], List[float]],
+) -> int:
+    """Schedule (or reuse) transfer jobs for a curvature checkpoint."""
+
+    scheduled = 0
+    for dataset in test_datasets:
+        for run_idx in range(1, args.runs + 1):
+            dataset_dir = os.path.join(logs_root, "transfer", dataset)
+            log_path = os.path.join(
+                dataset_dir,
+                f"{curvature_token(curvature)}_run{run_idx}.log",
+            )
+
+            if args.reuse_logs and os.path.exists(log_path):
+                try:
+                    acc = extract_best_test(log_path)
+                except Exception as exc:  # pragma: no cover - defensive
+                    print(
+                        f"[Transfer] Existing log for {dataset} (c={curvature:.4f}, run={run_idx}) "
+                        f"could not be parsed ({exc}); scheduling rerun."
+                    )
+                else:
+                    results[(curvature, dataset)].append(acc)
+                    print(
+                        f"[Transfer] Reused {dataset} c={curvature:.4f} run={run_idx} -> test={acc:.4f}"
+                    )
+                    continue
+
+            transfer_job = build_transfer_job(
+                curvature,
+                dataset,
+                run_idx,
+                model_filename,
+                args,
+                logs_root,
+                results,
+                log_path,
+            )
+            queue.append(transfer_job)
+            scheduled += 1
+    return scheduled
+
+
 def build_pretrain_job(
     curvature: float,
     model_filename: str,
     args: argparse.Namespace,
     queue: Deque[GPUJob],
     test_datasets: Sequence[str],
-    runs: int,
     logs_root: str,
     results: Dict[Tuple[float, str], List[float]],
 ) -> GPUJob:
@@ -215,18 +299,19 @@ def build_pretrain_job(
         if not os.path.exists(model_path):
             raise FileNotFoundError(f"Expected checkpoint not found: {model_path}")
         print(f"[Pretrain] Ready checkpoint {model_filename}")
-        for dataset in test_datasets:
-            for run_idx in range(1, runs + 1):
-                transfer_job = build_transfer_job(
-                    curvature,
-                    dataset,
-                    run_idx,
-                    model_filename,
-                    args,
-                    logs_root,
-                    results,
-                )
-                queue.append(transfer_job)
+        scheduled = enqueue_transfer_jobs(
+            curvature,
+            model_filename,
+            args,
+            queue,
+            test_datasets,
+            logs_root,
+            results,
+        )
+        if scheduled:
+            print(
+                f"[Pretrain] Enqueued {scheduled} transfer jobs for curvature {curvature:.4f}"
+            )
 
     return GPUJob(
         description=f"pretrain(c={curvature:.4f})",
@@ -244,14 +329,11 @@ def build_transfer_job(
     args: argparse.Namespace,
     logs_root: str,
     results: Dict[Tuple[float, str], List[float]],
+    log_path: str,
 ) -> GPUJob:
     python_bin = sys.executable
-    dataset_dir = os.path.join(logs_root, "transfer", dataset)
+    dataset_dir = os.path.dirname(log_path)
     os.makedirs(dataset_dir, exist_ok=True)
-    log_path = os.path.join(
-        dataset_dir,
-        f"{curvature_token(curvature)}_run{run_idx}.log",
-    )
 
     command = [
         python_bin,
@@ -333,6 +415,20 @@ def main() -> None:
         help="Whether to enable feature reduction during pretraining/transfer.",
     )
     parser.add_argument(
+        "--reuse-checkpoints",
+        dest="reuse_checkpoints",
+        type=str2bool,
+        default=False,
+        help="Skip pretraining when a matching checkpoint already exists.",
+    )
+    parser.add_argument(
+        "--reuse-logs",
+        dest="reuse_logs",
+        type=str2bool,
+        default=False,
+        help="Reuse existing transfer logs when available to avoid reruns.",
+    )
+    parser.add_argument(
         "--output-csv",
         type=str,
         default=None,
@@ -378,34 +474,46 @@ def main() -> None:
     results: Dict[Tuple[float, str], List[float]] = defaultdict(list)
 
     for curvature in curvatures:
-        curv_tag = curvature_token(curvature)
-        # Compose deterministic filename to avoid parsing stdout.
-        model_stamp = dt.datetime.now().strftime("%Y%m%d-%H%M%S-%f")
-        model_filename = ".".join(
-            [
-                args.pretrain_dataset,
-                args.pretext,
-                gnn_type,
-                curv_tag,
-                f"hyp_{hyperbolic}",
-                str(args.is_reduction),
-                model_stamp,
-            ]
-        ) + ".pth"
+        model_filename, model_path = build_model_filename(
+            curvature,
+            args.pretrain_dataset,
+            args.pretext,
+            gnn_type,
+            hyperbolic,
+            args.is_reduction,
+            reuse_existing=args.reuse_checkpoints,
+        )
+
+        if args.reuse_checkpoints and os.path.exists(model_path):
+            print(
+                f"[Pretrain] Reusing existing checkpoint for curvature {curvature:.4f}: {model_filename}"
+            )
+            enqueue_transfer_jobs(
+                curvature,
+                model_filename,
+                args,
+                queue,
+                test_datasets,
+                logs_root,
+                results,
+            )
+            continue
+
         pretrain_job = build_pretrain_job(
             curvature,
             model_filename,
             args,
             queue,
             test_datasets,
-            args.runs,
             logs_root,
             results,
         )
         queue.append(pretrain_job)
 
+    total_expected = args.runs * len(curvatures) * len(test_datasets)
     print(
-        f"Scheduled {len(curvatures)} pretrains and will spawn {args.runs * len(curvatures) * len(test_datasets)} transfers."
+        f"Scheduled {len([j for j in queue if 'pretrain' in j.description])} pretrains."
+        f" Expecting up to {total_expected} transfer runs (reused logs reduce this)."
     )
     scheduler(queue, gpus)
 
@@ -421,7 +529,7 @@ def main() -> None:
                 )
             mean = statistics.fmean(values)
             std = statistics.stdev(values) if len(values) > 1 else 0.0
-            percent_str = f"{mean * 100:.2f} ± {std * 100:.2f}"
+            percent_str = f"{mean * 100:.2f}±{std * 100:.2f}"
             rows.append(
                 [
                     args.pretrain_dataset,
@@ -430,6 +538,8 @@ def main() -> None:
                     percent_str,
                 ]
             )
+
+    rows.sort(key=lambda r: (float(r[2]), r[1]))
 
     output_csv = args.output_csv or os.path.join(
         REPO_ROOT,
