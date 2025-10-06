@@ -3,3 +3,5 @@ node_modules/
 package-lock.json
 package.json
 models/__pycache__/
+__pycache__/
+**/__pycache__/

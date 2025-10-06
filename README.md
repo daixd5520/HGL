@@ -26,4 +26,10 @@ python exp_multicard.py \
 --runs 5 \
 --gpus 5
 
+# Curvature sweep automation
+python curvature_experiment.py \
+  --curvatures 0.5 1.0 2.0 \
+  --pretrain-dataset Cora \
+  --test-datasets CiteSeer PubMed \
+  --gpus 0 1 2 3 4 5 6 7
 ```
