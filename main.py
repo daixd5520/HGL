@@ -51,9 +51,12 @@ if __name__ == '__main__':
     parser.add_argument('--lora_alpha', type=float, default=16.0)
     
     # --- 新增参数：指定预训练模型文件名 ---
-    parser.add_argument('--pretrained_model_name', type=str, default=None, 
+    parser.add_argument('--pretrained_model_name', type=str, default=None,
                         help='Filename of the pretrained model to load for transfer learning (e.g., "PubMed.GRACE.GAT.hyp_True.False.20250910-013000.pth")')
     # --- 修改结束 ---
+
+    parser.add_argument('--eval_on_source', type=str2bool, default=False,
+                        help='Whether to evaluate the fine-tuned model on the source dataset (d1) after transfer.')
     
     # ###learnable curvature
     # parser.add_argument('--learnable_curvature', type=bool, default=False)
