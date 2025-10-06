@@ -285,6 +285,32 @@ def get_balanced_few_shot_mask(data, shot, dataname, device, num_trials=5):
 # ===== Hyperbolic (Lorentz model) ops =====
 import math
 
+
+def _safe_acosh(x: torch.Tensor, eps: float = 1e-7) -> torch.Tensor:
+    """Numerically stable arcosh implementation."""
+    z = (x - 1.0).clamp_min(eps)
+    return torch.log(x + torch.sqrt(z * (x + 1.0)))
+
+
+def lorentz_inner(u: torch.Tensor, v: torch.Tensor) -> torch.Tensor:
+    """Lorentzian inner product with signature (-, +, ..., +)."""
+    time = -u[..., :1] * v[..., :1]
+    space = (u[..., 1:] * v[..., 1:]).sum(dim=-1, keepdim=True)
+    return time + space
+
+
+def lorentz_distance(p: torch.Tensor, q: torch.Tensor, c: torch.Tensor | float = 1.0,
+                     eps: float = 1e-7) -> torch.Tensor:
+    """Geodesic distance on the Lorentz model with curvature ``-c``."""
+    if not torch.is_tensor(c):
+        c = torch.tensor(c, dtype=p.dtype, device=p.device)
+    else:
+        c = c.to(dtype=p.dtype, device=p.device)
+
+    minkowski = -lorentz_inner(p, q).clamp_min(1.0 + eps)
+    dist = _safe_acosh(minkowski)
+    return dist.squeeze(-1) / torch.sqrt(c)
+
 def lorentz_expmap0(v: torch.Tensor, c: float = 1.0, eps: float = 1e-15) -> torch.Tensor:
     """
     v: [N, d]  tangent at origin -> point on hyperboloid H^d
