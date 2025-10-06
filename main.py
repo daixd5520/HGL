@@ -15,6 +15,12 @@ if __name__ == '__main__':
     parser.add_argument('--pretext', type=str, default='GRACE')
     parser.add_argument('--config', type=str, default='./config.yaml')
     parser.add_argument('--para_config', type=str, default='./config2.yaml')
+    parser.add_argument('--pretrain_curvature', type=float, default=None,
+                        help='Override initial curvature during pretraining (defaults to config/--curvature).')
+    parser.add_argument('--pretrain_run_tag', type=str, default=None,
+                        help='Optional tag appended to the generated pretrain checkpoint name.')
+    parser.add_argument('--pretrain_output_name', type=str, default=None,
+                        help='Explicit filename (within pre_trained_gnn) for saving the pretrain checkpoint.')
     # 兼容 "--few True/False" 的布尔解析
     def str2bool(v):
         if isinstance(v, bool):
@@ -75,7 +81,19 @@ if __name__ == '__main__':
 
     if args.is_pretrain:
         config_pretrain = yaml.load(open(args.config), Loader=SafeLoader)[args.pretrain_dataset]
-        pretrain(args.pretrain_dataset, args.pretext, config_pretrain, args.gpu_id, args.is_reduction)
+        init_c = args.pretrain_curvature if args.pretrain_curvature is not None else args.curvature
+        saved_path = pretrain(
+            args.pretrain_dataset,
+            args.pretext,
+            config_pretrain,
+            args.gpu_id,
+            args.is_reduction,
+            init_curvature=init_c,
+            run_tag=args.pretrain_run_tag,
+            output_name=args.pretrain_output_name,
+        )
+        if saved_path:
+            print(f"[Main] Pretrained checkpoint written to: {saved_path}")
     
     if args.is_transfer:
         # --- 修改部分：增加检查，确保在迁移时提供了模型文件名 ---

@@ -26,4 +26,14 @@ python exp_multicard.py \
 --runs 5 \
 --gpus 5
 
+# Curvature sweep automation
+python curvature_experiment.py \
+  --curvatures 0.5 1.0 2.0 \
+  --pretrain-dataset Cora \
+  --test-datasets CiteSeer PubMed \
+  --gpus 0 1 2 3 4 5 6 7 \
+  --reuse-checkpoints True \
+  --reuse-logs True
+
+The driver distributes every pre-training and transfer job across the listed GPUs, runs each transfer five times by default, and writes a CSV with `mean±std` percentages (e.g., `78.90±1.23`).
 ```

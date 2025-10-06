@@ -10,7 +10,26 @@ from model.GRACE_model import GRACE
 # from torch_geometric.transforms import SVDFeatureReduction
 
 
-def pretrain(dataname, pretext, config, gpu, is_reduction=False):
+def _format_curvature_tag(value: float) -> str:
+    """Return a filename-friendly token that still exposes the curvature value."""
+    fixed = f"{value:.4f}"
+    sanitized = fixed.replace('-', 'm').replace('.', 'p')
+    return f"curv_{sanitized}"
+
+
+def _sanitize_tag(tag: str) -> str:
+    """Keep filename safe while preserving meaning."""
+    allowed = []
+    for ch in tag:
+        if ch.isalnum() or ch in ('-', '_'):
+            allowed.append(ch)
+        else:
+            allowed.append('-')
+    return ''.join(allowed)
+
+
+def pretrain(dataname, pretext, config, gpu, is_reduction=False, *,
+             init_curvature=None, run_tag=None, output_name=None):
     print(os.getcwd())
     path = os.path.join('./datasets', dataname)
     dataset = get_dataset(path, dataname)
@@ -48,6 +67,8 @@ def pretrain(dataname, pretext, config, gpu, is_reduction=False):
     # === 双曲开关与可训练曲率 ===
     hyperbolic_backbone = bool(config.get('hyperbolic_backbone', True))
     init_c = float(config.get('curvature', 1.0))
+    if init_curvature is not None:
+        init_c = float(init_curvature)
     learnable_c = bool(config.get('learnable_curvature', True))
     min_c = float(config.get('min_curvature', 1e-4))
     max_c = float(config.get('max_curvature', 10.0))
@@ -73,16 +94,25 @@ def pretrain(dataname, pretext, config, gpu, is_reduction=False):
     
     # 1. 获取当前时间戳
     timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-    
-    # 2. 构建包含双曲信息和时间戳的新文件名
-    model_filename = "{}.{}.{}.hyp_{}.{}.{}.pth".format(
-        dataname, 
-        pretext, 
-        gnn_type, 
-        hyperbolic_backbone, 
-        is_reduction, 
-        timestamp
-    )
+
+    if output_name:
+        base_name = os.path.basename(output_name)
+        if not base_name.endswith('.pth'):
+            base_name = f"{base_name}.pth"
+        model_filename = base_name
+    else:
+        filename_parts = [
+            dataname,
+            pretext,
+            gnn_type,
+            _format_curvature_tag(init_c),
+            f"hyp_{hyperbolic_backbone}",
+            str(is_reduction)
+        ]
+        if run_tag:
+            filename_parts.append(_sanitize_tag(str(run_tag)))
+        filename_parts.append(timestamp)
+        model_filename = ".".join(filename_parts) + ".pth"
     model_path = os.path.join(pre_trained_model_path, model_filename)
     # --- 修改结束 ---
 
@@ -116,7 +146,9 @@ def pretrain(dataname, pretext, config, gpu, is_reduction=False):
             min_loss = loss.item()
             torch.save(pretrain_model.gnn.state_dict(), model_path)
             # --- 修改部分：打印保存的完整文件名 ---
-            print(f"+++ model saved ! {model_filename}")
+            print(f"+++ model saved ! {model_path}")
             # --- 修改结束 ---
 
     print("=== Final ===")
+    return model_path
+
