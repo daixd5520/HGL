@@ -1,0 +1,1158 @@
+/mnt/data1/Graph/HypGraphLoRA
+[Pretrain] Using Lorentz H^d with learnable curvature, init c=1.5
+pre-training.
+(T) | Epoch=001, loss=10.5803, c=1.499992, this 1.87s, total 1.87s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=002, loss=10.5800, c=1.499985, this 1.45s, total 3.33s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=003, loss=10.5798, c=1.499977, this 1.53s, total 4.86s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=004, loss=10.5798, c=1.499969, this 1.53s, total 6.39s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=005, loss=10.5795, c=1.499961, this 1.53s, total 7.92s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=006, loss=10.5793, c=1.499953, this 1.53s, total 9.45s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=007, loss=10.5790, c=1.499945, this 1.53s, total 10.98s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=008, loss=10.5787, c=1.499937, this 1.53s, total 12.51s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=009, loss=10.5786, c=1.499929, this 1.53s, total 14.04s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=010, loss=10.5781, c=1.499921, this 1.53s, total 15.57s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=011, loss=10.5777, c=1.499913, this 1.53s, total 17.10s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=012, loss=10.5770, c=1.499905, this 1.53s, total 18.63s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=013, loss=10.5774, c=1.499897, this 1.53s, total 20.16s
+(T) | Epoch=014, loss=10.5760, c=1.499888, this 1.53s, total 21.69s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=015, loss=10.5754, c=1.499880, this 1.53s, total 23.22s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=016, loss=10.5756, c=1.499871, this 1.53s, total 24.75s
+(T) | Epoch=017, loss=10.5741, c=1.499863, this 1.53s, total 26.28s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=018, loss=10.5737, c=1.499854, this 1.53s, total 27.81s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=019, loss=10.5727, c=1.499845, this 1.53s, total 29.34s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=020, loss=10.5709, c=1.499836, this 1.53s, total 30.87s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=021, loss=10.5698, c=1.499827, this 1.53s, total 32.40s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=022, loss=10.5675, c=1.499818, this 1.53s, total 33.93s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=023, loss=10.5657, c=1.499809, this 1.53s, total 35.46s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=024, loss=10.5642, c=1.499799, this 1.53s, total 36.99s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=025, loss=10.5618, c=1.499790, this 1.53s, total 38.52s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=026, loss=10.5632, c=1.499780, this 1.53s, total 40.05s
+(T) | Epoch=027, loss=10.5560, c=1.499770, this 1.53s, total 41.58s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=028, loss=10.5544, c=1.499761, this 1.53s, total 43.11s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=029, loss=10.5451, c=1.499751, this 1.53s, total 44.64s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=030, loss=10.5383, c=1.499741, this 1.53s, total 46.17s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=031, loss=10.5318, c=1.499731, this 1.53s, total 47.70s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=032, loss=10.5291, c=1.499720, this 1.53s, total 49.23s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=033, loss=10.5179, c=1.499710, this 1.53s, total 50.76s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=034, loss=10.5015, c=1.499699, this 1.53s, total 52.29s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=035, loss=10.4878, c=1.499689, this 1.53s, total 53.82s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=036, loss=10.4809, c=1.499678, this 1.53s, total 55.35s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=037, loss=10.4642, c=1.499667, this 1.53s, total 56.88s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=038, loss=10.4414, c=1.499656, this 1.53s, total 58.42s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=039, loss=10.4234, c=1.499645, this 1.53s, total 59.94s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=040, loss=10.4044, c=1.499634, this 1.53s, total 61.48s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=041, loss=10.3614, c=1.499623, this 1.53s, total 63.01s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=042, loss=10.3261, c=1.499611, this 1.53s, total 64.54s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=043, loss=10.2964, c=1.499600, this 1.53s, total 66.07s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=044, loss=10.2331, c=1.499588, this 1.53s, total 67.60s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=045, loss=10.1921, c=1.499576, this 1.53s, total 69.13s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=046, loss=10.1454, c=1.499564, this 1.53s, total 70.66s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=047, loss=10.1149, c=1.499552, this 1.54s, total 72.20s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=048, loss=10.0556, c=1.499539, this 1.54s, total 73.73s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=049, loss=10.0112, c=1.499527, this 1.53s, total 75.27s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=050, loss=9.9590, c=1.499515, this 1.54s, total 76.80s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=051, loss=9.9152, c=1.499503, this 1.53s, total 78.34s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=052, loss=9.8932, c=1.499491, this 1.53s, total 79.87s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=053, loss=9.8481, c=1.499479, this 1.54s, total 81.41s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=054, loss=9.8337, c=1.499468, this 1.54s, total 82.94s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=055, loss=9.7967, c=1.499457, this 1.54s, total 84.48s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=056, loss=9.7694, c=1.499446, this 1.54s, total 86.01s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=057, loss=9.7831, c=1.499436, this 1.53s, total 87.55s
+(T) | Epoch=058, loss=9.7590, c=1.499427, this 1.53s, total 89.08s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=059, loss=9.7413, c=1.499418, this 1.54s, total 90.62s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=060, loss=9.7287, c=1.499410, this 1.54s, total 92.15s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=061, loss=9.7347, c=1.499403, this 1.54s, total 93.69s
+(T) | Epoch=062, loss=9.6978, c=1.499396, this 1.53s, total 95.22s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=063, loss=9.7131, c=1.499389, this 1.54s, total 96.75s
+(T) | Epoch=064, loss=9.6884, c=1.499383, this 1.53s, total 98.28s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=065, loss=9.6691, c=1.499378, this 1.54s, total 99.82s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=066, loss=9.6546, c=1.499373, this 1.53s, total 101.36s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=067, loss=9.6535, c=1.499369, this 1.53s, total 102.89s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=068, loss=9.6206, c=1.499365, this 1.54s, total 104.43s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=069, loss=9.6101, c=1.499361, this 1.53s, total 105.96s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=070, loss=9.5859, c=1.499357, this 1.54s, total 107.50s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=071, loss=9.5789, c=1.499354, this 1.54s, total 109.03s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=072, loss=9.5664, c=1.499351, this 1.54s, total 110.57s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=073, loss=9.5633, c=1.499348, this 1.54s, total 112.10s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=074, loss=9.5527, c=1.499346, this 1.54s, total 113.64s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=075, loss=9.5317, c=1.499343, this 1.53s, total 115.17s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=076, loss=9.5274, c=1.499341, this 1.53s, total 116.71s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=077, loss=9.5179, c=1.499339, this 1.53s, total 118.24s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=078, loss=9.5207, c=1.499337, this 1.54s, total 119.78s
+(T) | Epoch=079, loss=9.4988, c=1.499335, this 1.53s, total 121.31s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=080, loss=9.4978, c=1.499333, this 1.53s, total 122.84s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=081, loss=9.4960, c=1.499332, this 1.53s, total 124.38s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=082, loss=9.4834, c=1.499330, this 1.54s, total 125.92s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=083, loss=9.4797, c=1.499329, this 1.54s, total 127.45s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=084, loss=9.4645, c=1.499327, this 1.53s, total 128.99s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=085, loss=9.4599, c=1.499326, this 1.54s, total 130.52s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=086, loss=9.4619, c=1.499325, this 1.53s, total 132.06s
+(T) | Epoch=087, loss=9.4581, c=1.499323, this 1.53s, total 133.59s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=088, loss=9.4570, c=1.499322, this 1.53s, total 135.12s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=089, loss=9.4754, c=1.499321, this 1.53s, total 136.66s
+(T) | Epoch=090, loss=9.4521, c=1.499319, this 1.53s, total 138.19s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=091, loss=9.4526, c=1.499318, this 1.53s, total 139.72s
+(T) | Epoch=092, loss=9.4465, c=1.499317, this 1.53s, total 141.25s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=093, loss=9.4184, c=1.499315, this 1.54s, total 142.79s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=094, loss=9.4148, c=1.499314, this 1.53s, total 144.32s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=095, loss=9.4180, c=1.499313, this 1.53s, total 145.86s
+(T) | Epoch=096, loss=9.4018, c=1.499312, this 1.53s, total 147.39s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=097, loss=9.3957, c=1.499311, this 1.54s, total 148.92s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=098, loss=9.3942, c=1.499310, this 1.54s, total 150.46s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=099, loss=9.3971, c=1.499308, this 1.54s, total 151.99s
+(T) | Epoch=100, loss=9.3739, c=1.499307, this 1.53s, total 153.52s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=101, loss=9.3553, c=1.499306, this 1.53s, total 155.06s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=102, loss=9.3580, c=1.499306, this 1.54s, total 156.60s
+(T) | Epoch=103, loss=9.3556, c=1.499305, this 1.53s, total 158.13s
+(T) | Epoch=104, loss=9.3555, c=1.499304, this 1.53s, total 159.66s
+(T) | Epoch=105, loss=9.3280, c=1.499303, this 1.53s, total 161.19s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=106, loss=9.3213, c=1.499302, this 1.54s, total 162.72s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=107, loss=9.3181, c=1.499301, this 1.53s, total 164.26s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=108, loss=9.3237, c=1.499300, this 1.53s, total 165.79s
+(T) | Epoch=109, loss=9.3030, c=1.499299, this 1.53s, total 167.32s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=110, loss=9.2962, c=1.499298, this 1.54s, total 168.86s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=111, loss=9.2828, c=1.499297, this 1.53s, total 170.39s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=112, loss=9.2906, c=1.499297, this 1.54s, total 171.93s
+(T) | Epoch=113, loss=9.2737, c=1.499296, this 1.53s, total 173.46s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=114, loss=9.2706, c=1.499295, this 1.54s, total 174.99s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=115, loss=9.2775, c=1.499294, this 1.54s, total 176.53s
+(T) | Epoch=116, loss=9.2581, c=1.499293, this 1.53s, total 178.06s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=117, loss=9.2953, c=1.499292, this 1.54s, total 179.59s
+(T) | Epoch=118, loss=9.2489, c=1.499291, this 1.53s, total 181.12s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=119, loss=9.2533, c=1.499291, this 1.54s, total 182.66s
+(T) | Epoch=120, loss=9.2559, c=1.499290, this 1.53s, total 184.19s
+(T) | Epoch=121, loss=9.2510, c=1.499289, this 1.53s, total 185.72s
+(T) | Epoch=122, loss=9.2229, c=1.499288, this 1.53s, total 187.25s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=123, loss=9.2422, c=1.499287, this 1.54s, total 188.79s
+(T) | Epoch=124, loss=9.2408, c=1.499286, this 1.53s, total 190.32s
+(T) | Epoch=125, loss=9.2272, c=1.499286, this 1.53s, total 191.85s
+(T) | Epoch=126, loss=9.2355, c=1.499285, this 1.53s, total 193.38s
+(T) | Epoch=127, loss=9.2189, c=1.499285, this 1.53s, total 194.91s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=128, loss=9.2203, c=1.499285, this 1.53s, total 196.44s
+(T) | Epoch=129, loss=9.2319, c=1.499284, this 1.53s, total 197.97s
+(T) | Epoch=130, loss=9.2147, c=1.499283, this 1.53s, total 199.50s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=131, loss=9.2032, c=1.499282, this 1.53s, total 201.04s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=132, loss=9.2289, c=1.499281, this 1.53s, total 202.57s
+(T) | Epoch=133, loss=9.2135, c=1.499281, this 1.53s, total 204.10s
+(T) | Epoch=134, loss=9.1960, c=1.499280, this 1.53s, total 205.63s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=135, loss=9.2025, c=1.499279, this 1.54s, total 207.17s
+(T) | Epoch=136, loss=9.1903, c=1.499279, this 1.53s, total 208.70s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=137, loss=9.1872, c=1.499278, this 1.54s, total 210.24s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=138, loss=9.2013, c=1.499278, this 1.54s, total 211.77s
+(T) | Epoch=139, loss=9.1948, c=1.499277, this 1.53s, total 213.30s
+(T) | Epoch=140, loss=9.2080, c=1.499276, this 1.53s, total 214.83s
+(T) | Epoch=141, loss=9.1690, c=1.499275, this 1.53s, total 216.36s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=142, loss=9.1621, c=1.499274, this 1.54s, total 217.90s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=143, loss=9.1776, c=1.499274, this 1.54s, total 219.43s
+(T) | Epoch=144, loss=9.1712, c=1.499273, this 1.53s, total 220.96s
+(T) | Epoch=145, loss=9.1747, c=1.499272, this 1.53s, total 222.50s
+(T) | Epoch=146, loss=9.1626, c=1.499270, this 1.53s, total 224.03s
+(T) | Epoch=147, loss=9.1683, c=1.499269, this 1.53s, total 225.56s
+(T) | Epoch=148, loss=9.1584, c=1.499268, this 1.53s, total 227.09s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=149, loss=9.1592, c=1.499268, this 1.53s, total 228.62s
+(T) | Epoch=150, loss=9.1469, c=1.499267, this 1.53s, total 230.15s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=151, loss=9.1494, c=1.499266, this 1.53s, total 231.69s
+(T) | Epoch=152, loss=9.1615, c=1.499266, this 1.53s, total 233.22s
+(T) | Epoch=153, loss=9.1487, c=1.499265, this 1.53s, total 234.75s
+(T) | Epoch=154, loss=9.1426, c=1.499263, this 1.53s, total 236.28s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=155, loss=9.1486, c=1.499262, this 1.53s, total 237.82s
+(T) | Epoch=156, loss=9.1285, c=1.499260, this 1.53s, total 239.35s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=157, loss=9.1488, c=1.499259, this 1.53s, total 240.88s
+(T) | Epoch=158, loss=9.1322, c=1.499258, this 1.53s, total 242.41s
+(T) | Epoch=159, loss=9.1606, c=1.499258, this 1.53s, total 243.94s
+(T) | Epoch=160, loss=9.1398, c=1.499257, this 1.53s, total 245.47s
+(T) | Epoch=161, loss=9.1430, c=1.499257, this 1.53s, total 247.00s
+(T) | Epoch=162, loss=9.1535, c=1.499256, this 1.53s, total 248.53s
+(T) | Epoch=163, loss=9.1103, c=1.499256, this 1.53s, total 250.06s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=164, loss=9.1213, c=1.499254, this 1.53s, total 251.60s
+(T) | Epoch=165, loss=9.1293, c=1.499253, this 1.53s, total 253.13s
+(T) | Epoch=166, loss=9.1351, c=1.499252, this 1.53s, total 254.66s
+(T) | Epoch=167, loss=9.1337, c=1.499251, this 1.53s, total 256.19s
+(T) | Epoch=168, loss=9.1241, c=1.499249, this 1.53s, total 257.72s
+(T) | Epoch=169, loss=9.1275, c=1.499248, this 1.53s, total 259.25s
+(T) | Epoch=170, loss=9.1271, c=1.499247, this 1.53s, total 260.78s
+(T) | Epoch=171, loss=9.1043, c=1.499247, this 1.53s, total 262.31s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=172, loss=9.1185, c=1.499247, this 1.54s, total 263.85s
+(T) | Epoch=173, loss=9.1133, c=1.499247, this 1.53s, total 265.38s
+(T) | Epoch=174, loss=9.1304, c=1.499246, this 1.53s, total 266.91s
+(T) | Epoch=175, loss=9.1262, c=1.499245, this 1.53s, total 268.44s
+(T) | Epoch=176, loss=9.1040, c=1.499244, this 1.53s, total 269.97s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=177, loss=9.1262, c=1.499243, this 1.53s, total 271.50s
+(T) | Epoch=178, loss=9.1114, c=1.499242, this 1.53s, total 273.03s
+(T) | Epoch=179, loss=9.1415, c=1.499241, this 1.53s, total 274.56s
+(T) | Epoch=180, loss=9.1035, c=1.499240, this 1.53s, total 276.10s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=181, loss=9.1104, c=1.499239, this 1.53s, total 277.63s
+(T) | Epoch=182, loss=9.1066, c=1.499239, this 1.53s, total 279.16s
+(T) | Epoch=183, loss=9.1051, c=1.499238, this 1.53s, total 280.69s
+(T) | Epoch=184, loss=9.0963, c=1.499238, this 1.53s, total 282.22s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=185, loss=9.1041, c=1.499237, this 1.54s, total 283.76s
+(T) | Epoch=186, loss=9.0920, c=1.499237, this 1.53s, total 285.29s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=187, loss=9.0966, c=1.499237, this 1.54s, total 286.82s
+(T) | Epoch=188, loss=9.1404, c=1.499236, this 1.53s, total 288.35s
+(T) | Epoch=189, loss=9.1085, c=1.499236, this 1.53s, total 289.88s
+(T) | Epoch=190, loss=9.1072, c=1.499235, this 1.53s, total 291.41s
+(T) | Epoch=191, loss=9.0990, c=1.499234, this 1.53s, total 292.95s
+(T) | Epoch=192, loss=9.0990, c=1.499233, this 1.53s, total 294.48s
+(T) | Epoch=193, loss=9.1069, c=1.499232, this 1.53s, total 296.01s
+(T) | Epoch=194, loss=9.0898, c=1.499231, this 1.53s, total 297.54s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=195, loss=9.0826, c=1.499230, this 1.54s, total 299.07s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=196, loss=9.1201, c=1.499229, this 1.54s, total 300.61s
+(T) | Epoch=197, loss=9.0966, c=1.499228, this 1.53s, total 302.14s
+(T) | Epoch=198, loss=9.0887, c=1.499228, this 1.53s, total 303.67s
+(T) | Epoch=199, loss=9.0895, c=1.499227, this 1.53s, total 305.20s
+(T) | Epoch=200, loss=9.1002, c=1.499226, this 1.53s, total 306.73s
+(T) | Epoch=201, loss=9.0896, c=1.499225, this 1.53s, total 308.26s
+(T) | Epoch=202, loss=9.1093, c=1.499225, this 1.53s, total 309.79s
+(T) | Epoch=203, loss=9.0823, c=1.499223, this 1.53s, total 311.32s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=204, loss=9.0764, c=1.499222, this 1.54s, total 312.86s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=205, loss=9.1003, c=1.499221, this 1.53s, total 314.39s
+(T) | Epoch=206, loss=9.1036, c=1.499220, this 1.53s, total 315.92s
+(T) | Epoch=207, loss=9.0930, c=1.499218, this 1.53s, total 317.45s
+(T) | Epoch=208, loss=9.0934, c=1.499216, this 1.53s, total 318.98s
+(T) | Epoch=209, loss=9.0857, c=1.499215, this 1.53s, total 320.51s
+(T) | Epoch=210, loss=9.0854, c=1.499215, this 1.53s, total 322.04s
+(T) | Epoch=211, loss=9.0887, c=1.499214, this 1.53s, total 323.57s
+(T) | Epoch=212, loss=9.1067, c=1.499213, this 1.53s, total 325.10s
+(T) | Epoch=213, loss=9.0844, c=1.499213, this 1.53s, total 326.64s
+(T) | Epoch=214, loss=9.0956, c=1.499212, this 1.53s, total 328.17s
+(T) | Epoch=215, loss=9.0809, c=1.499209, this 1.53s, total 329.70s
+(T) | Epoch=216, loss=9.0779, c=1.499207, this 1.53s, total 331.23s
+(T) | Epoch=217, loss=9.1206, c=1.499205, this 1.53s, total 332.76s
+(T) | Epoch=218, loss=9.0814, c=1.499203, this 1.53s, total 334.29s
+(T) | Epoch=219, loss=9.0841, c=1.499202, this 1.53s, total 335.82s
+(T) | Epoch=220, loss=9.0758, c=1.499201, this 1.53s, total 337.35s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=221, loss=9.0971, c=1.499200, this 1.53s, total 338.88s
+(T) | Epoch=222, loss=9.0683, c=1.499199, this 1.53s, total 340.41s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=223, loss=9.0667, c=1.499198, this 1.53s, total 341.95s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=224, loss=9.1075, c=1.499197, this 1.53s, total 343.48s
+(T) | Epoch=225, loss=9.0873, c=1.499195, this 1.53s, total 345.02s
+(T) | Epoch=226, loss=9.0854, c=1.499194, this 1.53s, total 346.55s
+(T) | Epoch=227, loss=9.0775, c=1.499193, this 1.53s, total 348.08s
+(T) | Epoch=228, loss=9.0761, c=1.499192, this 1.53s, total 349.61s
+(T) | Epoch=229, loss=9.0534, c=1.499191, this 1.53s, total 351.14s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=230, loss=9.0954, c=1.499189, this 1.53s, total 352.67s
+(T) | Epoch=231, loss=9.0702, c=1.499188, this 1.53s, total 354.21s
+(T) | Epoch=232, loss=9.0717, c=1.499186, this 1.53s, total 355.74s
+(T) | Epoch=233, loss=9.0792, c=1.499184, this 1.53s, total 357.27s
+(T) | Epoch=234, loss=9.0640, c=1.499182, this 1.53s, total 358.80s
+(T) | Epoch=235, loss=9.0566, c=1.499182, this 1.53s, total 360.33s
+(T) | Epoch=236, loss=9.0541, c=1.499182, this 1.53s, total 361.86s
+(T) | Epoch=237, loss=9.0754, c=1.499182, this 1.53s, total 363.39s
+(T) | Epoch=238, loss=9.0793, c=1.499181, this 1.53s, total 364.92s
+(T) | Epoch=239, loss=9.0694, c=1.499180, this 1.53s, total 366.45s
+(T) | Epoch=240, loss=9.0835, c=1.499179, this 1.53s, total 367.98s
+(T) | Epoch=241, loss=9.0678, c=1.499177, this 1.53s, total 369.51s
+(T) | Epoch=242, loss=9.0591, c=1.499175, this 1.53s, total 371.04s
+(T) | Epoch=243, loss=9.0550, c=1.499173, this 1.53s, total 372.57s
+(T) | Epoch=244, loss=9.0708, c=1.499171, this 1.53s, total 374.10s
+(T) | Epoch=245, loss=9.0794, c=1.499170, this 1.53s, total 375.63s
+(T) | Epoch=246, loss=9.0582, c=1.499169, this 1.53s, total 377.16s
+(T) | Epoch=247, loss=9.0627, c=1.499168, this 1.53s, total 378.70s
+(T) | Epoch=248, loss=9.1207, c=1.499168, this 1.53s, total 380.23s
+(T) | Epoch=249, loss=9.0670, c=1.499168, this 1.53s, total 381.76s
+(T) | Epoch=250, loss=9.0479, c=1.499167, this 1.53s, total 383.29s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=251, loss=9.0667, c=1.499165, this 1.54s, total 384.82s
+(T) | Epoch=252, loss=9.0521, c=1.499163, this 1.53s, total 386.35s
+(T) | Epoch=253, loss=9.0941, c=1.499160, this 1.53s, total 387.88s
+(T) | Epoch=254, loss=9.0980, c=1.499157, this 1.53s, total 389.42s
+(T) | Epoch=255, loss=9.0577, c=1.499155, this 1.53s, total 390.95s
+(T) | Epoch=256, loss=9.0780, c=1.499154, this 1.53s, total 392.48s
+(T) | Epoch=257, loss=9.0684, c=1.499153, this 1.53s, total 394.01s
+(T) | Epoch=258, loss=9.0681, c=1.499153, this 1.53s, total 395.54s
+(T) | Epoch=259, loss=9.0762, c=1.499152, this 1.53s, total 397.07s
+(T) | Epoch=260, loss=9.0702, c=1.499151, this 1.53s, total 398.60s
+(T) | Epoch=261, loss=9.0605, c=1.499149, this 1.53s, total 400.13s
+(T) | Epoch=262, loss=9.0577, c=1.499147, this 1.53s, total 401.66s
+(T) | Epoch=263, loss=9.0673, c=1.499144, this 1.53s, total 403.19s
+(T) | Epoch=264, loss=9.0523, c=1.499143, this 1.53s, total 404.72s
+(T) | Epoch=265, loss=9.0751, c=1.499141, this 1.53s, total 406.25s
+(T) | Epoch=266, loss=9.0381, c=1.499139, this 1.53s, total 407.78s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=267, loss=9.0720, c=1.499138, this 1.54s, total 409.32s
+(T) | Epoch=268, loss=9.0577, c=1.499136, this 1.53s, total 410.85s
+(T) | Epoch=269, loss=9.0642, c=1.499135, this 1.53s, total 412.38s
+(T) | Epoch=270, loss=9.0574, c=1.499134, this 1.53s, total 413.91s
+(T) | Epoch=271, loss=9.0421, c=1.499133, this 1.53s, total 415.44s
+(T) | Epoch=272, loss=9.0587, c=1.499133, this 1.53s, total 416.97s
+(T) | Epoch=273, loss=9.0792, c=1.499131, this 1.53s, total 418.50s
+(T) | Epoch=274, loss=9.0504, c=1.499130, this 1.53s, total 420.03s
+(T) | Epoch=275, loss=9.0559, c=1.499127, this 1.53s, total 421.56s
+(T) | Epoch=276, loss=9.0477, c=1.499125, this 1.53s, total 423.09s
+(T) | Epoch=277, loss=9.0418, c=1.499123, this 1.53s, total 424.62s
+(T) | Epoch=278, loss=9.0835, c=1.499122, this 1.53s, total 426.15s
+(T) | Epoch=279, loss=9.0503, c=1.499121, this 1.53s, total 427.68s
+(T) | Epoch=280, loss=9.0308, c=1.499120, this 1.53s, total 429.21s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=281, loss=9.0386, c=1.499120, this 1.54s, total 430.75s
+(T) | Epoch=282, loss=9.0601, c=1.499120, this 1.53s, total 432.28s
+(T) | Epoch=283, loss=9.0520, c=1.499119, this 1.53s, total 433.81s
+(T) | Epoch=284, loss=9.0647, c=1.499118, this 1.53s, total 435.34s
+(T) | Epoch=285, loss=9.0363, c=1.499117, this 1.53s, total 436.87s
+(T) | Epoch=286, loss=9.0403, c=1.499115, this 1.53s, total 438.40s
+(T) | Epoch=287, loss=9.0134, c=1.499114, this 1.53s, total 439.93s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=288, loss=9.0332, c=1.499113, this 1.54s, total 441.47s
+(T) | Epoch=289, loss=9.0531, c=1.499112, this 1.53s, total 443.00s
+(T) | Epoch=290, loss=9.0348, c=1.499111, this 1.53s, total 444.53s
+(T) | Epoch=291, loss=9.0350, c=1.499111, this 1.53s, total 446.06s
+(T) | Epoch=292, loss=9.0479, c=1.499110, this 1.53s, total 447.59s
+(T) | Epoch=293, loss=9.0478, c=1.499110, this 1.53s, total 449.12s
+(T) | Epoch=294, loss=9.0306, c=1.499109, this 1.53s, total 450.65s
+(T) | Epoch=295, loss=9.0473, c=1.499108, this 1.53s, total 452.18s
+(T) | Epoch=296, loss=9.0462, c=1.499107, this 1.53s, total 453.71s
+(T) | Epoch=297, loss=9.0417, c=1.499105, this 1.53s, total 455.24s
+(T) | Epoch=298, loss=9.0378, c=1.499104, this 1.53s, total 456.77s
+(T) | Epoch=299, loss=9.0464, c=1.499104, this 1.53s, total 458.30s
+(T) | Epoch=300, loss=9.0359, c=1.499103, this 1.53s, total 459.83s
+(T) | Epoch=301, loss=9.0517, c=1.499103, this 1.53s, total 461.37s
+(T) | Epoch=302, loss=9.0306, c=1.499102, this 1.53s, total 462.90s
+(T) | Epoch=303, loss=9.0452, c=1.499101, this 1.53s, total 464.43s
+(T) | Epoch=304, loss=9.0375, c=1.499100, this 1.53s, total 465.96s
+(T) | Epoch=305, loss=9.0374, c=1.499099, this 1.53s, total 467.49s
+(T) | Epoch=306, loss=9.0428, c=1.499098, this 1.53s, total 469.02s
+(T) | Epoch=307, loss=9.0376, c=1.499098, this 1.53s, total 470.55s
+(T) | Epoch=308, loss=9.0579, c=1.499097, this 1.53s, total 472.08s
+(T) | Epoch=309, loss=9.0361, c=1.499096, this 1.53s, total 473.61s
+(T) | Epoch=310, loss=9.0481, c=1.499096, this 1.53s, total 475.14s
+(T) | Epoch=311, loss=9.0460, c=1.499095, this 1.53s, total 476.67s
+(T) | Epoch=312, loss=9.0354, c=1.499093, this 1.53s, total 478.20s
+(T) | Epoch=313, loss=9.0409, c=1.499092, this 1.53s, total 479.73s
+(T) | Epoch=314, loss=9.0590, c=1.499090, this 1.53s, total 481.26s
+(T) | Epoch=315, loss=9.0269, c=1.499089, this 1.53s, total 482.79s
+(T) | Epoch=316, loss=9.0399, c=1.499088, this 1.53s, total 484.32s
+(T) | Epoch=317, loss=9.0406, c=1.499088, this 1.53s, total 485.85s
+(T) | Epoch=318, loss=9.0591, c=1.499087, this 1.53s, total 487.38s
+(T) | Epoch=319, loss=9.0371, c=1.499087, this 1.53s, total 488.92s
+(T) | Epoch=320, loss=9.0719, c=1.499085, this 1.53s, total 490.45s
+(T) | Epoch=321, loss=9.0307, c=1.499084, this 1.53s, total 491.98s
+(T) | Epoch=322, loss=9.0743, c=1.499082, this 1.53s, total 493.51s
+(T) | Epoch=323, loss=9.0386, c=1.499080, this 1.53s, total 495.04s
+(T) | Epoch=324, loss=9.0277, c=1.499079, this 1.53s, total 496.57s
+(T) | Epoch=325, loss=9.0595, c=1.499077, this 1.53s, total 498.10s
+(T) | Epoch=326, loss=9.0383, c=1.499076, this 1.53s, total 499.63s
+(T) | Epoch=327, loss=9.0500, c=1.499075, this 1.53s, total 501.16s
+(T) | Epoch=328, loss=9.0240, c=1.499075, this 1.53s, total 502.69s
+(T) | Epoch=329, loss=9.0435, c=1.499074, this 1.53s, total 504.22s
+(T) | Epoch=330, loss=9.0274, c=1.499072, this 1.53s, total 505.75s
+(T) | Epoch=331, loss=9.0292, c=1.499071, this 1.53s, total 507.28s
+(T) | Epoch=332, loss=9.0285, c=1.499069, this 1.53s, total 508.81s
+(T) | Epoch=333, loss=9.0314, c=1.499068, this 1.53s, total 510.34s
+(T) | Epoch=334, loss=9.0375, c=1.499067, this 1.53s, total 511.87s
+(T) | Epoch=335, loss=9.0586, c=1.499067, this 1.53s, total 513.40s
+(T) | Epoch=336, loss=9.0343, c=1.499067, this 1.53s, total 514.93s
+(T) | Epoch=337, loss=9.0363, c=1.499066, this 1.53s, total 516.46s
+(T) | Epoch=338, loss=9.0367, c=1.499065, this 1.53s, total 517.99s
+(T) | Epoch=339, loss=9.0192, c=1.499063, this 1.53s, total 519.52s
+(T) | Epoch=340, loss=9.0448, c=1.499061, this 1.53s, total 521.05s
+(T) | Epoch=341, loss=9.0555, c=1.499059, this 1.53s, total 522.58s
+(T) | Epoch=342, loss=9.0173, c=1.499058, this 1.53s, total 524.11s
+(T) | Epoch=343, loss=9.0319, c=1.499057, this 1.53s, total 525.64s
+(T) | Epoch=344, loss=9.0396, c=1.499058, this 1.53s, total 527.18s
+(T) | Epoch=345, loss=9.0300, c=1.499058, this 1.53s, total 528.71s
+(T) | Epoch=346, loss=9.0551, c=1.499058, this 1.53s, total 530.24s
+(T) | Epoch=347, loss=9.0350, c=1.499056, this 1.53s, total 531.77s
+(T) | Epoch=348, loss=9.0200, c=1.499055, this 1.53s, total 533.30s
+(T) | Epoch=349, loss=9.0584, c=1.499054, this 1.53s, total 534.83s
+(T) | Epoch=350, loss=9.0209, c=1.499052, this 1.53s, total 536.36s
+(T) | Epoch=351, loss=9.0132, c=1.499050, this 1.53s, total 537.89s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=352, loss=9.0472, c=1.499048, this 1.54s, total 539.42s
+(T) | Epoch=353, loss=9.0431, c=1.499047, this 1.53s, total 540.95s
+(T) | Epoch=354, loss=9.0282, c=1.499047, this 1.53s, total 542.49s
+(T) | Epoch=355, loss=9.0254, c=1.499047, this 1.53s, total 544.02s
+(T) | Epoch=356, loss=9.0357, c=1.499047, this 1.53s, total 545.55s
+(T) | Epoch=357, loss=9.0373, c=1.499045, this 1.53s, total 547.08s
+(T) | Epoch=358, loss=9.0357, c=1.499044, this 1.53s, total 548.61s
+(T) | Epoch=359, loss=9.0368, c=1.499041, this 1.53s, total 550.14s
+(T) | Epoch=360, loss=9.0337, c=1.499040, this 1.53s, total 551.67s
+(T) | Epoch=361, loss=9.0393, c=1.499038, this 1.53s, total 553.20s
+(T) | Epoch=362, loss=9.0322, c=1.499038, this 1.53s, total 554.73s
+(T) | Epoch=363, loss=9.0457, c=1.499038, this 1.53s, total 556.26s
+(T) | Epoch=364, loss=9.0563, c=1.499039, this 1.53s, total 557.79s
+(T) | Epoch=365, loss=9.0157, c=1.499040, this 1.53s, total 559.32s
+(T) | Epoch=366, loss=9.0340, c=1.499039, this 1.53s, total 560.85s
+(T) | Epoch=367, loss=9.0321, c=1.499037, this 1.53s, total 562.38s
+(T) | Epoch=368, loss=9.0101, c=1.499035, this 1.53s, total 563.91s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=369, loss=9.0356, c=1.499033, this 1.54s, total 565.45s
+(T) | Epoch=370, loss=9.0445, c=1.499032, this 1.53s, total 566.98s
+(T) | Epoch=371, loss=9.0280, c=1.499030, this 1.53s, total 568.51s
+(T) | Epoch=372, loss=9.0201, c=1.499030, this 1.53s, total 570.04s
+(T) | Epoch=373, loss=9.0224, c=1.499030, this 1.53s, total 571.57s
+(T) | Epoch=374, loss=9.0175, c=1.499030, this 1.53s, total 573.10s
+(T) | Epoch=375, loss=9.0235, c=1.499029, this 1.53s, total 574.63s
+(T) | Epoch=376, loss=9.0134, c=1.499028, this 1.53s, total 576.16s
+(T) | Epoch=377, loss=9.0436, c=1.499027, this 1.53s, total 577.69s
+(T) | Epoch=378, loss=9.0395, c=1.499025, this 1.53s, total 579.22s
+(T) | Epoch=379, loss=9.0169, c=1.499024, this 1.53s, total 580.75s
+(T) | Epoch=380, loss=9.0215, c=1.499022, this 1.53s, total 582.28s
+(T) | Epoch=381, loss=9.0074, c=1.499021, this 1.53s, total 583.81s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=382, loss=9.0189, c=1.499020, this 1.54s, total 585.35s
+(T) | Epoch=383, loss=9.0124, c=1.499019, this 1.53s, total 586.88s
+(T) | Epoch=384, loss=9.0447, c=1.499018, this 1.53s, total 588.41s
+(T) | Epoch=385, loss=9.0163, c=1.499018, this 1.53s, total 589.94s
+(T) | Epoch=386, loss=9.0115, c=1.499018, this 1.53s, total 591.47s
+(T) | Epoch=387, loss=9.0281, c=1.499017, this 1.53s, total 593.00s
+(T) | Epoch=388, loss=9.0320, c=1.499016, this 1.53s, total 594.53s
+(T) | Epoch=389, loss=9.0348, c=1.499015, this 1.53s, total 596.06s
+(T) | Epoch=390, loss=9.0242, c=1.499013, this 1.53s, total 597.59s
+(T) | Epoch=391, loss=9.0137, c=1.499012, this 1.53s, total 599.12s
+(T) | Epoch=392, loss=9.0288, c=1.499011, this 1.53s, total 600.65s
+(T) | Epoch=393, loss=9.0134, c=1.499011, this 1.53s, total 602.18s
+(T) | Epoch=394, loss=9.0209, c=1.499011, this 1.53s, total 603.71s
+(T) | Epoch=395, loss=9.0133, c=1.499011, this 1.53s, total 605.24s
+(T) | Epoch=396, loss=9.0197, c=1.499010, this 1.53s, total 606.77s
+(T) | Epoch=397, loss=9.0407, c=1.499009, this 1.53s, total 608.30s
+(T) | Epoch=398, loss=9.0128, c=1.499008, this 1.53s, total 609.83s
+(T) | Epoch=399, loss=9.0273, c=1.499007, this 1.53s, total 611.36s
+(T) | Epoch=400, loss=9.0376, c=1.499007, this 1.53s, total 612.90s
+(T) | Epoch=401, loss=9.0270, c=1.499006, this 1.53s, total 614.43s
+(T) | Epoch=402, loss=9.0279, c=1.499005, this 1.53s, total 615.96s
+(T) | Epoch=403, loss=9.0247, c=1.499004, this 1.53s, total 617.49s
+(T) | Epoch=404, loss=9.0298, c=1.499003, this 1.53s, total 619.02s
+(T) | Epoch=405, loss=9.0186, c=1.499001, this 1.53s, total 620.55s
+(T) | Epoch=406, loss=9.0422, c=1.499000, this 1.53s, total 622.08s
+(T) | Epoch=407, loss=9.0308, c=1.498998, this 1.53s, total 623.61s
+(T) | Epoch=408, loss=9.0261, c=1.498996, this 1.53s, total 625.14s
+(T) | Epoch=409, loss=9.0382, c=1.498994, this 1.53s, total 626.67s
+(T) | Epoch=410, loss=9.0235, c=1.498993, this 1.53s, total 628.20s
+(T) | Epoch=411, loss=9.0333, c=1.498993, this 1.53s, total 629.73s
+(T) | Epoch=412, loss=9.0138, c=1.498993, this 1.53s, total 631.26s
+(T) | Epoch=413, loss=9.0193, c=1.498993, this 1.53s, total 632.79s
+(T) | Epoch=414, loss=9.0361, c=1.498991, this 1.53s, total 634.32s
+(T) | Epoch=415, loss=9.0272, c=1.498989, this 1.53s, total 635.85s
+(T) | Epoch=416, loss=9.0113, c=1.498987, this 1.53s, total 637.38s
+(T) | Epoch=417, loss=9.0106, c=1.498984, this 1.53s, total 638.91s
+(T) | Epoch=418, loss=9.0118, c=1.498983, this 1.53s, total 640.44s
+(T) | Epoch=419, loss=9.0083, c=1.498982, this 1.53s, total 641.98s
+(T) | Epoch=420, loss=9.0172, c=1.498981, this 1.53s, total 643.51s
+(T) | Epoch=421, loss=9.0138, c=1.498980, this 1.53s, total 645.04s
+(T) | Epoch=422, loss=9.0004, c=1.498978, this 1.53s, total 646.57s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=423, loss=9.0176, c=1.498976, this 1.54s, total 648.10s
+(T) | Epoch=424, loss=9.0230, c=1.498975, this 1.53s, total 649.63s
+(T) | Epoch=425, loss=9.0317, c=1.498973, this 1.53s, total 651.17s
+(T) | Epoch=426, loss=9.0182, c=1.498972, this 1.53s, total 652.70s
+(T) | Epoch=427, loss=9.0097, c=1.498970, this 1.53s, total 654.23s
+(T) | Epoch=428, loss=9.0215, c=1.498969, this 1.53s, total 655.76s
+(T) | Epoch=429, loss=9.0157, c=1.498969, this 1.53s, total 657.29s
+(T) | Epoch=430, loss=8.9948, c=1.498968, this 1.53s, total 658.82s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=431, loss=9.0326, c=1.498967, this 1.54s, total 660.35s
+(T) | Epoch=432, loss=9.0163, c=1.498966, this 1.53s, total 661.88s
+(T) | Epoch=433, loss=9.0377, c=1.498965, this 1.53s, total 663.41s
+(T) | Epoch=434, loss=9.0356, c=1.498963, this 1.53s, total 664.94s
+(T) | Epoch=435, loss=9.0033, c=1.498960, this 1.53s, total 666.48s
+(T) | Epoch=436, loss=9.0196, c=1.498958, this 1.53s, total 668.00s
+(T) | Epoch=437, loss=9.0194, c=1.498957, this 1.53s, total 669.54s
+(T) | Epoch=438, loss=9.0292, c=1.498956, this 1.53s, total 671.07s
+(T) | Epoch=439, loss=9.0015, c=1.498955, this 1.53s, total 672.60s
+(T) | Epoch=440, loss=9.0281, c=1.498955, this 1.53s, total 674.13s
+(T) | Epoch=441, loss=9.0212, c=1.498955, this 1.53s, total 675.66s
+(T) | Epoch=442, loss=9.0186, c=1.498955, this 1.53s, total 677.19s
+(T) | Epoch=443, loss=9.0259, c=1.498954, this 1.53s, total 678.72s
+(T) | Epoch=444, loss=9.0200, c=1.498953, this 1.53s, total 680.25s
+(T) | Epoch=445, loss=9.0144, c=1.498951, this 1.53s, total 681.78s
+(T) | Epoch=446, loss=9.0266, c=1.498950, this 1.53s, total 683.31s
+(T) | Epoch=447, loss=9.0260, c=1.498949, this 1.53s, total 684.84s
+(T) | Epoch=448, loss=9.0264, c=1.498947, this 1.53s, total 686.37s
+(T) | Epoch=449, loss=9.0451, c=1.498945, this 1.53s, total 687.90s
+(T) | Epoch=450, loss=9.0193, c=1.498944, this 1.53s, total 689.43s
+(T) | Epoch=451, loss=9.0148, c=1.498943, this 1.53s, total 690.96s
+(T) | Epoch=452, loss=9.0129, c=1.498942, this 1.53s, total 692.49s
+(T) | Epoch=453, loss=9.0013, c=1.498942, this 1.53s, total 694.02s
+(T) | Epoch=454, loss=9.0234, c=1.498941, this 1.53s, total 695.55s
+(T) | Epoch=455, loss=9.0252, c=1.498941, this 1.53s, total 697.08s
+(T) | Epoch=456, loss=9.0251, c=1.498940, this 1.53s, total 698.61s
+(T) | Epoch=457, loss=9.0150, c=1.498939, this 1.53s, total 700.14s
+(T) | Epoch=458, loss=9.0087, c=1.498938, this 1.53s, total 701.67s
+(T) | Epoch=459, loss=9.0166, c=1.498937, this 1.53s, total 703.21s
+(T) | Epoch=460, loss=9.0227, c=1.498936, this 1.53s, total 704.74s
+(T) | Epoch=461, loss=9.0402, c=1.498935, this 1.53s, total 706.27s
+(T) | Epoch=462, loss=8.9969, c=1.498934, this 1.53s, total 707.80s
+(T) | Epoch=463, loss=9.0062, c=1.498933, this 1.53s, total 709.33s
+(T) | Epoch=464, loss=9.0358, c=1.498931, this 1.53s, total 710.86s
+(T) | Epoch=465, loss=9.0075, c=1.498930, this 1.53s, total 712.39s
+(T) | Epoch=466, loss=9.0104, c=1.498929, this 1.53s, total 713.92s
+(T) | Epoch=467, loss=9.0086, c=1.498928, this 1.53s, total 715.45s
+(T) | Epoch=468, loss=9.0226, c=1.498927, this 1.53s, total 716.98s
+(T) | Epoch=469, loss=9.0007, c=1.498926, this 1.53s, total 718.51s
+(T) | Epoch=470, loss=9.0190, c=1.498927, this 1.53s, total 720.04s
+(T) | Epoch=471, loss=9.0265, c=1.498927, this 1.53s, total 721.57s
+(T) | Epoch=472, loss=9.0296, c=1.498928, this 1.53s, total 723.10s
+(T) | Epoch=473, loss=9.0269, c=1.498927, this 1.53s, total 724.63s
+(T) | Epoch=474, loss=9.0099, c=1.498925, this 1.53s, total 726.16s
+(T) | Epoch=475, loss=9.0022, c=1.498924, this 1.53s, total 727.69s
+(T) | Epoch=476, loss=9.0070, c=1.498922, this 1.53s, total 729.22s
+(T) | Epoch=477, loss=9.0223, c=1.498921, this 1.53s, total 730.75s
+(T) | Epoch=478, loss=9.0224, c=1.498920, this 1.53s, total 732.28s
+(T) | Epoch=479, loss=9.0061, c=1.498918, this 1.53s, total 733.82s
+(T) | Epoch=480, loss=9.0221, c=1.498918, this 1.53s, total 735.35s
+(T) | Epoch=481, loss=8.9863, c=1.498917, this 1.53s, total 736.88s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=482, loss=8.9936, c=1.498917, this 1.54s, total 738.41s
+(T) | Epoch=483, loss=9.0207, c=1.498916, this 1.53s, total 739.94s
+(T) | Epoch=484, loss=9.0107, c=1.498916, this 1.53s, total 741.47s
+(T) | Epoch=485, loss=9.0074, c=1.498915, this 1.53s, total 743.00s
+(T) | Epoch=486, loss=9.0196, c=1.498914, this 1.53s, total 744.53s
+(T) | Epoch=487, loss=9.0090, c=1.498914, this 1.53s, total 746.06s
+(T) | Epoch=488, loss=9.0242, c=1.498913, this 1.53s, total 747.59s
+(T) | Epoch=489, loss=9.0228, c=1.498912, this 1.53s, total 749.12s
+(T) | Epoch=490, loss=9.0042, c=1.498910, this 1.53s, total 750.65s
+(T) | Epoch=491, loss=9.0033, c=1.498909, this 1.53s, total 752.18s
+(T) | Epoch=492, loss=9.0174, c=1.498907, this 1.53s, total 753.72s
+(T) | Epoch=493, loss=9.0121, c=1.498905, this 1.53s, total 755.25s
+(T) | Epoch=494, loss=9.0186, c=1.498904, this 1.53s, total 756.78s
+(T) | Epoch=495, loss=9.0038, c=1.498903, this 1.53s, total 758.31s
+(T) | Epoch=496, loss=9.0450, c=1.498904, this 1.53s, total 759.84s
+(T) | Epoch=497, loss=9.0229, c=1.498904, this 1.53s, total 761.37s
+(T) | Epoch=498, loss=9.0038, c=1.498904, this 1.53s, total 762.90s
+(T) | Epoch=499, loss=9.0109, c=1.498903, this 1.53s, total 764.43s
+(T) | Epoch=500, loss=9.0078, c=1.498901, this 1.53s, total 765.96s
+(T) | Epoch=501, loss=9.0033, c=1.498899, this 1.53s, total 767.49s
+(T) | Epoch=502, loss=9.0214, c=1.498897, this 1.53s, total 769.02s
+(T) | Epoch=503, loss=8.9971, c=1.498894, this 1.53s, total 770.55s
+(T) | Epoch=504, loss=9.0039, c=1.498893, this 1.53s, total 772.08s
+(T) | Epoch=505, loss=9.0045, c=1.498891, this 1.53s, total 773.61s
+(T) | Epoch=506, loss=9.0101, c=1.498890, this 1.53s, total 775.14s
+(T) | Epoch=507, loss=9.0148, c=1.498890, this 1.53s, total 776.67s
+(T) | Epoch=508, loss=9.0284, c=1.498890, this 1.53s, total 778.20s
+(T) | Epoch=509, loss=9.0224, c=1.498890, this 1.53s, total 779.73s
+(T) | Epoch=510, loss=8.9861, c=1.498890, this 1.53s, total 781.26s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=511, loss=9.0022, c=1.498888, this 1.54s, total 782.80s
+(T) | Epoch=512, loss=9.0194, c=1.498886, this 1.53s, total 784.33s
+(T) | Epoch=513, loss=9.0132, c=1.498884, this 1.53s, total 785.86s
+(T) | Epoch=514, loss=9.0081, c=1.498881, this 1.53s, total 787.39s
+(T) | Epoch=515, loss=9.0233, c=1.498879, this 1.53s, total 788.92s
+(T) | Epoch=516, loss=9.0198, c=1.498878, this 1.53s, total 790.45s
+(T) | Epoch=517, loss=8.9977, c=1.498877, this 1.53s, total 791.98s
+(T) | Epoch=518, loss=9.0080, c=1.498876, this 1.53s, total 793.51s
+(T) | Epoch=519, loss=9.0074, c=1.498876, this 1.53s, total 795.04s
+(T) | Epoch=520, loss=9.0114, c=1.498876, this 1.53s, total 796.57s
+(T) | Epoch=521, loss=9.0116, c=1.498876, this 1.53s, total 798.10s
+(T) | Epoch=522, loss=9.0097, c=1.498875, this 1.53s, total 799.64s
+(T) | Epoch=523, loss=9.0056, c=1.498874, this 1.53s, total 801.17s
+(T) | Epoch=524, loss=9.0080, c=1.498873, this 1.53s, total 802.70s
+(T) | Epoch=525, loss=9.0056, c=1.498871, this 1.53s, total 804.23s
+(T) | Epoch=526, loss=8.9970, c=1.498870, this 1.53s, total 805.76s
+(T) | Epoch=527, loss=9.0128, c=1.498869, this 1.53s, total 807.29s
+(T) | Epoch=528, loss=8.9902, c=1.498868, this 1.53s, total 808.82s
+(T) | Epoch=529, loss=9.0083, c=1.498867, this 1.53s, total 810.35s
+(T) | Epoch=530, loss=9.0023, c=1.498866, this 1.53s, total 811.88s
+(T) | Epoch=531, loss=8.9970, c=1.498866, this 1.53s, total 813.41s
+(T) | Epoch=532, loss=8.9915, c=1.498866, this 1.53s, total 814.94s
+(T) | Epoch=533, loss=9.0094, c=1.498866, this 1.53s, total 816.47s
+(T) | Epoch=534, loss=9.0165, c=1.498865, this 1.53s, total 818.00s
+(T) | Epoch=535, loss=8.9939, c=1.498863, this 1.53s, total 819.53s
+(T) | Epoch=536, loss=8.9961, c=1.498862, this 1.53s, total 821.06s
+(T) | Epoch=537, loss=9.0254, c=1.498860, this 1.53s, total 822.59s
+(T) | Epoch=538, loss=9.0150, c=1.498859, this 1.53s, total 824.12s
+(T) | Epoch=539, loss=8.9969, c=1.498858, this 1.53s, total 825.65s
+(T) | Epoch=540, loss=9.0353, c=1.498857, this 1.53s, total 827.18s
+(T) | Epoch=541, loss=9.0175, c=1.498856, this 1.53s, total 828.71s
+(T) | Epoch=542, loss=9.0183, c=1.498856, this 1.53s, total 830.25s
+(T) | Epoch=543, loss=8.9874, c=1.498857, this 1.53s, total 831.78s
+(T) | Epoch=544, loss=8.9959, c=1.498857, this 1.53s, total 833.31s
+(T) | Epoch=545, loss=9.0070, c=1.498857, this 1.53s, total 834.84s
+(T) | Epoch=546, loss=9.0071, c=1.498856, this 1.53s, total 836.37s
+(T) | Epoch=547, loss=8.9953, c=1.498854, this 1.53s, total 837.90s
+(T) | Epoch=548, loss=9.0171, c=1.498852, this 1.53s, total 839.43s
+(T) | Epoch=549, loss=8.9935, c=1.498850, this 1.53s, total 840.96s
+(T) | Epoch=550, loss=8.9982, c=1.498849, this 1.53s, total 842.49s
+(T) | Epoch=551, loss=8.9974, c=1.498848, this 1.53s, total 844.02s
+(T) | Epoch=552, loss=9.0117, c=1.498848, this 1.53s, total 845.55s
+(T) | Epoch=553, loss=9.0233, c=1.498848, this 1.53s, total 847.08s
+(T) | Epoch=554, loss=9.0030, c=1.498847, this 1.53s, total 848.61s
+(T) | Epoch=555, loss=8.9945, c=1.498847, this 1.53s, total 850.14s
+(T) | Epoch=556, loss=8.9910, c=1.498846, this 1.53s, total 851.67s
+(T) | Epoch=557, loss=9.0072, c=1.498846, this 1.53s, total 853.20s
+(T) | Epoch=558, loss=8.9937, c=1.498845, this 1.53s, total 854.73s
+(T) | Epoch=559, loss=8.9952, c=1.498845, this 1.53s, total 856.26s
+(T) | Epoch=560, loss=9.0077, c=1.498844, this 1.53s, total 857.79s
+(T) | Epoch=561, loss=9.0187, c=1.498842, this 1.53s, total 859.32s
+(T) | Epoch=562, loss=9.0155, c=1.498841, this 1.53s, total 860.85s
+(T) | Epoch=563, loss=9.0095, c=1.498839, this 1.53s, total 862.38s
+(T) | Epoch=564, loss=9.0047, c=1.498838, this 1.53s, total 863.91s
+(T) | Epoch=565, loss=9.0017, c=1.498837, this 1.53s, total 865.45s
+(T) | Epoch=566, loss=9.0041, c=1.498836, this 1.53s, total 866.98s
+(T) | Epoch=567, loss=8.9995, c=1.498835, this 1.53s, total 868.51s
+(T) | Epoch=568, loss=8.9877, c=1.498835, this 1.53s, total 870.04s
+(T) | Epoch=569, loss=8.9838, c=1.498834, this 1.53s, total 871.57s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=570, loss=9.0049, c=1.498833, this 1.54s, total 873.10s
+(T) | Epoch=571, loss=9.0138, c=1.498832, this 1.53s, total 874.63s
+(T) | Epoch=572, loss=8.9981, c=1.498831, this 1.53s, total 876.16s
+(T) | Epoch=573, loss=8.9894, c=1.498830, this 1.53s, total 877.69s
+(T) | Epoch=574, loss=8.9904, c=1.498829, this 1.53s, total 879.22s
+(T) | Epoch=575, loss=8.9966, c=1.498828, this 1.53s, total 880.75s
+(T) | Epoch=576, loss=9.0137, c=1.498827, this 1.53s, total 882.29s
+(T) | Epoch=577, loss=8.9921, c=1.498826, this 1.53s, total 883.82s
+(T) | Epoch=578, loss=8.9919, c=1.498825, this 1.53s, total 885.35s
+(T) | Epoch=579, loss=9.0206, c=1.498825, this 1.53s, total 886.88s
+(T) | Epoch=580, loss=9.0006, c=1.498825, this 1.53s, total 888.41s
+(T) | Epoch=581, loss=8.9932, c=1.498825, this 1.53s, total 889.94s
+(T) | Epoch=582, loss=9.0080, c=1.498824, this 1.53s, total 891.47s
+(T) | Epoch=583, loss=9.0030, c=1.498823, this 1.53s, total 893.00s
+(T) | Epoch=584, loss=9.0382, c=1.498822, this 1.53s, total 894.53s
+(T) | Epoch=585, loss=8.9964, c=1.498820, this 1.53s, total 896.06s
+(T) | Epoch=586, loss=9.0094, c=1.498819, this 1.53s, total 897.59s
+(T) | Epoch=587, loss=8.9820, c=1.498818, this 1.53s, total 899.12s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=588, loss=9.0016, c=1.498817, this 1.54s, total 900.65s
+(T) | Epoch=589, loss=8.9908, c=1.498816, this 1.53s, total 902.18s
+(T) | Epoch=590, loss=9.0085, c=1.498816, this 1.53s, total 903.71s
+(T) | Epoch=591, loss=8.9988, c=1.498816, this 1.53s, total 905.25s
+(T) | Epoch=592, loss=8.9944, c=1.498816, this 1.53s, total 906.78s
+(T) | Epoch=593, loss=8.9939, c=1.498817, this 1.53s, total 908.31s
+(T) | Epoch=594, loss=8.9830, c=1.498816, this 1.53s, total 909.84s
+(T) | Epoch=595, loss=8.9865, c=1.498815, this 1.53s, total 911.37s
+(T) | Epoch=596, loss=9.0251, c=1.498813, this 1.53s, total 912.90s
+(T) | Epoch=597, loss=9.0039, c=1.498811, this 1.53s, total 914.43s
+(T) | Epoch=598, loss=9.0106, c=1.498810, this 1.53s, total 915.96s
+(T) | Epoch=599, loss=8.9989, c=1.498809, this 1.53s, total 917.49s
+(T) | Epoch=600, loss=9.0156, c=1.498807, this 1.53s, total 919.02s
+(T) | Epoch=601, loss=8.9920, c=1.498807, this 1.53s, total 920.55s
+(T) | Epoch=602, loss=8.9974, c=1.498806, this 1.53s, total 922.08s
+(T) | Epoch=603, loss=8.9791, c=1.498806, this 1.53s, total 923.61s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=604, loss=8.9823, c=1.498806, this 1.54s, total 925.15s
+(T) | Epoch=605, loss=9.0025, c=1.498805, this 1.53s, total 926.68s
+(T) | Epoch=606, loss=9.0140, c=1.498804, this 1.53s, total 928.21s
+(T) | Epoch=607, loss=8.9898, c=1.498803, this 1.53s, total 929.74s
+(T) | Epoch=608, loss=8.9902, c=1.498801, this 1.53s, total 931.27s
+(T) | Epoch=609, loss=8.9924, c=1.498800, this 1.53s, total 932.80s
+(T) | Epoch=610, loss=8.9786, c=1.498798, this 1.53s, total 934.33s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=611, loss=9.0102, c=1.498797, this 1.53s, total 935.86s
+(T) | Epoch=612, loss=8.9965, c=1.498796, this 1.53s, total 937.39s
+(T) | Epoch=613, loss=9.0043, c=1.498796, this 1.53s, total 938.92s
+(T) | Epoch=614, loss=8.9896, c=1.498795, this 1.53s, total 940.46s
+(T) | Epoch=615, loss=8.9975, c=1.498795, this 1.53s, total 941.99s
+(T) | Epoch=616, loss=9.0064, c=1.498794, this 1.53s, total 943.52s
+(T) | Epoch=617, loss=8.9809, c=1.498793, this 1.53s, total 945.04s
+(T) | Epoch=618, loss=9.0040, c=1.498791, this 1.53s, total 946.57s
+(T) | Epoch=619, loss=8.9884, c=1.498791, this 1.53s, total 948.11s
+(T) | Epoch=620, loss=8.9938, c=1.498790, this 1.53s, total 949.64s
+(T) | Epoch=621, loss=9.0093, c=1.498789, this 1.53s, total 951.17s
+(T) | Epoch=622, loss=8.9917, c=1.498788, this 1.53s, total 952.70s
+(T) | Epoch=623, loss=8.9869, c=1.498787, this 1.53s, total 954.23s
+(T) | Epoch=624, loss=9.0021, c=1.498786, this 1.53s, total 955.76s
+(T) | Epoch=625, loss=8.9856, c=1.498785, this 1.53s, total 957.29s
+(T) | Epoch=626, loss=9.0053, c=1.498784, this 1.53s, total 958.82s
+(T) | Epoch=627, loss=9.0176, c=1.498783, this 1.53s, total 960.35s
+(T) | Epoch=628, loss=8.9863, c=1.498782, this 1.53s, total 961.88s
+(T) | Epoch=629, loss=9.0042, c=1.498781, this 1.53s, total 963.41s
+(T) | Epoch=630, loss=9.0153, c=1.498780, this 1.53s, total 964.94s
+(T) | Epoch=631, loss=8.9997, c=1.498778, this 1.53s, total 966.48s
+(T) | Epoch=632, loss=8.9823, c=1.498777, this 1.53s, total 968.01s
+(T) | Epoch=633, loss=9.0405, c=1.498776, this 1.53s, total 969.54s
+(T) | Epoch=634, loss=9.0032, c=1.498775, this 1.53s, total 971.07s
+(T) | Epoch=635, loss=9.0099, c=1.498774, this 1.53s, total 972.60s
+(T) | Epoch=636, loss=8.9972, c=1.498773, this 1.53s, total 974.13s
+(T) | Epoch=637, loss=9.0087, c=1.498772, this 1.53s, total 975.66s
+(T) | Epoch=638, loss=8.9932, c=1.498771, this 1.53s, total 977.19s
+(T) | Epoch=639, loss=8.9981, c=1.498770, this 1.53s, total 978.72s
+(T) | Epoch=640, loss=8.9870, c=1.498770, this 1.53s, total 980.25s
+(T) | Epoch=641, loss=8.9969, c=1.498769, this 1.53s, total 981.78s
+(T) | Epoch=642, loss=9.0333, c=1.498768, this 1.53s, total 983.31s
+(T) | Epoch=643, loss=8.9990, c=1.498767, this 1.53s, total 984.84s
+(T) | Epoch=644, loss=8.9867, c=1.498766, this 1.53s, total 986.37s
+(T) | Epoch=645, loss=8.9958, c=1.498764, this 1.53s, total 987.90s
+(T) | Epoch=646, loss=8.9946, c=1.498762, this 1.53s, total 989.43s
+(T) | Epoch=647, loss=8.9912, c=1.498761, this 1.53s, total 990.96s
+(T) | Epoch=648, loss=8.9979, c=1.498761, this 1.53s, total 992.49s
+(T) | Epoch=649, loss=9.0075, c=1.498760, this 1.53s, total 994.02s
+(T) | Epoch=650, loss=8.9965, c=1.498759, this 1.53s, total 995.56s
+(T) | Epoch=651, loss=8.9952, c=1.498758, this 1.53s, total 997.09s
+(T) | Epoch=652, loss=8.9863, c=1.498757, this 1.53s, total 998.62s
+(T) | Epoch=653, loss=8.9982, c=1.498754, this 1.53s, total 1000.15s
+(T) | Epoch=654, loss=8.9926, c=1.498753, this 1.53s, total 1001.68s
+(T) | Epoch=655, loss=8.9865, c=1.498753, this 1.53s, total 1003.21s
+(T) | Epoch=656, loss=8.9787, c=1.498752, this 1.53s, total 1004.74s
+(T) | Epoch=657, loss=8.9785, c=1.498753, this 1.53s, total 1006.27s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=658, loss=8.9992, c=1.498753, this 1.54s, total 1007.80s
+(T) | Epoch=659, loss=9.0065, c=1.498753, this 1.53s, total 1009.33s
+(T) | Epoch=660, loss=8.9918, c=1.498752, this 1.53s, total 1010.86s
+(T) | Epoch=661, loss=9.0103, c=1.498751, this 1.53s, total 1012.40s
+(T) | Epoch=662, loss=9.0102, c=1.498749, this 1.53s, total 1013.93s
+(T) | Epoch=663, loss=8.9932, c=1.498747, this 1.53s, total 1015.46s
+(T) | Epoch=664, loss=8.9906, c=1.498744, this 1.53s, total 1016.99s
+(T) | Epoch=665, loss=8.9885, c=1.498742, this 1.53s, total 1018.52s
+(T) | Epoch=666, loss=9.0054, c=1.498741, this 1.53s, total 1020.05s
+(T) | Epoch=667, loss=8.9858, c=1.498741, this 1.53s, total 1021.58s
+(T) | Epoch=668, loss=8.9885, c=1.498741, this 1.53s, total 1023.11s
+(T) | Epoch=669, loss=8.9837, c=1.498741, this 1.53s, total 1024.64s
+(T) | Epoch=670, loss=9.0075, c=1.498741, this 1.53s, total 1026.17s
+(T) | Epoch=671, loss=9.0216, c=1.498741, this 1.53s, total 1027.70s
+(T) | Epoch=672, loss=8.9774, c=1.498740, this 1.53s, total 1029.23s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=673, loss=9.0015, c=1.498739, this 1.54s, total 1030.77s
+(T) | Epoch=674, loss=8.9985, c=1.498737, this 1.53s, total 1032.30s
+(T) | Epoch=675, loss=8.9852, c=1.498736, this 1.53s, total 1033.83s
+(T) | Epoch=676, loss=8.9946, c=1.498735, this 1.53s, total 1035.36s
+(T) | Epoch=677, loss=8.9869, c=1.498734, this 1.53s, total 1036.89s
+(T) | Epoch=678, loss=9.0140, c=1.498733, this 1.53s, total 1038.42s
+(T) | Epoch=679, loss=9.0066, c=1.498732, this 1.53s, total 1039.95s
+(T) | Epoch=680, loss=8.9771, c=1.498731, this 1.53s, total 1041.48s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=681, loss=9.0032, c=1.498729, this 1.54s, total 1043.02s
+(T) | Epoch=682, loss=8.9885, c=1.498728, this 1.53s, total 1044.55s
+(T) | Epoch=683, loss=8.9943, c=1.498727, this 1.53s, total 1046.08s
+(T) | Epoch=684, loss=8.9856, c=1.498726, this 1.53s, total 1047.61s
+(T) | Epoch=685, loss=8.9948, c=1.498726, this 1.53s, total 1049.14s
+(T) | Epoch=686, loss=8.9820, c=1.498726, this 1.53s, total 1050.67s
+(T) | Epoch=687, loss=8.9930, c=1.498726, this 1.53s, total 1052.20s
+(T) | Epoch=688, loss=9.0029, c=1.498725, this 1.53s, total 1053.73s
+(T) | Epoch=689, loss=8.9805, c=1.498725, this 1.53s, total 1055.26s
+(T) | Epoch=690, loss=8.9866, c=1.498724, this 1.53s, total 1056.79s
+(T) | Epoch=691, loss=8.9770, c=1.498724, this 1.53s, total 1058.33s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=692, loss=8.9886, c=1.498722, this 1.54s, total 1059.86s
+(T) | Epoch=693, loss=8.9922, c=1.498721, this 1.53s, total 1061.39s
+(T) | Epoch=694, loss=8.9812, c=1.498720, this 1.53s, total 1062.92s
+(T) | Epoch=695, loss=8.9921, c=1.498719, this 1.53s, total 1064.45s
+(T) | Epoch=696, loss=9.0042, c=1.498718, this 1.53s, total 1065.98s
+(T) | Epoch=697, loss=8.9891, c=1.498716, this 1.53s, total 1067.51s
+(T) | Epoch=698, loss=8.9828, c=1.498715, this 1.53s, total 1069.05s
+(T) | Epoch=699, loss=8.9959, c=1.498715, this 1.53s, total 1070.58s
+(T) | Epoch=700, loss=9.0010, c=1.498715, this 1.53s, total 1072.11s
+(T) | Epoch=701, loss=8.9923, c=1.498715, this 1.53s, total 1073.64s
+(T) | Epoch=702, loss=8.9813, c=1.498715, this 1.53s, total 1075.17s
+(T) | Epoch=703, loss=8.9878, c=1.498715, this 1.53s, total 1076.70s
+(T) | Epoch=704, loss=8.9924, c=1.498713, this 1.53s, total 1078.23s
+(T) | Epoch=705, loss=9.0081, c=1.498711, this 1.53s, total 1079.76s
+(T) | Epoch=706, loss=8.9942, c=1.498709, this 1.53s, total 1081.29s
+(T) | Epoch=707, loss=8.9885, c=1.498707, this 1.53s, total 1082.82s
+(T) | Epoch=708, loss=8.9997, c=1.498707, this 1.53s, total 1084.35s
+(T) | Epoch=709, loss=8.9839, c=1.498707, this 1.53s, total 1085.88s
+(T) | Epoch=710, loss=8.9923, c=1.498708, this 1.53s, total 1087.41s
+(T) | Epoch=711, loss=8.9947, c=1.498708, this 1.53s, total 1088.94s
+(T) | Epoch=712, loss=8.9763, c=1.498708, this 1.53s, total 1090.47s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=713, loss=8.9989, c=1.498708, this 1.54s, total 1092.01s
+(T) | Epoch=714, loss=8.9923, c=1.498707, this 1.53s, total 1093.54s
+(T) | Epoch=715, loss=8.9824, c=1.498705, this 1.53s, total 1095.07s
+(T) | Epoch=716, loss=8.9908, c=1.498704, this 1.53s, total 1096.60s
+(T) | Epoch=717, loss=8.9868, c=1.498702, this 1.53s, total 1098.13s
+(T) | Epoch=718, loss=8.9938, c=1.498701, this 1.53s, total 1099.66s
+(T) | Epoch=719, loss=8.9854, c=1.498700, this 1.53s, total 1101.19s
+(T) | Epoch=720, loss=8.9883, c=1.498699, this 1.53s, total 1102.72s
+(T) | Epoch=721, loss=8.9829, c=1.498698, this 1.53s, total 1104.25s
+(T) | Epoch=722, loss=8.9848, c=1.498698, this 1.53s, total 1105.78s
+(T) | Epoch=723, loss=8.9783, c=1.498698, this 1.53s, total 1107.31s
+(T) | Epoch=724, loss=8.9714, c=1.498697, this 1.53s, total 1108.84s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=725, loss=8.9781, c=1.498697, this 1.54s, total 1110.38s
+(T) | Epoch=726, loss=8.9837, c=1.498696, this 1.53s, total 1111.91s
+(T) | Epoch=727, loss=8.9916, c=1.498695, this 1.53s, total 1113.44s
+(T) | Epoch=728, loss=9.0080, c=1.498694, this 1.53s, total 1114.97s
+(T) | Epoch=729, loss=8.9694, c=1.498693, this 1.53s, total 1116.50s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=730, loss=8.9845, c=1.498693, this 1.54s, total 1118.04s
+(T) | Epoch=731, loss=9.0047, c=1.498693, this 1.53s, total 1119.57s
+(T) | Epoch=732, loss=9.0212, c=1.498692, this 1.53s, total 1121.10s
+(T) | Epoch=733, loss=8.9855, c=1.498692, this 1.53s, total 1122.63s
+(T) | Epoch=734, loss=8.9999, c=1.498691, this 1.53s, total 1124.16s
+(T) | Epoch=735, loss=8.9949, c=1.498690, this 1.53s, total 1125.69s
+(T) | Epoch=736, loss=8.9711, c=1.498689, this 1.53s, total 1127.22s
+(T) | Epoch=737, loss=8.9789, c=1.498689, this 1.53s, total 1128.75s
+(T) | Epoch=738, loss=9.0302, c=1.498688, this 1.53s, total 1130.28s
+(T) | Epoch=739, loss=9.0162, c=1.498686, this 1.53s, total 1131.81s
+(T) | Epoch=740, loss=8.9866, c=1.498685, this 1.53s, total 1133.34s
+(T) | Epoch=741, loss=8.9884, c=1.498685, this 1.53s, total 1134.87s
+(T) | Epoch=742, loss=8.9908, c=1.498685, this 1.53s, total 1136.40s
+(T) | Epoch=743, loss=8.9911, c=1.498684, this 1.53s, total 1137.93s
+(T) | Epoch=744, loss=8.9833, c=1.498684, this 1.53s, total 1139.47s
+(T) | Epoch=745, loss=9.0097, c=1.498684, this 1.53s, total 1141.00s
+(T) | Epoch=746, loss=8.9766, c=1.498683, this 1.53s, total 1142.53s
+(T) | Epoch=747, loss=8.9915, c=1.498683, this 1.53s, total 1144.06s
+(T) | Epoch=748, loss=8.9962, c=1.498682, this 1.53s, total 1145.59s
+(T) | Epoch=749, loss=8.9869, c=1.498682, this 1.53s, total 1147.12s
+(T) | Epoch=750, loss=8.9884, c=1.498682, this 1.53s, total 1148.65s
+(T) | Epoch=751, loss=8.9773, c=1.498682, this 1.53s, total 1150.18s
+(T) | Epoch=752, loss=8.9740, c=1.498681, this 1.53s, total 1151.71s
+(T) | Epoch=753, loss=8.9803, c=1.498680, this 1.53s, total 1153.24s
+(T) | Epoch=754, loss=8.9952, c=1.498679, this 1.53s, total 1154.77s
+(T) | Epoch=755, loss=9.0002, c=1.498677, this 1.53s, total 1156.30s
+(T) | Epoch=756, loss=8.9898, c=1.498676, this 1.53s, total 1157.83s
+(T) | Epoch=757, loss=8.9987, c=1.498674, this 1.53s, total 1159.36s
+(T) | Epoch=758, loss=8.9885, c=1.498673, this 1.53s, total 1160.89s
+(T) | Epoch=759, loss=8.9839, c=1.498673, this 1.53s, total 1162.42s
+(T) | Epoch=760, loss=9.0012, c=1.498673, this 1.53s, total 1163.95s
+(T) | Epoch=761, loss=8.9915, c=1.498673, this 1.53s, total 1165.49s
+(T) | Epoch=762, loss=8.9875, c=1.498673, this 1.53s, total 1167.02s
+(T) | Epoch=763, loss=8.9718, c=1.498672, this 1.53s, total 1168.55s
+(T) | Epoch=764, loss=8.9737, c=1.498671, this 1.53s, total 1170.08s
+(T) | Epoch=765, loss=9.0092, c=1.498669, this 1.53s, total 1171.61s
+(T) | Epoch=766, loss=8.9791, c=1.498668, this 1.53s, total 1173.14s
+(T) | Epoch=767, loss=8.9952, c=1.498667, this 1.53s, total 1174.67s
+(T) | Epoch=768, loss=8.9891, c=1.498667, this 1.53s, total 1176.20s
+(T) | Epoch=769, loss=8.9887, c=1.498666, this 1.53s, total 1177.73s
+(T) | Epoch=770, loss=8.9767, c=1.498665, this 1.53s, total 1179.26s
+(T) | Epoch=771, loss=8.9882, c=1.498665, this 1.53s, total 1180.79s
+(T) | Epoch=772, loss=8.9770, c=1.498664, this 1.53s, total 1182.32s
+(T) | Epoch=773, loss=8.9765, c=1.498662, this 1.53s, total 1183.85s
+(T) | Epoch=774, loss=8.9786, c=1.498661, this 1.53s, total 1185.38s
+(T) | Epoch=775, loss=8.9754, c=1.498660, this 1.53s, total 1186.91s
+(T) | Epoch=776, loss=8.9717, c=1.498660, this 1.53s, total 1188.44s
+(T) | Epoch=777, loss=9.0032, c=1.498659, this 1.53s, total 1189.97s
+(T) | Epoch=778, loss=8.9784, c=1.498658, this 1.53s, total 1191.50s
+(T) | Epoch=779, loss=8.9735, c=1.498657, this 1.53s, total 1193.03s
+(T) | Epoch=780, loss=8.9876, c=1.498656, this 1.53s, total 1194.56s
+(T) | Epoch=781, loss=8.9973, c=1.498656, this 1.53s, total 1196.09s
+(T) | Epoch=782, loss=9.0022, c=1.498655, this 1.53s, total 1197.63s
+(T) | Epoch=783, loss=8.9939, c=1.498654, this 1.53s, total 1199.16s
+(T) | Epoch=784, loss=9.0107, c=1.498654, this 1.53s, total 1200.69s
+(T) | Epoch=785, loss=8.9738, c=1.498654, this 1.53s, total 1202.22s
+(T) | Epoch=786, loss=8.9824, c=1.498653, this 1.53s, total 1203.75s
+(T) | Epoch=787, loss=8.9972, c=1.498653, this 1.53s, total 1205.28s
+(T) | Epoch=788, loss=8.9878, c=1.498652, this 1.53s, total 1206.81s
+(T) | Epoch=789, loss=8.9933, c=1.498651, this 1.53s, total 1208.34s
+(T) | Epoch=790, loss=8.9755, c=1.498650, this 1.53s, total 1209.87s
+(T) | Epoch=791, loss=8.9716, c=1.498650, this 1.53s, total 1211.40s
+(T) | Epoch=792, loss=8.9898, c=1.498649, this 1.53s, total 1212.93s
+(T) | Epoch=793, loss=8.9847, c=1.498649, this 1.53s, total 1214.46s
+(T) | Epoch=794, loss=9.0019, c=1.498648, this 1.53s, total 1215.99s
+(T) | Epoch=795, loss=8.9886, c=1.498648, this 1.53s, total 1217.52s
+(T) | Epoch=796, loss=8.9857, c=1.498648, this 1.53s, total 1219.05s
+(T) | Epoch=797, loss=8.9856, c=1.498648, this 1.53s, total 1220.58s
+(T) | Epoch=798, loss=8.9922, c=1.498647, this 1.53s, total 1222.11s
+(T) | Epoch=799, loss=8.9815, c=1.498646, this 1.53s, total 1223.65s
+(T) | Epoch=800, loss=8.9867, c=1.498645, this 1.53s, total 1225.18s
+(T) | Epoch=801, loss=8.9904, c=1.498644, this 1.53s, total 1226.71s
+(T) | Epoch=802, loss=8.9734, c=1.498642, this 1.53s, total 1228.24s
+(T) | Epoch=803, loss=8.9959, c=1.498641, this 1.53s, total 1229.77s
+(T) | Epoch=804, loss=8.9752, c=1.498641, this 1.53s, total 1231.30s
+(T) | Epoch=805, loss=8.9691, c=1.498640, this 1.53s, total 1232.83s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=806, loss=8.9934, c=1.498640, this 1.54s, total 1234.37s
+(T) | Epoch=807, loss=8.9873, c=1.498640, this 1.53s, total 1235.90s
+(T) | Epoch=808, loss=8.9814, c=1.498640, this 1.53s, total 1237.43s
+(T) | Epoch=809, loss=9.0081, c=1.498639, this 1.53s, total 1238.96s
+(T) | Epoch=810, loss=8.9752, c=1.498639, this 1.53s, total 1240.49s
+(T) | Epoch=811, loss=8.9824, c=1.498638, this 1.53s, total 1242.02s
+(T) | Epoch=812, loss=8.9773, c=1.498638, this 1.53s, total 1243.55s
+(T) | Epoch=813, loss=8.9813, c=1.498637, this 1.53s, total 1245.08s
+(T) | Epoch=814, loss=8.9881, c=1.498636, this 1.53s, total 1246.61s
+(T) | Epoch=815, loss=8.9922, c=1.498635, this 1.53s, total 1248.14s
+(T) | Epoch=816, loss=8.9777, c=1.498632, this 1.53s, total 1249.67s
+(T) | Epoch=817, loss=8.9786, c=1.498630, this 1.53s, total 1251.20s
+(T) | Epoch=818, loss=8.9728, c=1.498629, this 1.53s, total 1252.73s
+(T) | Epoch=819, loss=8.9666, c=1.498628, this 1.53s, total 1254.26s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=820, loss=8.9901, c=1.498628, this 1.54s, total 1255.80s
+(T) | Epoch=821, loss=8.9810, c=1.498628, this 1.53s, total 1257.33s
+(T) | Epoch=822, loss=8.9784, c=1.498628, this 1.53s, total 1258.86s
+(T) | Epoch=823, loss=8.9898, c=1.498628, this 1.53s, total 1260.39s
+(T) | Epoch=824, loss=8.9744, c=1.498627, this 1.53s, total 1261.92s
+(T) | Epoch=825, loss=8.9894, c=1.498626, this 1.53s, total 1263.45s
+(T) | Epoch=826, loss=8.9681, c=1.498624, this 1.53s, total 1264.98s
+(T) | Epoch=827, loss=8.9885, c=1.498621, this 1.53s, total 1266.51s
+(T) | Epoch=828, loss=8.9933, c=1.498619, this 1.53s, total 1268.04s
+(T) | Epoch=829, loss=8.9772, c=1.498617, this 1.53s, total 1269.57s
+(T) | Epoch=830, loss=8.9692, c=1.498617, this 1.53s, total 1271.10s
+(T) | Epoch=831, loss=8.9890, c=1.498617, this 1.53s, total 1272.63s
+(T) | Epoch=832, loss=8.9818, c=1.498617, this 1.53s, total 1274.16s
+(T) | Epoch=833, loss=8.9737, c=1.498617, this 1.53s, total 1275.69s
+(T) | Epoch=834, loss=8.9659, c=1.498617, this 1.53s, total 1277.22s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=835, loss=8.9681, c=1.498617, this 1.54s, total 1278.76s
+(T) | Epoch=836, loss=8.9846, c=1.498615, this 1.53s, total 1280.29s
+(T) | Epoch=837, loss=8.9940, c=1.498613, this 1.53s, total 1281.82s
+(T) | Epoch=838, loss=8.9685, c=1.498611, this 1.53s, total 1283.35s
+(T) | Epoch=839, loss=8.9776, c=1.498608, this 1.53s, total 1284.88s
+(T) | Epoch=840, loss=8.9793, c=1.498606, this 1.53s, total 1286.41s
+(T) | Epoch=841, loss=8.9865, c=1.498605, this 1.53s, total 1287.94s
+(T) | Epoch=842, loss=8.9761, c=1.498604, this 1.53s, total 1289.47s
+(T) | Epoch=843, loss=8.9994, c=1.498604, this 1.53s, total 1291.00s
+(T) | Epoch=844, loss=8.9747, c=1.498604, this 1.53s, total 1292.54s
+(T) | Epoch=845, loss=8.9603, c=1.498604, this 1.53s, total 1294.07s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=846, loss=8.9843, c=1.498605, this 1.54s, total 1295.60s
+(T) | Epoch=847, loss=8.9754, c=1.498605, this 1.53s, total 1297.13s
+(T) | Epoch=848, loss=8.9943, c=1.498604, this 1.53s, total 1298.66s
+(T) | Epoch=849, loss=8.9876, c=1.498603, this 1.53s, total 1300.19s
+(T) | Epoch=850, loss=8.9778, c=1.498603, this 1.53s, total 1301.72s
+(T) | Epoch=851, loss=8.9766, c=1.498602, this 1.53s, total 1303.25s
+(T) | Epoch=852, loss=8.9721, c=1.498601, this 1.53s, total 1304.78s
+(T) | Epoch=853, loss=8.9794, c=1.498600, this 1.53s, total 1306.32s
+(T) | Epoch=854, loss=8.9831, c=1.498599, this 1.53s, total 1307.85s
+(T) | Epoch=855, loss=8.9713, c=1.498598, this 1.53s, total 1309.38s
+(T) | Epoch=856, loss=8.9729, c=1.498596, this 1.53s, total 1310.91s
+(T) | Epoch=857, loss=8.9818, c=1.498595, this 1.53s, total 1312.44s
+(T) | Epoch=858, loss=8.9498, c=1.498595, this 1.53s, total 1313.97s
++++ model saved ! ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth
+(T) | Epoch=859, loss=9.0073, c=1.498594, this 1.53s, total 1315.50s
+(T) | Epoch=860, loss=8.9861, c=1.498593, this 1.53s, total 1317.03s
+(T) | Epoch=861, loss=8.9787, c=1.498593, this 1.53s, total 1318.56s
+(T) | Epoch=862, loss=8.9920, c=1.498593, this 1.53s, total 1320.09s
+(T) | Epoch=863, loss=9.0039, c=1.498592, this 1.53s, total 1321.62s
+(T) | Epoch=864, loss=8.9749, c=1.498592, this 1.53s, total 1323.15s
+(T) | Epoch=865, loss=8.9784, c=1.498591, this 1.53s, total 1324.69s
+(T) | Epoch=866, loss=8.9736, c=1.498589, this 1.53s, total 1326.22s
+(T) | Epoch=867, loss=8.9802, c=1.498588, this 1.53s, total 1327.75s
+(T) | Epoch=868, loss=8.9567, c=1.498587, this 1.53s, total 1329.28s
+(T) | Epoch=869, loss=8.9829, c=1.498587, this 1.53s, total 1330.81s
+(T) | Epoch=870, loss=8.9780, c=1.498586, this 1.53s, total 1332.34s
+(T) | Epoch=871, loss=8.9843, c=1.498585, this 1.53s, total 1333.87s
+(T) | Epoch=872, loss=8.9741, c=1.498584, this 1.53s, total 1335.40s
+(T) | Epoch=873, loss=8.9915, c=1.498583, this 1.53s, total 1336.93s
+(T) | Epoch=874, loss=9.0010, c=1.498583, this 1.53s, total 1338.46s
+(T) | Epoch=875, loss=8.9829, c=1.498582, this 1.53s, total 1339.99s
+(T) | Epoch=876, loss=8.9786, c=1.498581, this 1.53s, total 1341.52s
+(T) | Epoch=877, loss=8.9653, c=1.498580, this 1.53s, total 1343.05s
+(T) | Epoch=878, loss=8.9911, c=1.498579, this 1.53s, total 1344.58s
+(T) | Epoch=879, loss=8.9802, c=1.498578, this 1.53s, total 1346.11s
+(T) | Epoch=880, loss=8.9684, c=1.498577, this 1.53s, total 1347.64s
+(T) | Epoch=881, loss=8.9835, c=1.498576, this 1.53s, total 1349.17s
+(T) | Epoch=882, loss=8.9829, c=1.498575, this 1.53s, total 1350.70s
+(T) | Epoch=883, loss=8.9680, c=1.498574, this 1.53s, total 1352.23s
+(T) | Epoch=884, loss=9.0041, c=1.498573, this 1.53s, total 1353.77s
+(T) | Epoch=885, loss=8.9706, c=1.498573, this 1.53s, total 1355.30s
+(T) | Epoch=886, loss=8.9839, c=1.498572, this 1.53s, total 1356.83s
+(T) | Epoch=887, loss=8.9703, c=1.498571, this 1.53s, total 1358.36s
+(T) | Epoch=888, loss=8.9797, c=1.498570, this 1.53s, total 1359.89s
+(T) | Epoch=889, loss=8.9873, c=1.498569, this 1.53s, total 1361.42s
+(T) | Epoch=890, loss=8.9816, c=1.498567, this 1.53s, total 1362.95s
+(T) | Epoch=891, loss=8.9731, c=1.498566, this 1.53s, total 1364.48s
+(T) | Epoch=892, loss=8.9732, c=1.498564, this 1.53s, total 1366.01s
+(T) | Epoch=893, loss=8.9718, c=1.498563, this 1.53s, total 1367.54s
+(T) | Epoch=894, loss=8.9601, c=1.498563, this 1.53s, total 1369.07s
+(T) | Epoch=895, loss=8.9760, c=1.498562, this 1.53s, total 1370.60s
+(T) | Epoch=896, loss=8.9958, c=1.498560, this 1.53s, total 1372.13s
+(T) | Epoch=897, loss=8.9668, c=1.498559, this 1.53s, total 1373.66s
+(T) | Epoch=898, loss=8.9755, c=1.498558, this 1.53s, total 1375.19s
+(T) | Epoch=899, loss=8.9767, c=1.498557, this 1.53s, total 1376.72s
+(T) | Epoch=900, loss=8.9911, c=1.498556, this 1.53s, total 1378.25s
+(T) | Epoch=901, loss=8.9589, c=1.498555, this 1.53s, total 1379.78s
+(T) | Epoch=902, loss=8.9873, c=1.498554, this 1.53s, total 1381.31s
+(T) | Epoch=903, loss=8.9820, c=1.498554, this 1.53s, total 1382.84s
+(T) | Epoch=904, loss=8.9702, c=1.498554, this 1.53s, total 1384.37s
+(T) | Epoch=905, loss=8.9870, c=1.498553, this 1.53s, total 1385.90s
+(T) | Epoch=906, loss=8.9845, c=1.498552, this 1.53s, total 1387.43s
+(T) | Epoch=907, loss=8.9675, c=1.498551, this 1.53s, total 1388.96s
+(T) | Epoch=908, loss=8.9821, c=1.498550, this 1.53s, total 1390.49s
+(T) | Epoch=909, loss=8.9927, c=1.498549, this 1.53s, total 1392.02s
+(T) | Epoch=910, loss=9.0170, c=1.498548, this 1.53s, total 1393.55s
+(T) | Epoch=911, loss=8.9802, c=1.498547, this 1.53s, total 1395.08s
+(T) | Epoch=912, loss=8.9724, c=1.498547, this 1.53s, total 1396.61s
+(T) | Epoch=913, loss=8.9876, c=1.498546, this 1.53s, total 1398.14s
+(T) | Epoch=914, loss=8.9745, c=1.498545, this 1.53s, total 1399.67s
+(T) | Epoch=915, loss=8.9614, c=1.498544, this 1.53s, total 1401.20s
+(T) | Epoch=916, loss=8.9518, c=1.498543, this 1.53s, total 1402.74s
+(T) | Epoch=917, loss=8.9702, c=1.498542, this 1.53s, total 1404.27s
+(T) | Epoch=918, loss=8.9985, c=1.498541, this 1.53s, total 1405.80s
+(T) | Epoch=919, loss=8.9611, c=1.498540, this 1.53s, total 1407.33s
+(T) | Epoch=920, loss=8.9807, c=1.498539, this 1.53s, total 1408.86s
+(T) | Epoch=921, loss=8.9825, c=1.498538, this 1.53s, total 1410.39s
+(T) | Epoch=922, loss=8.9717, c=1.498537, this 1.53s, total 1411.92s
+(T) | Epoch=923, loss=9.0161, c=1.498536, this 1.53s, total 1413.45s
+(T) | Epoch=924, loss=8.9748, c=1.498535, this 1.53s, total 1414.98s
+(T) | Epoch=925, loss=8.9716, c=1.498535, this 1.53s, total 1416.51s
+(T) | Epoch=926, loss=8.9797, c=1.498534, this 1.53s, total 1418.04s
+(T) | Epoch=927, loss=8.9910, c=1.498533, this 1.53s, total 1419.57s
+(T) | Epoch=928, loss=8.9794, c=1.498532, this 1.53s, total 1421.10s
+(T) | Epoch=929, loss=8.9937, c=1.498531, this 1.53s, total 1422.63s
+(T) | Epoch=930, loss=8.9845, c=1.498530, this 1.53s, total 1424.16s
+(T) | Epoch=931, loss=8.9748, c=1.498529, this 1.53s, total 1425.69s
+(T) | Epoch=932, loss=8.9817, c=1.498528, this 1.53s, total 1427.22s
+(T) | Epoch=933, loss=8.9711, c=1.498527, this 1.53s, total 1428.75s
+(T) | Epoch=934, loss=8.9740, c=1.498527, this 1.53s, total 1430.28s
+(T) | Epoch=935, loss=8.9668, c=1.498526, this 1.53s, total 1431.81s
+(T) | Epoch=936, loss=8.9926, c=1.498527, this 1.53s, total 1433.34s
+(T) | Epoch=937, loss=8.9745, c=1.498526, this 1.53s, total 1434.87s
+(T) | Epoch=938, loss=8.9785, c=1.498525, this 1.53s, total 1436.40s
+(T) | Epoch=939, loss=8.9679, c=1.498524, this 1.53s, total 1437.93s
+(T) | Epoch=940, loss=8.9687, c=1.498523, this 1.53s, total 1439.46s
+(T) | Epoch=941, loss=8.9801, c=1.498521, this 1.53s, total 1440.99s
+(T) | Epoch=942, loss=8.9743, c=1.498520, this 1.53s, total 1442.52s
+(T) | Epoch=943, loss=8.9635, c=1.498518, this 1.53s, total 1444.05s
+(T) | Epoch=944, loss=8.9793, c=1.498518, this 1.53s, total 1445.58s
+(T) | Epoch=945, loss=8.9861, c=1.498518, this 1.53s, total 1447.11s
+(T) | Epoch=946, loss=8.9776, c=1.498519, this 1.53s, total 1448.64s
+(T) | Epoch=947, loss=8.9685, c=1.498519, this 1.53s, total 1450.17s
+(T) | Epoch=948, loss=8.9742, c=1.498519, this 1.53s, total 1451.70s
+(T) | Epoch=949, loss=8.9688, c=1.498519, this 1.53s, total 1453.23s
+(T) | Epoch=950, loss=9.0100, c=1.498518, this 1.53s, total 1454.76s
+(T) | Epoch=951, loss=8.9976, c=1.498516, this 1.53s, total 1456.29s
+(T) | Epoch=952, loss=8.9867, c=1.498514, this 1.53s, total 1457.83s
+(T) | Epoch=953, loss=8.9827, c=1.498512, this 1.53s, total 1459.36s
+(T) | Epoch=954, loss=8.9791, c=1.498511, this 1.53s, total 1460.89s
+(T) | Epoch=955, loss=8.9690, c=1.498511, this 1.53s, total 1462.42s
+(T) | Epoch=956, loss=8.9807, c=1.498512, this 1.53s, total 1463.95s
+(T) | Epoch=957, loss=8.9749, c=1.498512, this 1.53s, total 1465.48s
+(T) | Epoch=958, loss=8.9698, c=1.498513, this 1.53s, total 1467.01s
+(T) | Epoch=959, loss=8.9740, c=1.498513, this 1.53s, total 1468.54s
+(T) | Epoch=960, loss=8.9755, c=1.498512, this 1.53s, total 1470.07s
+(T) | Epoch=961, loss=8.9706, c=1.498510, this 1.53s, total 1471.60s
+(T) | Epoch=962, loss=8.9789, c=1.498507, this 1.53s, total 1473.13s
+(T) | Epoch=963, loss=8.9882, c=1.498504, this 1.53s, total 1474.66s
+(T) | Epoch=964, loss=8.9643, c=1.498502, this 1.53s, total 1476.19s
+(T) | Epoch=965, loss=8.9856, c=1.498501, this 1.53s, total 1477.72s
+(T) | Epoch=966, loss=8.9728, c=1.498501, this 1.53s, total 1479.25s
+(T) | Epoch=967, loss=8.9661, c=1.498502, this 1.53s, total 1480.78s
+(T) | Epoch=968, loss=8.9803, c=1.498502, this 1.53s, total 1482.31s
+(T) | Epoch=969, loss=8.9790, c=1.498502, this 1.53s, total 1483.84s
+(T) | Epoch=970, loss=8.9841, c=1.498502, this 1.53s, total 1485.37s
+(T) | Epoch=971, loss=8.9753, c=1.498500, this 1.53s, total 1486.90s
+(T) | Epoch=972, loss=8.9734, c=1.498499, this 1.53s, total 1488.43s
+(T) | Epoch=973, loss=8.9682, c=1.498497, this 1.53s, total 1489.96s
+(T) | Epoch=974, loss=8.9748, c=1.498495, this 1.53s, total 1491.49s
+(T) | Epoch=975, loss=8.9792, c=1.498494, this 1.53s, total 1493.02s
+(T) | Epoch=976, loss=8.9796, c=1.498493, this 1.53s, total 1494.55s
+(T) | Epoch=977, loss=8.9835, c=1.498492, this 1.53s, total 1496.08s
+(T) | Epoch=978, loss=8.9637, c=1.498490, this 1.53s, total 1497.61s
+(T) | Epoch=979, loss=8.9765, c=1.498490, this 1.53s, total 1499.14s
+(T) | Epoch=980, loss=8.9877, c=1.498489, this 1.53s, total 1500.67s
+(T) | Epoch=981, loss=8.9882, c=1.498489, this 1.53s, total 1502.20s
+(T) | Epoch=982, loss=8.9660, c=1.498489, this 1.53s, total 1503.73s
+(T) | Epoch=983, loss=8.9607, c=1.498489, this 1.53s, total 1505.26s
+(T) | Epoch=984, loss=8.9809, c=1.498489, this 1.53s, total 1506.80s
+(T) | Epoch=985, loss=8.9651, c=1.498488, this 1.53s, total 1508.33s
+(T) | Epoch=986, loss=8.9694, c=1.498487, this 1.53s, total 1509.86s
+(T) | Epoch=987, loss=8.9689, c=1.498487, this 1.53s, total 1511.39s
+(T) | Epoch=988, loss=8.9513, c=1.498486, this 1.53s, total 1512.92s
+(T) | Epoch=989, loss=8.9753, c=1.498486, this 1.53s, total 1514.45s
+(T) | Epoch=990, loss=9.0112, c=1.498485, this 1.53s, total 1515.98s
+(T) | Epoch=991, loss=8.9708, c=1.498484, this 1.53s, total 1517.51s
+(T) | Epoch=992, loss=8.9824, c=1.498484, this 1.53s, total 1519.04s
+(T) | Epoch=993, loss=8.9844, c=1.498484, this 1.53s, total 1520.57s
+(T) | Epoch=994, loss=8.9751, c=1.498483, this 1.53s, total 1522.10s
+(T) | Epoch=995, loss=8.9588, c=1.498483, this 1.53s, total 1523.63s
+(T) | Epoch=996, loss=8.9716, c=1.498482, this 1.53s, total 1525.16s
+(T) | Epoch=997, loss=8.9750, c=1.498481, this 1.53s, total 1526.69s
+(T) | Epoch=998, loss=8.9736, c=1.498480, this 1.53s, total 1528.22s
+(T) | Epoch=999, loss=8.9738, c=1.498480, this 1.53s, total 1529.75s
+(T) | Epoch=1000, loss=8.9637, c=1.498480, this 1.53s, total 1531.28s
+=== Final ===
+[Main] Pretrained checkpoint written to: ./pre_trained_gnn/PubMed.GRACE.GAT.curv_1p5000.hyp_True.True.pth

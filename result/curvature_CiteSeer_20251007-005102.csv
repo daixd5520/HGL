@@ -1,0 +1,6 @@
+pretrain_dataset,test_dataset,curvature,mean±std (%)
+CiteSeer,CiteSeer,0.1000,75.98±0.60
+CiteSeer,CiteSeer,0.5000,76.76±1.33
+CiteSeer,CiteSeer,1.0000,75.62±1.36
+CiteSeer,CiteSeer,1.5000,75.16±2.08
+CiteSeer,CiteSeer,2.0000,76.34±1.31

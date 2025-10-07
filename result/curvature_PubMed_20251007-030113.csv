@@ -1,0 +1,26 @@
+pretrain_dataset,test_dataset,curvature,mean±std (%)
+PubMed,CiteSeer,0.1000,76.73±0.84
+PubMed,Computers,0.1000,89.76±0.37
+PubMed,Cora,0.1000,87.05±1.60
+PubMed,Photo,0.1000,92.99±0.34
+PubMed,PubMed,0.1000,82.88±0.77
+PubMed,CiteSeer,0.5000,74.38±0.99
+PubMed,Computers,0.5000,90.21±0.77
+PubMed,Cora,0.5000,87.31±1.62
+PubMed,Photo,0.5000,94.04±0.68
+PubMed,PubMed,0.5000,82.29±1.25
+PubMed,CiteSeer,1.0000,73.63±0.98
+PubMed,Computers,1.0000,89.90±0.80
+PubMed,Cora,1.0000,87.16±0.85
+PubMed,Photo,1.0000,93.89±0.95
+PubMed,PubMed,1.0000,82.32±0.38
+PubMed,CiteSeer,1.5000,74.89±0.93
+PubMed,Computers,1.5000,90.18±0.23
+PubMed,Cora,1.5000,86.61±1.37
+PubMed,Photo,1.5000,92.90±0.65
+PubMed,PubMed,1.5000,82.68±0.13
+PubMed,CiteSeer,2.0000,74.05±0.78
+PubMed,Computers,2.0000,90.00±0.93
+PubMed,Cora,2.0000,88.30±0.79
+PubMed,Photo,2.0000,93.58±0.77
+PubMed,PubMed,2.0000,82.80±0.39

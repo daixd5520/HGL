@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/mnt/data1/Graph/HypGraphLoRA/main.py", line 5, in <module>
+    from pre_train import pretrain
+  File "/mnt/data1/Graph/HypGraphLoRA/pre_train.py", line 6, in <module>
+    from util import get_dataset, act, mkdir
+  File "/mnt/data1/Graph/HypGraphLoRA/util.py", line 6, in <module>
+    from torch_geometric.datasets import Planetoid, Amazon
+ImportError: cannot import name 'Amazon' from 'torch_geometric.datasets' (/mnt/data1/miniconda3/envs/grace/lib/python3.9/site-packages/torch_geometric/datasets/__init__.py)

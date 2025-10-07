@@ -1,0 +1,1234 @@
+/mnt/data1/Graph/HypGraphLoRA
+[Pretrain] Using Lorentz H^d with learnable curvature, init c=2.0
+pre-training.
+(T) | Epoch=001, loss=8.8025, c=1.999991, this 0.60s, total 0.60s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=002, loss=8.8024, c=1.999983, this 0.08s, total 0.68s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=003, loss=8.8024, c=1.999974, this 0.08s, total 0.76s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=004, loss=8.8024, c=1.999965, this 0.08s, total 0.83s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=005, loss=8.8023, c=1.999957, this 0.08s, total 0.91s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=006, loss=8.8023, c=1.999948, this 0.07s, total 0.98s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=007, loss=8.8022, c=1.999939, this 0.07s, total 1.05s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=008, loss=8.8022, c=1.999930, this 0.07s, total 1.12s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=009, loss=8.8021, c=1.999921, this 0.07s, total 1.19s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=010, loss=8.8020, c=1.999913, this 0.07s, total 1.26s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=011, loss=8.8019, c=1.999903, this 0.07s, total 1.33s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=012, loss=8.8019, c=1.999894, this 0.07s, total 1.41s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=013, loss=8.8018, c=1.999885, this 0.07s, total 1.48s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=014, loss=8.8018, c=1.999876, this 0.07s, total 1.55s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=015, loss=8.8016, c=1.999866, this 0.07s, total 1.62s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=016, loss=8.8015, c=1.999857, this 0.07s, total 1.69s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=017, loss=8.8014, c=1.999847, this 0.07s, total 1.76s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=018, loss=8.8013, c=1.999838, this 0.07s, total 1.83s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=019, loss=8.8011, c=1.999828, this 0.07s, total 1.90s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=020, loss=8.8008, c=1.999818, this 0.07s, total 1.97s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=021, loss=8.8007, c=1.999808, this 0.07s, total 2.04s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=022, loss=8.8004, c=1.999797, this 0.07s, total 2.11s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=023, loss=8.8002, c=1.999787, this 0.07s, total 2.18s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=024, loss=8.7999, c=1.999776, this 0.07s, total 2.25s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=025, loss=8.7993, c=1.999766, this 0.07s, total 2.32s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=026, loss=8.7991, c=1.999755, this 0.07s, total 2.39s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=027, loss=8.7985, c=1.999744, this 0.07s, total 2.46s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=028, loss=8.7980, c=1.999733, this 0.07s, total 2.53s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=029, loss=8.7973, c=1.999722, this 0.07s, total 2.60s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=030, loss=8.7967, c=1.999711, this 0.07s, total 2.67s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=031, loss=8.7957, c=1.999700, this 0.07s, total 2.74s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=032, loss=8.7942, c=1.999688, this 0.07s, total 2.81s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=033, loss=8.7931, c=1.999677, this 0.07s, total 2.88s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=034, loss=8.7912, c=1.999665, this 0.07s, total 2.95s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=035, loss=8.7889, c=1.999653, this 0.07s, total 3.02s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=036, loss=8.7876, c=1.999641, this 0.07s, total 3.09s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=037, loss=8.7840, c=1.999629, this 0.07s, total 3.16s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=038, loss=8.7812, c=1.999617, this 0.07s, total 3.23s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=039, loss=8.7772, c=1.999605, this 0.08s, total 3.31s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=040, loss=8.7739, c=1.999592, this 0.07s, total 3.38s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=041, loss=8.7680, c=1.999580, this 0.07s, total 3.46s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=042, loss=8.7592, c=1.999568, this 0.08s, total 3.53s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=043, loss=8.7510, c=1.999555, this 0.08s, total 3.62s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=044, loss=8.7392, c=1.999542, this 0.08s, total 3.70s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=045, loss=8.7262, c=1.999530, this 0.08s, total 3.78s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=046, loss=8.7124, c=1.999517, this 0.08s, total 3.86s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=047, loss=8.6952, c=1.999504, this 0.08s, total 3.95s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=048, loss=8.6691, c=1.999491, this 0.08s, total 4.03s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=049, loss=8.6311, c=1.999477, this 0.08s, total 4.11s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=050, loss=8.6067, c=1.999464, this 0.08s, total 4.19s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=051, loss=8.5709, c=1.999451, this 0.08s, total 4.27s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=052, loss=8.5267, c=1.999437, this 0.08s, total 4.35s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=053, loss=8.4724, c=1.999423, this 0.08s, total 4.43s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=054, loss=8.4153, c=1.999409, this 0.08s, total 4.51s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=055, loss=8.3426, c=1.999395, this 0.08s, total 4.60s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=056, loss=8.2787, c=1.999381, this 0.08s, total 4.68s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=057, loss=8.2127, c=1.999366, this 0.08s, total 4.76s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=058, loss=8.1461, c=1.999351, this 0.08s, total 4.84s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=059, loss=8.0578, c=1.999336, this 0.08s, total 4.92s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=060, loss=8.0037, c=1.999322, this 0.08s, total 5.00s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=061, loss=7.9270, c=1.999307, this 0.08s, total 5.08s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=062, loss=7.8942, c=1.999293, this 0.08s, total 5.16s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=063, loss=7.8502, c=1.999279, this 0.08s, total 5.24s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=064, loss=7.8142, c=1.999266, this 0.08s, total 5.32s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=065, loss=7.7914, c=1.999254, this 0.08s, total 5.40s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=066, loss=7.7677, c=1.999242, this 0.08s, total 5.48s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=067, loss=7.7542, c=1.999232, this 0.08s, total 5.56s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=068, loss=7.7512, c=1.999223, this 0.08s, total 5.64s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=069, loss=7.7356, c=1.999215, this 0.08s, total 5.72s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=070, loss=7.7120, c=1.999208, this 0.08s, total 5.80s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=071, loss=7.7208, c=1.999202, this 0.08s, total 5.88s
+(T) | Epoch=072, loss=7.6865, c=1.999196, this 0.06s, total 5.95s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=073, loss=7.6709, c=1.999191, this 0.08s, total 6.03s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=074, loss=7.6477, c=1.999186, this 0.08s, total 6.11s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=075, loss=7.6457, c=1.999182, this 0.08s, total 6.19s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=076, loss=7.6142, c=1.999178, this 0.08s, total 6.27s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=077, loss=7.6084, c=1.999175, this 0.08s, total 6.35s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=078, loss=7.5839, c=1.999172, this 0.08s, total 6.43s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=079, loss=7.5695, c=1.999169, this 0.08s, total 6.50s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=080, loss=7.5510, c=1.999166, this 0.08s, total 6.58s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=081, loss=7.5468, c=1.999164, this 0.08s, total 6.67s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=082, loss=7.5181, c=1.999161, this 0.08s, total 6.74s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=083, loss=7.5260, c=1.999159, this 0.08s, total 6.82s
+(T) | Epoch=084, loss=7.5067, c=1.999157, this 0.06s, total 6.89s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=085, loss=7.5072, c=1.999155, this 0.08s, total 6.97s
+(T) | Epoch=086, loss=7.4877, c=1.999152, this 0.06s, total 7.03s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=087, loss=7.4821, c=1.999150, this 0.08s, total 7.11s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=088, loss=7.4789, c=1.999148, this 0.08s, total 7.19s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=089, loss=7.4734, c=1.999146, this 0.08s, total 7.27s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=090, loss=7.4565, c=1.999144, this 0.08s, total 7.35s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=091, loss=7.4409, c=1.999142, this 0.08s, total 7.44s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=092, loss=7.4535, c=1.999140, this 0.08s, total 7.52s
+(T) | Epoch=093, loss=7.4477, c=1.999138, this 0.06s, total 7.58s
+(T) | Epoch=094, loss=7.4432, c=1.999135, this 0.06s, total 7.64s
+(T) | Epoch=095, loss=7.4405, c=1.999134, this 0.06s, total 7.70s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=096, loss=7.4309, c=1.999132, this 0.08s, total 7.77s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=097, loss=7.4208, c=1.999130, this 0.08s, total 7.85s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=098, loss=7.4179, c=1.999129, this 0.08s, total 7.93s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=099, loss=7.4156, c=1.999128, this 0.08s, total 8.00s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=100, loss=7.4195, c=1.999126, this 0.08s, total 8.08s
+(T) | Epoch=101, loss=7.4015, c=1.999125, this 0.06s, total 8.15s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=102, loss=7.3960, c=1.999123, this 0.08s, total 8.22s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=103, loss=7.3921, c=1.999122, this 0.08s, total 8.30s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=104, loss=7.4001, c=1.999121, this 0.08s, total 8.38s
+(T) | Epoch=105, loss=7.3933, c=1.999120, this 0.06s, total 8.44s
+(T) | Epoch=106, loss=7.3893, c=1.999120, this 0.06s, total 8.50s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=107, loss=7.3865, c=1.999119, this 0.08s, total 8.57s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=108, loss=7.4066, c=1.999118, this 0.08s, total 8.65s
+(T) | Epoch=109, loss=7.3736, c=1.999118, this 0.06s, total 8.72s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=110, loss=7.3636, c=1.999117, this 0.08s, total 8.80s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=111, loss=7.3782, c=1.999117, this 0.08s, total 8.88s
+(T) | Epoch=112, loss=7.3713, c=1.999116, this 0.06s, total 8.94s
+(T) | Epoch=113, loss=7.3679, c=1.999115, this 0.06s, total 9.00s
+(T) | Epoch=114, loss=7.3690, c=1.999114, this 0.06s, total 9.07s
+(T) | Epoch=115, loss=7.3554, c=1.999114, this 0.06s, total 9.13s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=116, loss=7.3564, c=1.999113, this 0.08s, total 9.21s
+(T) | Epoch=117, loss=7.3571, c=1.999113, this 0.06s, total 9.27s
+(T) | Epoch=118, loss=7.3530, c=1.999112, this 0.06s, total 9.33s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=119, loss=7.3660, c=1.999111, this 0.08s, total 9.41s
+(T) | Epoch=120, loss=7.3418, c=1.999110, this 0.06s, total 9.48s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=121, loss=7.3449, c=1.999110, this 0.08s, total 9.56s
+(T) | Epoch=122, loss=7.3672, c=1.999109, this 0.06s, total 9.62s
+(T) | Epoch=123, loss=7.3601, c=1.999109, this 0.06s, total 9.68s
+(T) | Epoch=124, loss=7.3442, c=1.999108, this 0.06s, total 9.74s
+(T) | Epoch=125, loss=7.3379, c=1.999108, this 0.06s, total 9.80s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=126, loss=7.3462, c=1.999107, this 0.08s, total 9.88s
+(T) | Epoch=127, loss=7.3395, c=1.999107, this 0.06s, total 9.95s
+(T) | Epoch=128, loss=7.3364, c=1.999106, this 0.06s, total 10.01s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=129, loss=7.3365, c=1.999106, this 0.08s, total 10.09s
+(T) | Epoch=130, loss=7.3395, c=1.999105, this 0.06s, total 10.15s
+(T) | Epoch=131, loss=7.3329, c=1.999105, this 0.06s, total 10.21s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=132, loss=7.3305, c=1.999104, this 0.08s, total 10.29s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=133, loss=7.3283, c=1.999104, this 0.08s, total 10.37s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=134, loss=7.3252, c=1.999104, this 0.08s, total 10.45s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=135, loss=7.3332, c=1.999103, this 0.08s, total 10.53s
+(T) | Epoch=136, loss=7.3278, c=1.999103, this 0.06s, total 10.59s
+(T) | Epoch=137, loss=7.3281, c=1.999102, this 0.06s, total 10.65s
+(T) | Epoch=138, loss=7.3361, c=1.999102, this 0.06s, total 10.71s
+(T) | Epoch=139, loss=7.3215, c=1.999102, this 0.06s, total 10.78s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=140, loss=7.3219, c=1.999101, this 0.08s, total 10.86s
+(T) | Epoch=141, loss=7.3169, c=1.999100, this 0.06s, total 10.92s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=142, loss=7.3262, c=1.999100, this 0.08s, total 11.00s
+(T) | Epoch=143, loss=7.3191, c=1.999099, this 0.06s, total 11.06s
+(T) | Epoch=144, loss=7.3217, c=1.999099, this 0.06s, total 11.12s
+(T) | Epoch=145, loss=7.3171, c=1.999099, this 0.06s, total 11.19s
+(T) | Epoch=146, loss=7.3212, c=1.999098, this 0.06s, total 11.25s
+(T) | Epoch=147, loss=7.3101, c=1.999098, this 0.06s, total 11.31s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=148, loss=7.3148, c=1.999098, this 0.08s, total 11.39s
+(T) | Epoch=149, loss=7.3089, c=1.999097, this 0.06s, total 11.45s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=150, loss=7.3011, c=1.999097, this 0.08s, total 11.53s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=151, loss=7.3008, c=1.999096, this 0.08s, total 11.61s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=152, loss=7.3075, c=1.999096, this 0.08s, total 11.69s
+(T) | Epoch=153, loss=7.2966, c=1.999096, this 0.06s, total 11.75s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=154, loss=7.3096, c=1.999095, this 0.08s, total 11.83s
+(T) | Epoch=155, loss=7.3061, c=1.999095, this 0.06s, total 11.89s
+(T) | Epoch=156, loss=7.2973, c=1.999094, this 0.06s, total 11.95s
+(T) | Epoch=157, loss=7.2994, c=1.999093, this 0.06s, total 12.02s
+(T) | Epoch=158, loss=7.2886, c=1.999093, this 0.06s, total 12.08s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=159, loss=7.2893, c=1.999092, this 0.08s, total 12.16s
+(T) | Epoch=160, loss=7.2855, c=1.999092, this 0.06s, total 12.22s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=161, loss=7.2887, c=1.999092, this 0.08s, total 12.30s
+(T) | Epoch=162, loss=7.2820, c=1.999091, this 0.06s, total 12.36s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=163, loss=7.2840, c=1.999091, this 0.08s, total 12.44s
+(T) | Epoch=164, loss=7.2763, c=1.999090, this 0.06s, total 12.50s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=165, loss=7.2755, c=1.999089, this 0.08s, total 12.58s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=166, loss=7.2735, c=1.999089, this 0.08s, total 12.66s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=167, loss=7.2695, c=1.999089, this 0.08s, total 12.74s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=168, loss=7.2764, c=1.999088, this 0.08s, total 12.82s
+(T) | Epoch=169, loss=7.2771, c=1.999088, this 0.06s, total 12.88s
+(T) | Epoch=170, loss=7.2658, c=1.999087, this 0.06s, total 12.95s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=171, loss=7.2565, c=1.999087, this 0.08s, total 13.03s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=172, loss=7.2641, c=1.999086, this 0.08s, total 13.11s
+(T) | Epoch=173, loss=7.2679, c=1.999086, this 0.06s, total 13.17s
+(T) | Epoch=174, loss=7.2567, c=1.999085, this 0.06s, total 13.23s
+(T) | Epoch=175, loss=7.2589, c=1.999085, this 0.06s, total 13.29s
+(T) | Epoch=176, loss=7.2510, c=1.999084, this 0.06s, total 13.35s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=177, loss=7.2528, c=1.999084, this 0.08s, total 13.43s
+(T) | Epoch=178, loss=7.2548, c=1.999083, this 0.06s, total 13.49s
+(T) | Epoch=179, loss=7.2517, c=1.999082, this 0.06s, total 13.56s
+(T) | Epoch=180, loss=7.2431, c=1.999081, this 0.06s, total 13.62s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=181, loss=7.2518, c=1.999081, this 0.08s, total 13.70s
+(T) | Epoch=182, loss=7.2496, c=1.999081, this 0.06s, total 13.76s
+(T) | Epoch=183, loss=7.2474, c=1.999081, this 0.06s, total 13.82s
+(T) | Epoch=184, loss=7.2394, c=1.999080, this 0.06s, total 13.88s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=185, loss=7.2484, c=1.999079, this 0.08s, total 13.96s
+(T) | Epoch=186, loss=7.2392, c=1.999078, this 0.06s, total 14.03s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=187, loss=7.2355, c=1.999077, this 0.08s, total 14.10s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=188, loss=7.2362, c=1.999076, this 0.08s, total 14.18s
+(T) | Epoch=189, loss=7.2331, c=1.999076, this 0.06s, total 14.24s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=190, loss=7.2377, c=1.999076, this 0.08s, total 14.32s
+(T) | Epoch=191, loss=7.2297, c=1.999075, this 0.06s, total 14.39s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=192, loss=7.2236, c=1.999075, this 0.08s, total 14.47s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=193, loss=7.2334, c=1.999074, this 0.08s, total 14.55s
+(T) | Epoch=194, loss=7.2315, c=1.999073, this 0.06s, total 14.61s
+(T) | Epoch=195, loss=7.2278, c=1.999072, this 0.06s, total 14.67s
+(T) | Epoch=196, loss=7.2214, c=1.999072, this 0.06s, total 14.73s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=197, loss=7.2254, c=1.999071, this 0.08s, total 14.81s
+(T) | Epoch=198, loss=7.2300, c=1.999070, this 0.06s, total 14.87s
+(T) | Epoch=199, loss=7.2307, c=1.999070, this 0.06s, total 14.93s
+(T) | Epoch=200, loss=7.2188, c=1.999069, this 0.06s, total 15.00s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=201, loss=7.2312, c=1.999068, this 0.08s, total 15.07s
+(T) | Epoch=202, loss=7.2150, c=1.999067, this 0.06s, total 15.14s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=203, loss=7.2154, c=1.999066, this 0.08s, total 15.21s
+(T) | Epoch=204, loss=7.2175, c=1.999065, this 0.06s, total 15.28s
+(T) | Epoch=205, loss=7.2171, c=1.999065, this 0.06s, total 15.34s
+(T) | Epoch=206, loss=7.2078, c=1.999064, this 0.06s, total 15.40s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=207, loss=7.2125, c=1.999064, this 0.08s, total 15.48s
+(T) | Epoch=208, loss=7.2173, c=1.999063, this 0.06s, total 15.54s
+(T) | Epoch=209, loss=7.2183, c=1.999062, this 0.06s, total 15.60s
+(T) | Epoch=210, loss=7.2063, c=1.999060, this 0.06s, total 15.67s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=211, loss=7.2176, c=1.999059, this 0.08s, total 15.75s
+(T) | Epoch=212, loss=7.2111, c=1.999058, this 0.06s, total 15.81s
+(T) | Epoch=213, loss=7.2164, c=1.999057, this 0.06s, total 15.87s
+(T) | Epoch=214, loss=7.2106, c=1.999056, this 0.06s, total 15.93s
+(T) | Epoch=215, loss=7.2106, c=1.999055, this 0.06s, total 16.00s
+(T) | Epoch=216, loss=7.2031, c=1.999054, this 0.06s, total 16.06s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=217, loss=7.2000, c=1.999053, this 0.08s, total 16.14s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=218, loss=7.2079, c=1.999052, this 0.08s, total 16.22s
+(T) | Epoch=219, loss=7.1946, c=1.999052, this 0.06s, total 16.28s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=220, loss=7.1996, c=1.999051, this 0.08s, total 16.36s
+(T) | Epoch=221, loss=7.2019, c=1.999050, this 0.06s, total 16.42s
+(T) | Epoch=222, loss=7.2023, c=1.999049, this 0.06s, total 16.48s
+(T) | Epoch=223, loss=7.2040, c=1.999049, this 0.06s, total 16.55s
+(T) | Epoch=224, loss=7.1978, c=1.999048, this 0.06s, total 16.61s
+(T) | Epoch=225, loss=7.2019, c=1.999046, this 0.06s, total 16.67s
+(T) | Epoch=226, loss=7.1999, c=1.999045, this 0.06s, total 16.73s
+(T) | Epoch=227, loss=7.1972, c=1.999044, this 0.06s, total 16.80s
+(T) | Epoch=228, loss=7.1978, c=1.999043, this 0.07s, total 16.86s
+(T) | Epoch=229, loss=7.1990, c=1.999042, this 0.06s, total 16.92s
+(T) | Epoch=230, loss=7.1894, c=1.999041, this 0.06s, total 16.99s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=231, loss=7.1914, c=1.999040, this 0.08s, total 17.07s
+(T) | Epoch=232, loss=7.1839, c=1.999040, this 0.06s, total 17.13s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=233, loss=7.1917, c=1.999039, this 0.08s, total 17.21s
+(T) | Epoch=234, loss=7.1920, c=1.999037, this 0.06s, total 17.27s
+(T) | Epoch=235, loss=7.1868, c=1.999035, this 0.06s, total 17.33s
+(T) | Epoch=236, loss=7.1899, c=1.999034, this 0.06s, total 17.39s
+(T) | Epoch=237, loss=7.1958, c=1.999034, this 0.06s, total 17.46s
+(T) | Epoch=238, loss=7.1904, c=1.999034, this 0.06s, total 17.52s
+(T) | Epoch=239, loss=7.1790, c=1.999034, this 0.06s, total 17.58s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=240, loss=7.1831, c=1.999033, this 0.08s, total 17.66s
+(T) | Epoch=241, loss=7.1937, c=1.999030, this 0.06s, total 17.72s
+(T) | Epoch=242, loss=7.1838, c=1.999029, this 0.06s, total 17.78s
+(T) | Epoch=243, loss=7.1837, c=1.999027, this 0.06s, total 17.85s
+(T) | Epoch=244, loss=7.1757, c=1.999027, this 0.06s, total 17.91s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=245, loss=7.1744, c=1.999027, this 0.08s, total 17.99s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=246, loss=7.1769, c=1.999026, this 0.08s, total 18.07s
+(T) | Epoch=247, loss=7.1798, c=1.999025, this 0.06s, total 18.13s
+(T) | Epoch=248, loss=7.1791, c=1.999023, this 0.06s, total 18.19s
+(T) | Epoch=249, loss=7.1733, c=1.999020, this 0.06s, total 18.26s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=250, loss=7.1736, c=1.999019, this 0.08s, total 18.33s
+(T) | Epoch=251, loss=7.1703, c=1.999017, this 0.06s, total 18.40s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=252, loss=7.1724, c=1.999018, this 0.08s, total 18.48s
+(T) | Epoch=253, loss=7.1722, c=1.999018, this 0.06s, total 18.54s
+(T) | Epoch=254, loss=7.1724, c=1.999017, this 0.06s, total 18.60s
+(T) | Epoch=255, loss=7.1649, c=1.999016, this 0.06s, total 18.66s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=256, loss=7.1757, c=1.999014, this 0.08s, total 18.75s
+(T) | Epoch=257, loss=7.1664, c=1.999012, this 0.06s, total 18.81s
+(T) | Epoch=258, loss=7.1691, c=1.999010, this 0.06s, total 18.87s
+(T) | Epoch=259, loss=7.1725, c=1.999009, this 0.06s, total 18.93s
+(T) | Epoch=260, loss=7.1687, c=1.999009, this 0.06s, total 18.99s
+(T) | Epoch=261, loss=7.1633, c=1.999008, this 0.06s, total 19.06s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=262, loss=7.1639, c=1.999007, this 0.08s, total 19.14s
+(T) | Epoch=263, loss=7.1618, c=1.999006, this 0.06s, total 19.20s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=264, loss=7.1716, c=1.999004, this 0.08s, total 19.28s
+(T) | Epoch=265, loss=7.1689, c=1.999003, this 0.06s, total 19.34s
+(T) | Epoch=266, loss=7.1629, c=1.999002, this 0.06s, total 19.40s
+(T) | Epoch=267, loss=7.1760, c=1.999000, this 0.06s, total 19.46s
+(T) | Epoch=268, loss=7.1702, c=1.998998, this 0.06s, total 19.53s
+(T) | Epoch=269, loss=7.1561, c=1.998997, this 0.06s, total 19.59s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=270, loss=7.1598, c=1.998997, this 0.08s, total 19.67s
+(T) | Epoch=271, loss=7.1640, c=1.998996, this 0.06s, total 19.73s
+(T) | Epoch=272, loss=7.1543, c=1.998995, this 0.06s, total 19.79s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=273, loss=7.1572, c=1.998993, this 0.08s, total 19.87s
+(T) | Epoch=274, loss=7.1605, c=1.998991, this 0.06s, total 19.94s
+(T) | Epoch=275, loss=7.1512, c=1.998989, this 0.06s, total 20.00s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=276, loss=7.1490, c=1.998988, this 0.08s, total 20.08s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=277, loss=7.1542, c=1.998987, this 0.08s, total 20.16s
+(T) | Epoch=278, loss=7.1490, c=1.998986, this 0.06s, total 20.22s
+(T) | Epoch=279, loss=7.1524, c=1.998985, this 0.06s, total 20.28s
+(T) | Epoch=280, loss=7.1521, c=1.998984, this 0.06s, total 20.34s
+(T) | Epoch=281, loss=7.1492, c=1.998982, this 0.06s, total 20.41s
+(T) | Epoch=282, loss=7.1471, c=1.998980, this 0.06s, total 20.47s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=283, loss=7.1446, c=1.998979, this 0.08s, total 20.55s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=284, loss=7.1422, c=1.998978, this 0.08s, total 20.63s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=285, loss=7.1436, c=1.998977, this 0.08s, total 20.71s
+(T) | Epoch=286, loss=7.1456, c=1.998976, this 0.06s, total 20.77s
+(T) | Epoch=287, loss=7.1429, c=1.998975, this 0.06s, total 20.83s
+(T) | Epoch=288, loss=7.1417, c=1.998973, this 0.06s, total 20.89s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=289, loss=7.1416, c=1.998971, this 0.08s, total 20.97s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=290, loss=7.1442, c=1.998970, this 0.08s, total 21.05s
+(T) | Epoch=291, loss=7.1391, c=1.998968, this 0.06s, total 21.11s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=292, loss=7.1480, c=1.998968, this 0.08s, total 21.20s
+(T) | Epoch=293, loss=7.1385, c=1.998966, this 0.06s, total 21.26s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=294, loss=7.1388, c=1.998966, this 0.08s, total 21.34s
+(T) | Epoch=295, loss=7.1394, c=1.998965, this 0.06s, total 21.40s
+(T) | Epoch=296, loss=7.1368, c=1.998964, this 0.06s, total 21.46s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=297, loss=7.1375, c=1.998962, this 0.08s, total 21.54s
+(T) | Epoch=298, loss=7.1417, c=1.998961, this 0.06s, total 21.60s
+(T) | Epoch=299, loss=7.1310, c=1.998959, this 0.06s, total 21.66s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=300, loss=7.1311, c=1.998958, this 0.08s, total 21.74s
+(T) | Epoch=301, loss=7.1334, c=1.998958, this 0.06s, total 21.81s
+(T) | Epoch=302, loss=7.1347, c=1.998956, this 0.06s, total 21.87s
+(T) | Epoch=303, loss=7.1336, c=1.998954, this 0.06s, total 21.93s
+(T) | Epoch=304, loss=7.1296, c=1.998953, this 0.06s, total 21.99s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=305, loss=7.1288, c=1.998953, this 0.08s, total 22.07s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=306, loss=7.1308, c=1.998952, this 0.08s, total 22.15s
+(T) | Epoch=307, loss=7.1221, c=1.998951, this 0.06s, total 22.21s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=308, loss=7.1237, c=1.998950, this 0.08s, total 22.29s
+(T) | Epoch=309, loss=7.1261, c=1.998949, this 0.06s, total 22.36s
+(T) | Epoch=310, loss=7.1264, c=1.998948, this 0.06s, total 22.42s
+(T) | Epoch=311, loss=7.1229, c=1.998947, this 0.06s, total 22.48s
+(T) | Epoch=312, loss=7.1288, c=1.998946, this 0.06s, total 22.54s
+(T) | Epoch=313, loss=7.1280, c=1.998945, this 0.06s, total 22.61s
+(T) | Epoch=314, loss=7.1221, c=1.998943, this 0.06s, total 22.67s
+(T) | Epoch=315, loss=7.1257, c=1.998942, this 0.06s, total 22.73s
+(T) | Epoch=316, loss=7.1291, c=1.998940, this 0.06s, total 22.79s
+(T) | Epoch=317, loss=7.1266, c=1.998940, this 0.06s, total 22.85s
+(T) | Epoch=318, loss=7.1217, c=1.998940, this 0.06s, total 22.92s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=319, loss=7.1231, c=1.998939, this 0.08s, total 23.00s
+(T) | Epoch=320, loss=7.1317, c=1.998937, this 0.06s, total 23.06s
+(T) | Epoch=321, loss=7.1209, c=1.998935, this 0.06s, total 23.12s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=322, loss=7.1225, c=1.998934, this 0.08s, total 23.20s
+(T) | Epoch=323, loss=7.1173, c=1.998934, this 0.06s, total 23.26s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=324, loss=7.1210, c=1.998933, this 0.08s, total 23.34s
+(T) | Epoch=325, loss=7.1188, c=1.998932, this 0.06s, total 23.40s
+(T) | Epoch=326, loss=7.1208, c=1.998932, this 0.06s, total 23.47s
+(T) | Epoch=327, loss=7.1259, c=1.998932, this 0.06s, total 23.53s
+(T) | Epoch=328, loss=7.1223, c=1.998930, this 0.06s, total 23.59s
+(T) | Epoch=329, loss=7.1290, c=1.998928, this 0.06s, total 23.65s
+(T) | Epoch=330, loss=7.1205, c=1.998927, this 0.06s, total 23.72s
+(T) | Epoch=331, loss=7.1272, c=1.998925, this 0.06s, total 23.78s
+(T) | Epoch=332, loss=7.1177, c=1.998925, this 0.06s, total 23.84s
+(T) | Epoch=333, loss=7.1200, c=1.998924, this 0.06s, total 23.90s
+(T) | Epoch=334, loss=7.1178, c=1.998924, this 0.06s, total 23.96s
+(T) | Epoch=335, loss=7.1207, c=1.998923, this 0.06s, total 24.03s
+(T) | Epoch=336, loss=7.1154, c=1.998922, this 0.06s, total 24.09s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=337, loss=7.1172, c=1.998920, this 0.08s, total 24.17s
+(T) | Epoch=338, loss=7.1199, c=1.998918, this 0.06s, total 24.23s
+(T) | Epoch=339, loss=7.1088, c=1.998917, this 0.06s, total 24.29s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=340, loss=7.1202, c=1.998916, this 0.08s, total 24.37s
+(T) | Epoch=341, loss=7.1081, c=1.998915, this 0.06s, total 24.44s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=342, loss=7.1211, c=1.998915, this 0.08s, total 24.52s
+(T) | Epoch=343, loss=7.1111, c=1.998914, this 0.06s, total 24.58s
+(T) | Epoch=344, loss=7.1131, c=1.998911, this 0.06s, total 24.64s
+(T) | Epoch=345, loss=7.1101, c=1.998909, this 0.06s, total 24.70s
+(T) | Epoch=346, loss=7.1186, c=1.998908, this 0.06s, total 24.76s
+(T) | Epoch=347, loss=7.1074, c=1.998908, this 0.06s, total 24.83s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=348, loss=7.1077, c=1.998908, this 0.08s, total 24.91s
+(T) | Epoch=349, loss=7.1077, c=1.998906, this 0.06s, total 24.97s
+(T) | Epoch=350, loss=7.1134, c=1.998904, this 0.06s, total 25.03s
+(T) | Epoch=351, loss=7.1028, c=1.998902, this 0.06s, total 25.09s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=352, loss=7.1111, c=1.998901, this 0.08s, total 25.17s
+(T) | Epoch=353, loss=7.1108, c=1.998899, this 0.06s, total 25.24s
+(T) | Epoch=354, loss=7.1128, c=1.998899, this 0.06s, total 25.30s
+(T) | Epoch=355, loss=7.1076, c=1.998900, this 0.06s, total 25.36s
+(T) | Epoch=356, loss=7.1091, c=1.998899, this 0.06s, total 25.42s
+(T) | Epoch=357, loss=7.1051, c=1.998898, this 0.06s, total 25.48s
+(T) | Epoch=358, loss=7.0960, c=1.998896, this 0.06s, total 25.55s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=359, loss=7.1013, c=1.998894, this 0.08s, total 25.62s
+(T) | Epoch=360, loss=7.1047, c=1.998892, this 0.06s, total 25.69s
+(T) | Epoch=361, loss=7.1078, c=1.998891, this 0.06s, total 25.75s
+(T) | Epoch=362, loss=7.1024, c=1.998890, this 0.06s, total 25.81s
+(T) | Epoch=363, loss=7.1058, c=1.998890, this 0.06s, total 25.87s
+(T) | Epoch=364, loss=7.1064, c=1.998889, this 0.06s, total 25.94s
+(T) | Epoch=365, loss=7.0991, c=1.998888, this 0.06s, total 26.00s
+(T) | Epoch=366, loss=7.1033, c=1.998886, this 0.06s, total 26.06s
+(T) | Epoch=367, loss=7.0996, c=1.998884, this 0.06s, total 26.12s
+(T) | Epoch=368, loss=7.1023, c=1.998884, this 0.06s, total 26.18s
+(T) | Epoch=369, loss=7.0952, c=1.998883, this 0.06s, total 26.25s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=370, loss=7.1018, c=1.998883, this 0.08s, total 26.32s
+(T) | Epoch=371, loss=7.1013, c=1.998882, this 0.06s, total 26.39s
+(T) | Epoch=372, loss=7.0988, c=1.998881, this 0.06s, total 26.45s
+(T) | Epoch=373, loss=7.1051, c=1.998879, this 0.06s, total 26.51s
+(T) | Epoch=374, loss=7.1077, c=1.998877, this 0.06s, total 26.57s
+(T) | Epoch=375, loss=7.1054, c=1.998876, this 0.06s, total 26.64s
+(T) | Epoch=376, loss=7.0990, c=1.998876, this 0.06s, total 26.70s
+(T) | Epoch=377, loss=7.0983, c=1.998875, this 0.06s, total 26.76s
+(T) | Epoch=378, loss=7.0975, c=1.998875, this 0.06s, total 26.82s
+(T) | Epoch=379, loss=7.0996, c=1.998874, this 0.06s, total 26.88s
+(T) | Epoch=380, loss=7.0959, c=1.998871, this 0.06s, total 26.95s
+(T) | Epoch=381, loss=7.0977, c=1.998869, this 0.06s, total 27.01s
+(T) | Epoch=382, loss=7.1008, c=1.998867, this 0.06s, total 27.07s
+(T) | Epoch=383, loss=7.0996, c=1.998867, this 0.06s, total 27.13s
+(T) | Epoch=384, loss=7.0968, c=1.998867, this 0.06s, total 27.20s
+(T) | Epoch=385, loss=7.1017, c=1.998867, this 0.06s, total 27.26s
+(T) | Epoch=386, loss=7.0971, c=1.998866, this 0.06s, total 27.32s
+(T) | Epoch=387, loss=7.0972, c=1.998865, this 0.06s, total 27.38s
+(T) | Epoch=388, loss=7.0954, c=1.998862, this 0.06s, total 27.45s
+(T) | Epoch=389, loss=7.1010, c=1.998860, this 0.06s, total 27.51s
+(T) | Epoch=390, loss=7.0925, c=1.998858, this 0.06s, total 27.57s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=391, loss=7.0945, c=1.998858, this 0.08s, total 27.65s
+(T) | Epoch=392, loss=7.0973, c=1.998858, this 0.06s, total 27.71s
+(T) | Epoch=393, loss=7.0891, c=1.998858, this 0.06s, total 27.78s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=394, loss=7.0936, c=1.998856, this 0.08s, total 27.86s
+(T) | Epoch=395, loss=7.0975, c=1.998854, this 0.06s, total 27.92s
+(T) | Epoch=396, loss=7.0939, c=1.998852, this 0.06s, total 27.98s
+(T) | Epoch=397, loss=7.0921, c=1.998851, this 0.06s, total 28.04s
+(T) | Epoch=398, loss=7.0880, c=1.998852, this 0.06s, total 28.10s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=399, loss=7.0907, c=1.998852, this 0.08s, total 28.18s
+(T) | Epoch=400, loss=7.0935, c=1.998851, this 0.06s, total 28.25s
+(T) | Epoch=401, loss=7.0926, c=1.998849, this 0.06s, total 28.31s
+(T) | Epoch=402, loss=7.0919, c=1.998846, this 0.06s, total 28.37s
+(T) | Epoch=403, loss=7.0949, c=1.998845, this 0.06s, total 28.43s
+(T) | Epoch=404, loss=7.0905, c=1.998845, this 0.06s, total 28.49s
+(T) | Epoch=405, loss=7.0876, c=1.998845, this 0.06s, total 28.56s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=406, loss=7.0886, c=1.998845, this 0.08s, total 28.64s
+(T) | Epoch=407, loss=7.0956, c=1.998843, this 0.06s, total 28.70s
+(T) | Epoch=408, loss=7.0824, c=1.998841, this 0.06s, total 28.76s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=409, loss=7.0912, c=1.998839, this 0.08s, total 28.84s
+(T) | Epoch=410, loss=7.0901, c=1.998838, this 0.06s, total 28.91s
+(T) | Epoch=411, loss=7.0849, c=1.998837, this 0.06s, total 28.97s
+(T) | Epoch=412, loss=7.0898, c=1.998837, this 0.06s, total 29.03s
+(T) | Epoch=413, loss=7.0851, c=1.998838, this 0.06s, total 29.09s
+(T) | Epoch=414, loss=7.0887, c=1.998837, this 0.06s, total 29.15s
+(T) | Epoch=415, loss=7.0826, c=1.998836, this 0.06s, total 29.21s
+(T) | Epoch=416, loss=7.0957, c=1.998834, this 0.06s, total 29.28s
+(T) | Epoch=417, loss=7.0873, c=1.998832, this 0.06s, total 29.34s
+(T) | Epoch=418, loss=7.0884, c=1.998832, this 0.06s, total 29.40s
+(T) | Epoch=419, loss=7.0860, c=1.998831, this 0.06s, total 29.46s
+(T) | Epoch=420, loss=7.0843, c=1.998830, this 0.06s, total 29.52s
+(T) | Epoch=421, loss=7.0817, c=1.998829, this 0.06s, total 29.59s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=422, loss=7.0836, c=1.998829, this 0.08s, total 29.67s
+(T) | Epoch=423, loss=7.0788, c=1.998828, this 0.06s, total 29.73s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=424, loss=7.0881, c=1.998826, this 0.08s, total 29.81s
+(T) | Epoch=425, loss=7.0901, c=1.998823, this 0.06s, total 29.87s
+(T) | Epoch=426, loss=7.0829, c=1.998822, this 0.06s, total 29.93s
+(T) | Epoch=427, loss=7.0853, c=1.998822, this 0.06s, total 30.00s
+(T) | Epoch=428, loss=7.0818, c=1.998823, this 0.06s, total 30.06s
+(T) | Epoch=429, loss=7.0830, c=1.998823, this 0.06s, total 30.12s
+(T) | Epoch=430, loss=7.0808, c=1.998822, this 0.06s, total 30.18s
+(T) | Epoch=431, loss=7.0786, c=1.998818, this 0.06s, total 30.24s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=432, loss=7.0863, c=1.998815, this 0.08s, total 30.32s
+(T) | Epoch=433, loss=7.0927, c=1.998813, this 0.06s, total 30.39s
+(T) | Epoch=434, loss=7.0843, c=1.998814, this 0.06s, total 30.45s
+(T) | Epoch=435, loss=7.0887, c=1.998814, this 0.06s, total 30.51s
+(T) | Epoch=436, loss=7.0744, c=1.998815, this 0.06s, total 30.57s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=437, loss=7.0877, c=1.998813, this 0.08s, total 30.66s
+(T) | Epoch=438, loss=7.0794, c=1.998811, this 0.06s, total 30.72s
+(T) | Epoch=439, loss=7.0832, c=1.998808, this 0.06s, total 30.78s
+(T) | Epoch=440, loss=7.0840, c=1.998807, this 0.06s, total 30.84s
+(T) | Epoch=441, loss=7.0770, c=1.998807, this 0.06s, total 30.90s
+(T) | Epoch=442, loss=7.0859, c=1.998807, this 0.06s, total 30.97s
+(T) | Epoch=443, loss=7.0737, c=1.998808, this 0.06s, total 31.03s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=444, loss=7.0769, c=1.998808, this 0.08s, total 31.11s
+(T) | Epoch=445, loss=7.0826, c=1.998805, this 0.06s, total 31.17s
+(T) | Epoch=446, loss=7.0755, c=1.998802, this 0.06s, total 31.23s
+(T) | Epoch=447, loss=7.0739, c=1.998800, this 0.06s, total 31.29s
+(T) | Epoch=448, loss=7.0815, c=1.998799, this 0.06s, total 31.36s
+(T) | Epoch=449, loss=7.0806, c=1.998800, this 0.06s, total 31.42s
+(T) | Epoch=450, loss=7.0762, c=1.998800, this 0.06s, total 31.48s
+(T) | Epoch=451, loss=7.0697, c=1.998800, this 0.06s, total 31.54s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=452, loss=7.0741, c=1.998799, this 0.08s, total 31.62s
+(T) | Epoch=453, loss=7.0821, c=1.998797, this 0.06s, total 31.68s
+(T) | Epoch=454, loss=7.0794, c=1.998795, this 0.06s, total 31.75s
+(T) | Epoch=455, loss=7.0798, c=1.998793, this 0.06s, total 31.81s
+(T) | Epoch=456, loss=7.0805, c=1.998792, this 0.06s, total 31.87s
+(T) | Epoch=457, loss=7.0829, c=1.998792, this 0.06s, total 31.93s
+(T) | Epoch=458, loss=7.0700, c=1.998793, this 0.06s, total 32.00s
+(T) | Epoch=459, loss=7.0717, c=1.998792, this 0.06s, total 32.06s
+(T) | Epoch=460, loss=7.0707, c=1.998791, this 0.06s, total 32.12s
+(T) | Epoch=461, loss=7.0667, c=1.998789, this 0.06s, total 32.18s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=462, loss=7.0731, c=1.998787, this 0.08s, total 32.26s
+(T) | Epoch=463, loss=7.0772, c=1.998785, this 0.06s, total 32.33s
+(T) | Epoch=464, loss=7.0794, c=1.998784, this 0.06s, total 32.39s
+(T) | Epoch=465, loss=7.0738, c=1.998784, this 0.06s, total 32.45s
+(T) | Epoch=466, loss=7.0682, c=1.998785, this 0.06s, total 32.51s
+(T) | Epoch=467, loss=7.0752, c=1.998785, this 0.06s, total 32.57s
+(T) | Epoch=468, loss=7.0718, c=1.998784, this 0.06s, total 32.64s
+(T) | Epoch=469, loss=7.0713, c=1.998782, this 0.06s, total 32.70s
+(T) | Epoch=470, loss=7.0787, c=1.998780, this 0.06s, total 32.76s
+(T) | Epoch=471, loss=7.0686, c=1.998778, this 0.06s, total 32.82s
+(T) | Epoch=472, loss=7.0684, c=1.998778, this 0.06s, total 32.88s
+(T) | Epoch=473, loss=7.0691, c=1.998778, this 0.06s, total 32.95s
+(T) | Epoch=474, loss=7.0756, c=1.998777, this 0.06s, total 33.01s
+(T) | Epoch=475, loss=7.0723, c=1.998775, this 0.06s, total 33.07s
+(T) | Epoch=476, loss=7.0621, c=1.998774, this 0.06s, total 33.13s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=477, loss=7.0704, c=1.998773, this 0.08s, total 33.21s
+(T) | Epoch=478, loss=7.0756, c=1.998773, this 0.06s, total 33.28s
+(T) | Epoch=479, loss=7.0673, c=1.998772, this 0.06s, total 33.34s
+(T) | Epoch=480, loss=7.0743, c=1.998771, this 0.06s, total 33.40s
+(T) | Epoch=481, loss=7.0724, c=1.998770, this 0.06s, total 33.46s
+(T) | Epoch=482, loss=7.0665, c=1.998768, this 0.06s, total 33.53s
+(T) | Epoch=483, loss=7.0652, c=1.998767, this 0.06s, total 33.59s
+(T) | Epoch=484, loss=7.0677, c=1.998766, this 0.06s, total 33.65s
+(T) | Epoch=485, loss=7.0759, c=1.998765, this 0.06s, total 33.71s
+(T) | Epoch=486, loss=7.0677, c=1.998764, this 0.06s, total 33.77s
+(T) | Epoch=487, loss=7.0677, c=1.998762, this 0.06s, total 33.84s
+(T) | Epoch=488, loss=7.0744, c=1.998760, this 0.06s, total 33.90s
+(T) | Epoch=489, loss=7.0762, c=1.998759, this 0.06s, total 33.96s
+(T) | Epoch=490, loss=7.0655, c=1.998759, this 0.06s, total 34.02s
+(T) | Epoch=491, loss=7.0660, c=1.998760, this 0.06s, total 34.09s
+(T) | Epoch=492, loss=7.0657, c=1.998760, this 0.06s, total 34.15s
+(T) | Epoch=493, loss=7.0668, c=1.998758, this 0.06s, total 34.21s
+(T) | Epoch=494, loss=7.0582, c=1.998756, this 0.06s, total 34.27s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=495, loss=7.0599, c=1.998754, this 0.08s, total 34.35s
+(T) | Epoch=496, loss=7.0764, c=1.998753, this 0.06s, total 34.41s
+(T) | Epoch=497, loss=7.0723, c=1.998753, this 0.06s, total 34.48s
+(T) | Epoch=498, loss=7.0697, c=1.998753, this 0.06s, total 34.54s
+(T) | Epoch=499, loss=7.0654, c=1.998753, this 0.06s, total 34.60s
+(T) | Epoch=500, loss=7.0636, c=1.998752, this 0.06s, total 34.66s
+(T) | Epoch=501, loss=7.0687, c=1.998750, this 0.06s, total 34.72s
+(T) | Epoch=502, loss=7.0632, c=1.998748, this 0.06s, total 34.79s
+(T) | Epoch=503, loss=7.0702, c=1.998747, this 0.06s, total 34.85s
+(T) | Epoch=504, loss=7.0623, c=1.998746, this 0.06s, total 34.91s
+(T) | Epoch=505, loss=7.0560, c=1.998746, this 0.06s, total 34.97s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=506, loss=7.0618, c=1.998746, this 0.08s, total 35.05s
+(T) | Epoch=507, loss=7.0689, c=1.998745, this 0.06s, total 35.12s
+(T) | Epoch=508, loss=7.0593, c=1.998743, this 0.06s, total 35.18s
+(T) | Epoch=509, loss=7.0610, c=1.998741, this 0.06s, total 35.24s
+(T) | Epoch=510, loss=7.0655, c=1.998738, this 0.06s, total 35.30s
+(T) | Epoch=511, loss=7.0609, c=1.998738, this 0.06s, total 35.36s
+(T) | Epoch=512, loss=7.0612, c=1.998738, this 0.06s, total 35.43s
+(T) | Epoch=513, loss=7.0669, c=1.998738, this 0.06s, total 35.49s
+(T) | Epoch=514, loss=7.0602, c=1.998738, this 0.06s, total 35.55s
+(T) | Epoch=515, loss=7.0582, c=1.998737, this 0.06s, total 35.61s
+(T) | Epoch=516, loss=7.0656, c=1.998736, this 0.06s, total 35.67s
+(T) | Epoch=517, loss=7.0703, c=1.998733, this 0.06s, total 35.74s
+(T) | Epoch=518, loss=7.0607, c=1.998732, this 0.06s, total 35.80s
+(T) | Epoch=519, loss=7.0567, c=1.998732, this 0.06s, total 35.86s
+(T) | Epoch=520, loss=7.0631, c=1.998731, this 0.06s, total 35.92s
+(T) | Epoch=521, loss=7.0530, c=1.998730, this 0.06s, total 35.99s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=522, loss=7.0555, c=1.998729, this 0.08s, total 36.07s
+(T) | Epoch=523, loss=7.0628, c=1.998728, this 0.06s, total 36.13s
+(T) | Epoch=524, loss=7.0627, c=1.998726, this 0.06s, total 36.19s
+(T) | Epoch=525, loss=7.0571, c=1.998726, this 0.06s, total 36.25s
+(T) | Epoch=526, loss=7.0613, c=1.998726, this 0.06s, total 36.31s
+(T) | Epoch=527, loss=7.0619, c=1.998727, this 0.06s, total 36.37s
+(T) | Epoch=528, loss=7.0623, c=1.998725, this 0.06s, total 36.44s
+(T) | Epoch=529, loss=7.0577, c=1.998723, this 0.06s, total 36.50s
+(T) | Epoch=530, loss=7.0589, c=1.998721, this 0.06s, total 36.56s
+(T) | Epoch=531, loss=7.0674, c=1.998720, this 0.06s, total 36.62s
+(T) | Epoch=532, loss=7.0618, c=1.998719, this 0.06s, total 36.69s
+(T) | Epoch=533, loss=7.0552, c=1.998718, this 0.06s, total 36.75s
+(T) | Epoch=534, loss=7.0596, c=1.998718, this 0.06s, total 36.81s
+(T) | Epoch=535, loss=7.0571, c=1.998717, this 0.06s, total 36.87s
+(T) | Epoch=536, loss=7.0559, c=1.998716, this 0.06s, total 36.94s
+(T) | Epoch=537, loss=7.0588, c=1.998714, this 0.06s, total 37.00s
+(T) | Epoch=538, loss=7.0618, c=1.998712, this 0.06s, total 37.06s
+(T) | Epoch=539, loss=7.0674, c=1.998711, this 0.06s, total 37.12s
+(T) | Epoch=540, loss=7.0508, c=1.998711, this 0.06s, total 37.18s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=541, loss=7.0576, c=1.998711, this 0.08s, total 37.27s
+(T) | Epoch=542, loss=7.0591, c=1.998711, this 0.06s, total 37.33s
+(T) | Epoch=543, loss=7.0519, c=1.998709, this 0.06s, total 37.39s
+(T) | Epoch=544, loss=7.0477, c=1.998707, this 0.06s, total 37.45s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=545, loss=7.0556, c=1.998706, this 0.08s, total 37.53s
+(T) | Epoch=546, loss=7.0505, c=1.998706, this 0.06s, total 37.59s
+(T) | Epoch=547, loss=7.0500, c=1.998705, this 0.06s, total 37.65s
+(T) | Epoch=548, loss=7.0526, c=1.998706, this 0.06s, total 37.72s
+(T) | Epoch=549, loss=7.0499, c=1.998705, this 0.06s, total 37.78s
+(T) | Epoch=550, loss=7.0505, c=1.998704, this 0.06s, total 37.84s
+(T) | Epoch=551, loss=7.0593, c=1.998703, this 0.06s, total 37.90s
+(T) | Epoch=552, loss=7.0542, c=1.998701, this 0.06s, total 37.97s
+(T) | Epoch=553, loss=7.0577, c=1.998700, this 0.06s, total 38.03s
+(T) | Epoch=554, loss=7.0573, c=1.998700, this 0.06s, total 38.09s
+(T) | Epoch=555, loss=7.0591, c=1.998699, this 0.06s, total 38.15s
+(T) | Epoch=556, loss=7.0564, c=1.998698, this 0.06s, total 38.21s
+(T) | Epoch=557, loss=7.0518, c=1.998698, this 0.06s, total 38.28s
+(T) | Epoch=558, loss=7.0537, c=1.998697, this 0.06s, total 38.34s
+(T) | Epoch=559, loss=7.0607, c=1.998696, this 0.06s, total 38.40s
+(T) | Epoch=560, loss=7.0488, c=1.998695, this 0.06s, total 38.46s
+(T) | Epoch=561, loss=7.0511, c=1.998694, this 0.06s, total 38.52s
+(T) | Epoch=562, loss=7.0604, c=1.998694, this 0.06s, total 38.59s
+(T) | Epoch=563, loss=7.0479, c=1.998694, this 0.06s, total 38.65s
+(T) | Epoch=564, loss=7.0469, c=1.998694, this 0.06s, total 38.71s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=565, loss=7.0545, c=1.998692, this 0.08s, total 38.79s
+(T) | Epoch=566, loss=7.0518, c=1.998690, this 0.06s, total 38.85s
+(T) | Epoch=567, loss=7.0468, c=1.998688, this 0.06s, total 38.91s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=568, loss=7.0515, c=1.998688, this 0.08s, total 38.99s
+(T) | Epoch=569, loss=7.0465, c=1.998688, this 0.06s, total 39.06s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=570, loss=7.0460, c=1.998688, this 0.08s, total 39.14s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=571, loss=7.0468, c=1.998688, this 0.08s, total 39.21s
+(T) | Epoch=572, loss=7.0575, c=1.998685, this 0.06s, total 39.28s
+(T) | Epoch=573, loss=7.0489, c=1.998684, this 0.06s, total 39.34s
+(T) | Epoch=574, loss=7.0453, c=1.998682, this 0.06s, total 39.40s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=575, loss=7.0505, c=1.998681, this 0.08s, total 39.48s
+(T) | Epoch=576, loss=7.0517, c=1.998681, this 0.06s, total 39.54s
+(T) | Epoch=577, loss=7.0527, c=1.998682, this 0.06s, total 39.60s
+(T) | Epoch=578, loss=7.0494, c=1.998682, this 0.06s, total 39.67s
+(T) | Epoch=579, loss=7.0446, c=1.998681, this 0.06s, total 39.73s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=580, loss=7.0478, c=1.998679, this 0.08s, total 39.81s
+(T) | Epoch=581, loss=7.0460, c=1.998676, this 0.06s, total 39.87s
+(T) | Epoch=582, loss=7.0503, c=1.998675, this 0.06s, total 39.93s
+(T) | Epoch=583, loss=7.0486, c=1.998675, this 0.06s, total 39.99s
+(T) | Epoch=584, loss=7.0515, c=1.998676, this 0.06s, total 40.06s
+(T) | Epoch=585, loss=7.0450, c=1.998676, this 0.06s, total 40.12s
+(T) | Epoch=586, loss=7.0587, c=1.998675, this 0.06s, total 40.18s
+(T) | Epoch=587, loss=7.0453, c=1.998672, this 0.06s, total 40.24s
+(T) | Epoch=588, loss=7.0509, c=1.998670, this 0.06s, total 40.30s
+(T) | Epoch=589, loss=7.0459, c=1.998670, this 0.06s, total 40.37s
+(T) | Epoch=590, loss=7.0465, c=1.998670, this 0.06s, total 40.43s
+(T) | Epoch=591, loss=7.0517, c=1.998668, this 0.06s, total 40.49s
+(T) | Epoch=592, loss=7.0462, c=1.998667, this 0.06s, total 40.55s
+(T) | Epoch=593, loss=7.0491, c=1.998666, this 0.06s, total 40.62s
+(T) | Epoch=594, loss=7.0449, c=1.998665, this 0.06s, total 40.68s
+(T) | Epoch=595, loss=7.0438, c=1.998664, this 0.06s, total 40.74s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=596, loss=7.0442, c=1.998664, this 0.08s, total 40.82s
+(T) | Epoch=597, loss=7.0489, c=1.998663, this 0.06s, total 40.88s
+(T) | Epoch=598, loss=7.0409, c=1.998662, this 0.06s, total 40.94s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=599, loss=7.0496, c=1.998661, this 0.08s, total 41.03s
+(T) | Epoch=600, loss=7.0448, c=1.998660, this 0.06s, total 41.09s
+(T) | Epoch=601, loss=7.0472, c=1.998658, this 0.06s, total 41.15s
+(T) | Epoch=602, loss=7.0446, c=1.998657, this 0.06s, total 41.21s
+(T) | Epoch=603, loss=7.0457, c=1.998657, this 0.06s, total 41.27s
+(T) | Epoch=604, loss=7.0440, c=1.998658, this 0.06s, total 41.34s
+(T) | Epoch=605, loss=7.0391, c=1.998657, this 0.06s, total 41.40s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=606, loss=7.0382, c=1.998656, this 0.08s, total 41.48s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=607, loss=7.0415, c=1.998654, this 0.08s, total 41.56s
+(T) | Epoch=608, loss=7.0463, c=1.998653, this 0.06s, total 41.62s
+(T) | Epoch=609, loss=7.0430, c=1.998653, this 0.06s, total 41.68s
+(T) | Epoch=610, loss=7.0448, c=1.998652, this 0.06s, total 41.74s
+(T) | Epoch=611, loss=7.0368, c=1.998652, this 0.06s, total 41.80s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=612, loss=7.0442, c=1.998650, this 0.08s, total 41.88s
+(T) | Epoch=613, loss=7.0451, c=1.998649, this 0.06s, total 41.95s
+(T) | Epoch=614, loss=7.0398, c=1.998648, this 0.06s, total 42.01s
+(T) | Epoch=615, loss=7.0398, c=1.998648, this 0.06s, total 42.07s
+(T) | Epoch=616, loss=7.0463, c=1.998647, this 0.06s, total 42.13s
+(T) | Epoch=617, loss=7.0416, c=1.998646, this 0.06s, total 42.20s
+(T) | Epoch=618, loss=7.0389, c=1.998645, this 0.06s, total 42.26s
+(T) | Epoch=619, loss=7.0448, c=1.998644, this 0.06s, total 42.32s
+(T) | Epoch=620, loss=7.0400, c=1.998644, this 0.06s, total 42.38s
+(T) | Epoch=621, loss=7.0410, c=1.998644, this 0.06s, total 42.44s
+(T) | Epoch=622, loss=7.0378, c=1.998644, this 0.06s, total 42.51s
+(T) | Epoch=623, loss=7.0401, c=1.998643, this 0.06s, total 42.57s
+(T) | Epoch=624, loss=7.0378, c=1.998642, this 0.06s, total 42.63s
+(T) | Epoch=625, loss=7.0407, c=1.998640, this 0.06s, total 42.69s
+(T) | Epoch=626, loss=7.0399, c=1.998638, this 0.06s, total 42.75s
+(T) | Epoch=627, loss=7.0392, c=1.998638, this 0.06s, total 42.82s
+(T) | Epoch=628, loss=7.0411, c=1.998639, this 0.06s, total 42.88s
+(T) | Epoch=629, loss=7.0442, c=1.998639, this 0.06s, total 42.94s
+(T) | Epoch=630, loss=7.0387, c=1.998639, this 0.06s, total 43.00s
+(T) | Epoch=631, loss=7.0331, c=1.998638, this 0.06s, total 43.07s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=632, loss=7.0407, c=1.998636, this 0.08s, total 43.15s
+(T) | Epoch=633, loss=7.0360, c=1.998634, this 0.06s, total 43.21s
+(T) | Epoch=634, loss=7.0387, c=1.998633, this 0.06s, total 43.27s
+(T) | Epoch=635, loss=7.0370, c=1.998633, this 0.06s, total 43.33s
+(T) | Epoch=636, loss=7.0407, c=1.998633, this 0.06s, total 43.40s
+(T) | Epoch=637, loss=7.0389, c=1.998633, this 0.06s, total 43.46s
+(T) | Epoch=638, loss=7.0355, c=1.998633, this 0.06s, total 43.52s
+(T) | Epoch=639, loss=7.0331, c=1.998632, this 0.06s, total 43.58s
+(T) | Epoch=640, loss=7.0348, c=1.998631, this 0.06s, total 43.64s
+(T) | Epoch=641, loss=7.0321, c=1.998629, this 0.06s, total 43.71s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=642, loss=7.0360, c=1.998628, this 0.08s, total 43.79s
+(T) | Epoch=643, loss=7.0411, c=1.998628, this 0.06s, total 43.85s
+(T) | Epoch=644, loss=7.0399, c=1.998627, this 0.06s, total 43.91s
+(T) | Epoch=645, loss=7.0307, c=1.998627, this 0.06s, total 43.97s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=646, loss=7.0351, c=1.998628, this 0.08s, total 44.05s
+(T) | Epoch=647, loss=7.0363, c=1.998628, this 0.06s, total 44.11s
+(T) | Epoch=648, loss=7.0375, c=1.998627, this 0.06s, total 44.18s
+(T) | Epoch=649, loss=7.0391, c=1.998625, this 0.06s, total 44.24s
+(T) | Epoch=650, loss=7.0357, c=1.998623, this 0.06s, total 44.30s
+(T) | Epoch=651, loss=7.0395, c=1.998622, this 0.06s, total 44.36s
+(T) | Epoch=652, loss=7.0351, c=1.998623, this 0.06s, total 44.43s
+(T) | Epoch=653, loss=7.0377, c=1.998624, this 0.06s, total 44.49s
+(T) | Epoch=654, loss=7.0382, c=1.998623, this 0.06s, total 44.55s
+(T) | Epoch=655, loss=7.0369, c=1.998622, this 0.06s, total 44.61s
+(T) | Epoch=656, loss=7.0337, c=1.998620, this 0.06s, total 44.68s
+(T) | Epoch=657, loss=7.0350, c=1.998619, this 0.06s, total 44.74s
+(T) | Epoch=658, loss=7.0366, c=1.998618, this 0.06s, total 44.80s
+(T) | Epoch=659, loss=7.0379, c=1.998618, this 0.06s, total 44.86s
+(T) | Epoch=660, loss=7.0294, c=1.998619, this 0.06s, total 44.92s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=661, loss=7.0350, c=1.998619, this 0.08s, total 45.00s
+(T) | Epoch=662, loss=7.0318, c=1.998618, this 0.06s, total 45.07s
+(T) | Epoch=663, loss=7.0400, c=1.998616, this 0.06s, total 45.13s
+(T) | Epoch=664, loss=7.0323, c=1.998614, this 0.06s, total 45.19s
+(T) | Epoch=665, loss=7.0433, c=1.998614, this 0.06s, total 45.25s
+(T) | Epoch=666, loss=7.0367, c=1.998614, this 0.06s, total 45.31s
+(T) | Epoch=667, loss=7.0344, c=1.998613, this 0.06s, total 45.38s
+(T) | Epoch=668, loss=7.0371, c=1.998613, this 0.06s, total 45.44s
+(T) | Epoch=669, loss=7.0344, c=1.998613, this 0.06s, total 45.50s
+(T) | Epoch=670, loss=7.0366, c=1.998611, this 0.06s, total 45.56s
+(T) | Epoch=671, loss=7.0355, c=1.998610, this 0.06s, total 45.63s
+(T) | Epoch=672, loss=7.0362, c=1.998608, this 0.06s, total 45.69s
+(T) | Epoch=673, loss=7.0350, c=1.998608, this 0.06s, total 45.75s
+(T) | Epoch=674, loss=7.0324, c=1.998608, this 0.06s, total 45.81s
+(T) | Epoch=675, loss=7.0246, c=1.998607, this 0.06s, total 45.87s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=676, loss=7.0397, c=1.998607, this 0.08s, total 45.96s
+(T) | Epoch=677, loss=7.0328, c=1.998607, this 0.06s, total 46.02s
+(T) | Epoch=678, loss=7.0340, c=1.998605, this 0.06s, total 46.08s
+(T) | Epoch=679, loss=7.0315, c=1.998603, this 0.06s, total 46.14s
+(T) | Epoch=680, loss=7.0343, c=1.998602, this 0.06s, total 46.20s
+(T) | Epoch=681, loss=7.0356, c=1.998602, this 0.06s, total 46.27s
+(T) | Epoch=682, loss=7.0329, c=1.998602, this 0.06s, total 46.33s
+(T) | Epoch=683, loss=7.0343, c=1.998602, this 0.06s, total 46.39s
+(T) | Epoch=684, loss=7.0327, c=1.998601, this 0.06s, total 46.45s
+(T) | Epoch=685, loss=7.0338, c=1.998600, this 0.06s, total 46.52s
+(T) | Epoch=686, loss=7.0328, c=1.998600, this 0.06s, total 46.58s
+(T) | Epoch=687, loss=7.0356, c=1.998598, this 0.06s, total 46.64s
+(T) | Epoch=688, loss=7.0347, c=1.998597, this 0.06s, total 46.70s
+(T) | Epoch=689, loss=7.0365, c=1.998597, this 0.06s, total 46.77s
+(T) | Epoch=690, loss=7.0369, c=1.998597, this 0.06s, total 46.83s
+(T) | Epoch=691, loss=7.0340, c=1.998597, this 0.06s, total 46.89s
+(T) | Epoch=692, loss=7.0323, c=1.998597, this 0.06s, total 46.95s
+(T) | Epoch=693, loss=7.0304, c=1.998596, this 0.06s, total 47.01s
+(T) | Epoch=694, loss=7.0287, c=1.998595, this 0.06s, total 47.08s
+(T) | Epoch=695, loss=7.0352, c=1.998594, this 0.06s, total 47.14s
+(T) | Epoch=696, loss=7.0325, c=1.998593, this 0.06s, total 47.20s
+(T) | Epoch=697, loss=7.0318, c=1.998593, this 0.06s, total 47.26s
+(T) | Epoch=698, loss=7.0307, c=1.998593, this 0.06s, total 47.33s
+(T) | Epoch=699, loss=7.0318, c=1.998593, this 0.06s, total 47.39s
+(T) | Epoch=700, loss=7.0302, c=1.998591, this 0.06s, total 47.45s
+(T) | Epoch=701, loss=7.0374, c=1.998589, this 0.06s, total 47.51s
+(T) | Epoch=702, loss=7.0330, c=1.998588, this 0.06s, total 47.57s
+(T) | Epoch=703, loss=7.0344, c=1.998587, this 0.06s, total 47.64s
+(T) | Epoch=704, loss=7.0344, c=1.998587, this 0.06s, total 47.70s
+(T) | Epoch=705, loss=7.0301, c=1.998588, this 0.06s, total 47.76s
+(T) | Epoch=706, loss=7.0287, c=1.998588, this 0.06s, total 47.82s
+(T) | Epoch=707, loss=7.0318, c=1.998587, this 0.06s, total 47.89s
+(T) | Epoch=708, loss=7.0213, c=1.998586, this 0.06s, total 47.95s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=709, loss=7.0258, c=1.998584, this 0.08s, total 48.03s
+(T) | Epoch=710, loss=7.0300, c=1.998583, this 0.06s, total 48.09s
+(T) | Epoch=711, loss=7.0250, c=1.998582, this 0.06s, total 48.15s
+(T) | Epoch=712, loss=7.0285, c=1.998582, this 0.06s, total 48.21s
+(T) | Epoch=713, loss=7.0293, c=1.998582, this 0.06s, total 48.28s
+(T) | Epoch=714, loss=7.0253, c=1.998581, this 0.06s, total 48.34s
+(T) | Epoch=715, loss=7.0292, c=1.998580, this 0.06s, total 48.40s
+(T) | Epoch=716, loss=7.0262, c=1.998579, this 0.06s, total 48.46s
+(T) | Epoch=717, loss=7.0268, c=1.998578, this 0.06s, total 48.53s
+(T) | Epoch=718, loss=7.0220, c=1.998577, this 0.06s, total 48.59s
+(T) | Epoch=719, loss=7.0284, c=1.998577, this 0.06s, total 48.65s
+(T) | Epoch=720, loss=7.0308, c=1.998577, this 0.06s, total 48.71s
+(T) | Epoch=721, loss=7.0295, c=1.998576, this 0.06s, total 48.77s
+(T) | Epoch=722, loss=7.0231, c=1.998575, this 0.06s, total 48.84s
+(T) | Epoch=723, loss=7.0221, c=1.998574, this 0.06s, total 48.90s
+(T) | Epoch=724, loss=7.0345, c=1.998574, this 0.06s, total 48.96s
+(T) | Epoch=725, loss=7.0274, c=1.998573, this 0.06s, total 49.02s
+(T) | Epoch=726, loss=7.0257, c=1.998572, this 0.06s, total 49.09s
+(T) | Epoch=727, loss=7.0251, c=1.998571, this 0.06s, total 49.15s
+(T) | Epoch=728, loss=7.0263, c=1.998571, this 0.06s, total 49.21s
+(T) | Epoch=729, loss=7.0274, c=1.998570, this 0.06s, total 49.27s
+(T) | Epoch=730, loss=7.0306, c=1.998569, this 0.06s, total 49.33s
+(T) | Epoch=731, loss=7.0263, c=1.998568, this 0.06s, total 49.40s
+(T) | Epoch=732, loss=7.0249, c=1.998568, this 0.06s, total 49.46s
+(T) | Epoch=733, loss=7.0232, c=1.998568, this 0.06s, total 49.52s
+(T) | Epoch=734, loss=7.0238, c=1.998567, this 0.06s, total 49.58s
+(T) | Epoch=735, loss=7.0240, c=1.998567, this 0.06s, total 49.64s
+(T) | Epoch=736, loss=7.0240, c=1.998566, this 0.06s, total 49.71s
+(T) | Epoch=737, loss=7.0245, c=1.998564, this 0.06s, total 49.77s
+(T) | Epoch=738, loss=7.0218, c=1.998563, this 0.06s, total 49.83s
+(T) | Epoch=739, loss=7.0272, c=1.998562, this 0.06s, total 49.89s
+(T) | Epoch=740, loss=7.0266, c=1.998563, this 0.06s, total 49.95s
+(T) | Epoch=741, loss=7.0243, c=1.998564, this 0.06s, total 50.02s
+(T) | Epoch=742, loss=7.0245, c=1.998564, this 0.06s, total 50.08s
+(T) | Epoch=743, loss=7.0328, c=1.998563, this 0.06s, total 50.14s
+(T) | Epoch=744, loss=7.0252, c=1.998561, this 0.06s, total 50.20s
+(T) | Epoch=745, loss=7.0235, c=1.998559, this 0.06s, total 50.27s
+(T) | Epoch=746, loss=7.0226, c=1.998558, this 0.06s, total 50.33s
+(T) | Epoch=747, loss=7.0230, c=1.998558, this 0.06s, total 50.39s
+(T) | Epoch=748, loss=7.0214, c=1.998559, this 0.06s, total 50.45s
+(T) | Epoch=749, loss=7.0191, c=1.998559, this 0.06s, total 50.52s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=750, loss=7.0237, c=1.998557, this 0.08s, total 50.60s
+(T) | Epoch=751, loss=7.0221, c=1.998555, this 0.06s, total 50.66s
+(T) | Epoch=752, loss=7.0243, c=1.998554, this 0.06s, total 50.72s
+(T) | Epoch=753, loss=7.0316, c=1.998554, this 0.06s, total 50.78s
+(T) | Epoch=754, loss=7.0265, c=1.998555, this 0.06s, total 50.84s
+(T) | Epoch=755, loss=7.0208, c=1.998555, this 0.06s, total 50.91s
+(T) | Epoch=756, loss=7.0263, c=1.998554, this 0.06s, total 50.97s
+(T) | Epoch=757, loss=7.0237, c=1.998552, this 0.06s, total 51.03s
+(T) | Epoch=758, loss=7.0215, c=1.998551, this 0.06s, total 51.09s
+(T) | Epoch=759, loss=7.0184, c=1.998549, this 0.06s, total 51.15s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=760, loss=7.0276, c=1.998549, this 0.08s, total 51.23s
+(T) | Epoch=761, loss=7.0261, c=1.998549, this 0.06s, total 51.30s
+(T) | Epoch=762, loss=7.0207, c=1.998550, this 0.06s, total 51.36s
+(T) | Epoch=763, loss=7.0244, c=1.998550, this 0.06s, total 51.42s
+(T) | Epoch=764, loss=7.0270, c=1.998549, this 0.06s, total 51.48s
+(T) | Epoch=765, loss=7.0267, c=1.998546, this 0.06s, total 51.55s
+(T) | Epoch=766, loss=7.0258, c=1.998545, this 0.06s, total 51.61s
+(T) | Epoch=767, loss=7.0261, c=1.998544, this 0.06s, total 51.67s
+(T) | Epoch=768, loss=7.0252, c=1.998543, this 0.06s, total 51.73s
+(T) | Epoch=769, loss=7.0265, c=1.998544, this 0.06s, total 51.80s
+(T) | Epoch=770, loss=7.0294, c=1.998544, this 0.06s, total 51.86s
+(T) | Epoch=771, loss=7.0268, c=1.998544, this 0.06s, total 51.92s
+(T) | Epoch=772, loss=7.0246, c=1.998542, this 0.06s, total 51.98s
+(T) | Epoch=773, loss=7.0213, c=1.998540, this 0.06s, total 52.04s
+(T) | Epoch=774, loss=7.0197, c=1.998539, this 0.06s, total 52.11s
+(T) | Epoch=775, loss=7.0217, c=1.998538, this 0.06s, total 52.17s
+(T) | Epoch=776, loss=7.0192, c=1.998539, this 0.06s, total 52.23s
+(T) | Epoch=777, loss=7.0221, c=1.998538, this 0.06s, total 52.29s
+(T) | Epoch=778, loss=7.0255, c=1.998536, this 0.06s, total 52.36s
+(T) | Epoch=779, loss=7.0231, c=1.998535, this 0.06s, total 52.42s
+(T) | Epoch=780, loss=7.0216, c=1.998534, this 0.06s, total 52.48s
+(T) | Epoch=781, loss=7.0121, c=1.998534, this 0.06s, total 52.54s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=782, loss=7.0288, c=1.998535, this 0.08s, total 52.62s
+(T) | Epoch=783, loss=7.0200, c=1.998534, this 0.06s, total 52.68s
+(T) | Epoch=784, loss=7.0156, c=1.998533, this 0.06s, total 52.75s
+(T) | Epoch=785, loss=7.0244, c=1.998531, this 0.06s, total 52.81s
+(T) | Epoch=786, loss=7.0215, c=1.998530, this 0.06s, total 52.87s
+(T) | Epoch=787, loss=7.0202, c=1.998529, this 0.06s, total 52.93s
+(T) | Epoch=788, loss=7.0222, c=1.998529, this 0.06s, total 53.00s
+(T) | Epoch=789, loss=7.0195, c=1.998529, this 0.06s, total 53.06s
+(T) | Epoch=790, loss=7.0221, c=1.998528, this 0.06s, total 53.12s
+(T) | Epoch=791, loss=7.0218, c=1.998527, this 0.06s, total 53.18s
+(T) | Epoch=792, loss=7.0149, c=1.998527, this 0.06s, total 53.24s
+(T) | Epoch=793, loss=7.0175, c=1.998526, this 0.06s, total 53.31s
+(T) | Epoch=794, loss=7.0175, c=1.998526, this 0.06s, total 53.37s
+(T) | Epoch=795, loss=7.0191, c=1.998526, this 0.06s, total 53.43s
+(T) | Epoch=796, loss=7.0115, c=1.998525, this 0.06s, total 53.49s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=797, loss=7.0187, c=1.998524, this 0.08s, total 53.57s
+(T) | Epoch=798, loss=7.0176, c=1.998523, this 0.06s, total 53.63s
+(T) | Epoch=799, loss=7.0146, c=1.998523, this 0.06s, total 53.70s
+(T) | Epoch=800, loss=7.0198, c=1.998523, this 0.06s, total 53.76s
+(T) | Epoch=801, loss=7.0233, c=1.998522, this 0.06s, total 53.82s
+(T) | Epoch=802, loss=7.0211, c=1.998521, this 0.06s, total 53.88s
+(T) | Epoch=803, loss=7.0130, c=1.998521, this 0.06s, total 53.95s
+(T) | Epoch=804, loss=7.0198, c=1.998520, this 0.06s, total 54.01s
+(T) | Epoch=805, loss=7.0211, c=1.998520, this 0.06s, total 54.07s
+(T) | Epoch=806, loss=7.0155, c=1.998519, this 0.06s, total 54.13s
+(T) | Epoch=807, loss=7.0194, c=1.998519, this 0.06s, total 54.20s
+(T) | Epoch=808, loss=7.0188, c=1.998518, this 0.06s, total 54.26s
+(T) | Epoch=809, loss=7.0205, c=1.998517, this 0.06s, total 54.32s
+(T) | Epoch=810, loss=7.0181, c=1.998517, this 0.06s, total 54.38s
+(T) | Epoch=811, loss=7.0159, c=1.998517, this 0.06s, total 54.44s
+(T) | Epoch=812, loss=7.0186, c=1.998516, this 0.06s, total 54.51s
+(T) | Epoch=813, loss=7.0160, c=1.998515, this 0.06s, total 54.57s
+(T) | Epoch=814, loss=7.0190, c=1.998513, this 0.06s, total 54.63s
+(T) | Epoch=815, loss=7.0183, c=1.998513, this 0.06s, total 54.69s
+(T) | Epoch=816, loss=7.0196, c=1.998513, this 0.06s, total 54.76s
+(T) | Epoch=817, loss=7.0142, c=1.998513, this 0.06s, total 54.82s
+(T) | Epoch=818, loss=7.0158, c=1.998513, this 0.06s, total 54.88s
+(T) | Epoch=819, loss=7.0162, c=1.998512, this 0.06s, total 54.94s
+(T) | Epoch=820, loss=7.0135, c=1.998511, this 0.06s, total 55.00s
+(T) | Epoch=821, loss=7.0147, c=1.998510, this 0.06s, total 55.07s
+(T) | Epoch=822, loss=7.0131, c=1.998509, this 0.06s, total 55.13s
+(T) | Epoch=823, loss=7.0137, c=1.998509, this 0.06s, total 55.19s
+(T) | Epoch=824, loss=7.0227, c=1.998508, this 0.06s, total 55.25s
+(T) | Epoch=825, loss=7.0162, c=1.998508, this 0.06s, total 55.32s
+(T) | Epoch=826, loss=7.0193, c=1.998507, this 0.06s, total 55.38s
+(T) | Epoch=827, loss=7.0191, c=1.998506, this 0.06s, total 55.44s
+(T) | Epoch=828, loss=7.0189, c=1.998506, this 0.06s, total 55.50s
+(T) | Epoch=829, loss=7.0117, c=1.998505, this 0.06s, total 55.56s
+(T) | Epoch=830, loss=7.0175, c=1.998505, this 0.06s, total 55.63s
+(T) | Epoch=831, loss=7.0138, c=1.998505, this 0.06s, total 55.69s
+(T) | Epoch=832, loss=7.0102, c=1.998504, this 0.06s, total 55.75s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=833, loss=7.0129, c=1.998503, this 0.08s, total 55.83s
+(T) | Epoch=834, loss=7.0139, c=1.998502, this 0.06s, total 55.89s
+(T) | Epoch=835, loss=7.0119, c=1.998501, this 0.06s, total 55.96s
+(T) | Epoch=836, loss=7.0143, c=1.998501, this 0.06s, total 56.02s
+(T) | Epoch=837, loss=7.0145, c=1.998502, this 0.06s, total 56.08s
+(T) | Epoch=838, loss=7.0158, c=1.998502, this 0.06s, total 56.14s
+(T) | Epoch=839, loss=7.0140, c=1.998501, this 0.06s, total 56.20s
+(T) | Epoch=840, loss=7.0173, c=1.998499, this 0.06s, total 56.27s
+(T) | Epoch=841, loss=7.0134, c=1.998497, this 0.06s, total 56.33s
+(T) | Epoch=842, loss=7.0160, c=1.998497, this 0.06s, total 56.39s
+(T) | Epoch=843, loss=7.0147, c=1.998497, this 0.06s, total 56.45s
+(T) | Epoch=844, loss=7.0101, c=1.998497, this 0.06s, total 56.51s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=845, loss=7.0108, c=1.998497, this 0.08s, total 56.59s
+(T) | Epoch=846, loss=7.0124, c=1.998496, this 0.06s, total 56.65s
+(T) | Epoch=847, loss=7.0163, c=1.998494, this 0.06s, total 56.72s
+(T) | Epoch=848, loss=7.0173, c=1.998494, this 0.06s, total 56.78s
+(T) | Epoch=849, loss=7.0127, c=1.998493, this 0.06s, total 56.84s
+(T) | Epoch=850, loss=7.0082, c=1.998493, this 0.06s, total 56.90s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=851, loss=7.0157, c=1.998493, this 0.08s, total 56.98s
+(T) | Epoch=852, loss=7.0180, c=1.998493, this 0.06s, total 57.05s
+(T) | Epoch=853, loss=7.0108, c=1.998492, this 0.06s, total 57.11s
+(T) | Epoch=854, loss=7.0144, c=1.998490, this 0.06s, total 57.17s
+(T) | Epoch=855, loss=7.0166, c=1.998489, this 0.06s, total 57.23s
+(T) | Epoch=856, loss=7.0142, c=1.998488, this 0.06s, total 57.29s
+(T) | Epoch=857, loss=7.0167, c=1.998488, this 0.06s, total 57.36s
+(T) | Epoch=858, loss=7.0159, c=1.998488, this 0.06s, total 57.42s
+(T) | Epoch=859, loss=7.0101, c=1.998487, this 0.06s, total 57.48s
+(T) | Epoch=860, loss=7.0120, c=1.998486, this 0.06s, total 57.54s
+(T) | Epoch=861, loss=7.0106, c=1.998485, this 0.06s, total 57.60s
+(T) | Epoch=862, loss=7.0122, c=1.998484, this 0.06s, total 57.67s
+(T) | Epoch=863, loss=7.0104, c=1.998484, this 0.06s, total 57.73s
+(T) | Epoch=864, loss=7.0151, c=1.998483, this 0.06s, total 57.79s
+(T) | Epoch=865, loss=7.0123, c=1.998482, this 0.06s, total 57.85s
+(T) | Epoch=866, loss=7.0138, c=1.998482, this 0.06s, total 57.91s
+(T) | Epoch=867, loss=7.0094, c=1.998482, this 0.06s, total 57.98s
+(T) | Epoch=868, loss=7.0096, c=1.998481, this 0.06s, total 58.04s
+(T) | Epoch=869, loss=7.0112, c=1.998479, this 0.06s, total 58.10s
+(T) | Epoch=870, loss=7.0111, c=1.998478, this 0.06s, total 58.16s
+(T) | Epoch=871, loss=7.0111, c=1.998477, this 0.06s, total 58.22s
+(T) | Epoch=872, loss=7.0081, c=1.998477, this 0.06s, total 58.29s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=873, loss=7.0125, c=1.998477, this 0.08s, total 58.37s
+(T) | Epoch=874, loss=7.0146, c=1.998476, this 0.06s, total 58.43s
+(T) | Epoch=875, loss=7.0099, c=1.998475, this 0.06s, total 58.49s
+(T) | Epoch=876, loss=7.0091, c=1.998474, this 0.06s, total 58.55s
+(T) | Epoch=877, loss=7.0068, c=1.998474, this 0.06s, total 58.61s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=878, loss=7.0072, c=1.998474, this 0.08s, total 58.69s
+(T) | Epoch=879, loss=7.0088, c=1.998474, this 0.06s, total 58.76s
+(T) | Epoch=880, loss=7.0102, c=1.998474, this 0.06s, total 58.82s
+(T) | Epoch=881, loss=7.0086, c=1.998473, this 0.06s, total 58.88s
+(T) | Epoch=882, loss=7.0088, c=1.998473, this 0.06s, total 58.94s
+(T) | Epoch=883, loss=7.0112, c=1.998472, this 0.06s, total 59.00s
+(T) | Epoch=884, loss=7.0104, c=1.998471, this 0.06s, total 59.07s
+(T) | Epoch=885, loss=7.0109, c=1.998471, this 0.06s, total 59.13s
+(T) | Epoch=886, loss=7.0096, c=1.998470, this 0.06s, total 59.19s
+(T) | Epoch=887, loss=7.0096, c=1.998470, this 0.06s, total 59.25s
+(T) | Epoch=888, loss=7.0084, c=1.998469, this 0.06s, total 59.31s
+(T) | Epoch=889, loss=7.0085, c=1.998469, this 0.06s, total 59.38s
+(T) | Epoch=890, loss=7.0064, c=1.998468, this 0.06s, total 59.44s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=891, loss=7.0058, c=1.998468, this 0.08s, total 59.52s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=892, loss=7.0064, c=1.998467, this 0.08s, total 59.60s
+(T) | Epoch=893, loss=7.0040, c=1.998467, this 0.06s, total 59.66s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=894, loss=7.0087, c=1.998466, this 0.08s, total 59.74s
+(T) | Epoch=895, loss=7.0093, c=1.998466, this 0.06s, total 59.81s
+(T) | Epoch=896, loss=7.0075, c=1.998466, this 0.06s, total 59.87s
+(T) | Epoch=897, loss=7.0081, c=1.998465, this 0.06s, total 59.93s
+(T) | Epoch=898, loss=7.0045, c=1.998463, this 0.06s, total 59.99s
+(T) | Epoch=899, loss=7.0060, c=1.998462, this 0.06s, total 60.06s
+(T) | Epoch=900, loss=7.0049, c=1.998462, this 0.06s, total 60.12s
+(T) | Epoch=901, loss=7.0069, c=1.998462, this 0.06s, total 60.18s
+(T) | Epoch=902, loss=7.0060, c=1.998463, this 0.06s, total 60.24s
+(T) | Epoch=903, loss=7.0058, c=1.998463, this 0.06s, total 60.31s
+(T) | Epoch=904, loss=7.0048, c=1.998462, this 0.06s, total 60.37s
+(T) | Epoch=905, loss=7.0074, c=1.998461, this 0.06s, total 60.43s
+(T) | Epoch=906, loss=7.0128, c=1.998459, this 0.06s, total 60.49s
+(T) | Epoch=907, loss=7.0115, c=1.998457, this 0.06s, total 60.55s
+(T) | Epoch=908, loss=7.0127, c=1.998456, this 0.06s, total 60.62s
+(T) | Epoch=909, loss=7.0063, c=1.998457, this 0.06s, total 60.68s
+(T) | Epoch=910, loss=7.0088, c=1.998459, this 0.06s, total 60.74s
+(T) | Epoch=911, loss=7.0064, c=1.998460, this 0.06s, total 60.80s
+(T) | Epoch=912, loss=7.0095, c=1.998459, this 0.06s, total 60.86s
+(T) | Epoch=913, loss=7.0180, c=1.998457, this 0.06s, total 60.93s
+(T) | Epoch=914, loss=7.0087, c=1.998454, this 0.06s, total 60.99s
+(T) | Epoch=915, loss=7.0102, c=1.998453, this 0.06s, total 61.05s
+(T) | Epoch=916, loss=7.0056, c=1.998453, this 0.06s, total 61.11s
+(T) | Epoch=917, loss=7.0033, c=1.998455, this 0.06s, total 61.17s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=918, loss=7.0054, c=1.998455, this 0.08s, total 61.25s
+(T) | Epoch=919, loss=7.0082, c=1.998454, this 0.06s, total 61.32s
+(T) | Epoch=920, loss=7.0075, c=1.998451, this 0.06s, total 61.38s
+(T) | Epoch=921, loss=7.0074, c=1.998450, this 0.06s, total 61.44s
+(T) | Epoch=922, loss=7.0096, c=1.998449, this 0.06s, total 61.50s
+(T) | Epoch=923, loss=7.0105, c=1.998449, this 0.06s, total 61.56s
+(T) | Epoch=924, loss=7.0045, c=1.998450, this 0.06s, total 61.63s
+(T) | Epoch=925, loss=7.0064, c=1.998451, this 0.06s, total 61.69s
+(T) | Epoch=926, loss=7.0037, c=1.998450, this 0.06s, total 61.75s
+(T) | Epoch=927, loss=7.0125, c=1.998448, this 0.06s, total 61.81s
+(T) | Epoch=928, loss=7.0001, c=1.998447, this 0.06s, total 61.87s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=929, loss=7.0031, c=1.998445, this 0.08s, total 61.95s
+(T) | Epoch=930, loss=7.0060, c=1.998446, this 0.06s, total 62.01s
+(T) | Epoch=931, loss=7.0038, c=1.998446, this 0.06s, total 62.08s
+(T) | Epoch=932, loss=7.0072, c=1.998446, this 0.06s, total 62.14s
+(T) | Epoch=933, loss=7.0033, c=1.998446, this 0.06s, total 62.20s
+(T) | Epoch=934, loss=7.0035, c=1.998445, this 0.06s, total 62.26s
+(T) | Epoch=935, loss=7.0062, c=1.998444, this 0.06s, total 62.32s
+(T) | Epoch=936, loss=7.0090, c=1.998443, this 0.06s, total 62.39s
+(T) | Epoch=937, loss=7.0079, c=1.998443, this 0.06s, total 62.45s
+(T) | Epoch=938, loss=7.0040, c=1.998442, this 0.06s, total 62.51s
+(T) | Epoch=939, loss=7.0003, c=1.998442, this 0.06s, total 62.57s
+(T) | Epoch=940, loss=7.0042, c=1.998441, this 0.06s, total 62.63s
+(T) | Epoch=941, loss=7.0002, c=1.998440, this 0.06s, total 62.70s
+(T) | Epoch=942, loss=7.0031, c=1.998440, this 0.06s, total 62.76s
+(T) | Epoch=943, loss=7.0092, c=1.998441, this 0.06s, total 62.82s
+(T) | Epoch=944, loss=7.0036, c=1.998441, this 0.06s, total 62.88s
+(T) | Epoch=945, loss=7.0043, c=1.998439, this 0.06s, total 62.94s
+(T) | Epoch=946, loss=7.0014, c=1.998438, this 0.06s, total 63.01s
+(T) | Epoch=947, loss=7.0065, c=1.998438, this 0.06s, total 63.07s
+(T) | Epoch=948, loss=7.0125, c=1.998437, this 0.06s, total 63.13s
+(T) | Epoch=949, loss=7.0051, c=1.998437, this 0.06s, total 63.19s
+(T) | Epoch=950, loss=7.0034, c=1.998438, this 0.06s, total 63.26s
+(T) | Epoch=951, loss=7.0060, c=1.998438, this 0.06s, total 63.32s
+(T) | Epoch=952, loss=7.0054, c=1.998437, this 0.06s, total 63.38s
+(T) | Epoch=953, loss=7.0075, c=1.998435, this 0.06s, total 63.44s
+(T) | Epoch=954, loss=7.0043, c=1.998433, this 0.06s, total 63.50s
+(T) | Epoch=955, loss=7.0083, c=1.998433, this 0.06s, total 63.57s
+(T) | Epoch=956, loss=7.0097, c=1.998432, this 0.06s, total 63.63s
+(T) | Epoch=957, loss=7.0043, c=1.998433, this 0.06s, total 63.69s
+(T) | Epoch=958, loss=7.0049, c=1.998434, this 0.06s, total 63.75s
+(T) | Epoch=959, loss=7.0023, c=1.998434, this 0.06s, total 63.81s
+(T) | Epoch=960, loss=7.0010, c=1.998433, this 0.06s, total 63.88s
+(T) | Epoch=961, loss=7.0043, c=1.998432, this 0.06s, total 63.94s
+(T) | Epoch=962, loss=7.0042, c=1.998430, this 0.06s, total 64.00s
+(T) | Epoch=963, loss=7.0035, c=1.998428, this 0.06s, total 64.06s
+(T) | Epoch=964, loss=6.9989, c=1.998428, this 0.06s, total 64.13s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=965, loss=7.0024, c=1.998429, this 0.08s, total 64.21s
+(T) | Epoch=966, loss=7.0057, c=1.998430, this 0.06s, total 64.27s
+(T) | Epoch=967, loss=7.0026, c=1.998430, this 0.06s, total 64.33s
+(T) | Epoch=968, loss=7.0036, c=1.998428, this 0.06s, total 64.39s
+(T) | Epoch=969, loss=7.0040, c=1.998426, this 0.06s, total 64.46s
+(T) | Epoch=970, loss=7.0010, c=1.998424, this 0.06s, total 64.52s
+(T) | Epoch=971, loss=7.0018, c=1.998424, this 0.06s, total 64.58s
+(T) | Epoch=972, loss=7.0049, c=1.998425, this 0.06s, total 64.65s
+(T) | Epoch=973, loss=7.0064, c=1.998426, this 0.06s, total 64.71s
+(T) | Epoch=974, loss=7.0035, c=1.998425, this 0.06s, total 64.77s
+(T) | Epoch=975, loss=7.0000, c=1.998424, this 0.06s, total 64.83s
+(T) | Epoch=976, loss=7.0070, c=1.998422, this 0.06s, total 64.90s
+(T) | Epoch=977, loss=6.9984, c=1.998420, this 0.06s, total 64.96s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=978, loss=7.0032, c=1.998420, this 0.08s, total 65.04s
+(T) | Epoch=979, loss=6.9973, c=1.998420, this 0.06s, total 65.10s
++++ model saved ! ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
+(T) | Epoch=980, loss=7.0065, c=1.998421, this 0.08s, total 65.18s
+(T) | Epoch=981, loss=7.0052, c=1.998420, this 0.06s, total 65.24s
+(T) | Epoch=982, loss=7.0037, c=1.998419, this 0.06s, total 65.31s
+(T) | Epoch=983, loss=7.0076, c=1.998417, this 0.06s, total 65.37s
+(T) | Epoch=984, loss=7.0034, c=1.998416, this 0.06s, total 65.43s
+(T) | Epoch=985, loss=7.0054, c=1.998416, this 0.06s, total 65.49s
+(T) | Epoch=986, loss=7.0028, c=1.998416, this 0.06s, total 65.56s
+(T) | Epoch=987, loss=7.0019, c=1.998417, this 0.06s, total 65.62s
+(T) | Epoch=988, loss=6.9998, c=1.998416, this 0.06s, total 65.68s
+(T) | Epoch=989, loss=7.0065, c=1.998413, this 0.06s, total 65.74s
+(T) | Epoch=990, loss=7.0024, c=1.998411, this 0.06s, total 65.81s
+(T) | Epoch=991, loss=7.0042, c=1.998410, this 0.06s, total 65.87s
+(T) | Epoch=992, loss=7.0014, c=1.998411, this 0.06s, total 65.93s
+(T) | Epoch=993, loss=7.0017, c=1.998412, this 0.06s, total 65.99s
+(T) | Epoch=994, loss=7.0045, c=1.998412, this 0.06s, total 66.05s
+(T) | Epoch=995, loss=6.9978, c=1.998411, this 0.06s, total 66.12s
+(T) | Epoch=996, loss=7.0038, c=1.998409, this 0.06s, total 66.18s
+(T) | Epoch=997, loss=7.0035, c=1.998407, this 0.06s, total 66.24s
+(T) | Epoch=998, loss=7.0034, c=1.998406, this 0.06s, total 66.30s
+(T) | Epoch=999, loss=7.0024, c=1.998406, this 0.06s, total 66.37s
+(T) | Epoch=1000, loss=7.0090, c=1.998407, this 0.06s, total 66.43s
+=== Final ===
+[Main] Pretrained checkpoint written to: ./pre_trained_gnn/CiteSeer.GRACE.GAT.curv_2p0000.hyp_True.False.pth
