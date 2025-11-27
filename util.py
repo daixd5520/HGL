@@ -3,7 +3,7 @@ import torch
 import torch.nn.functional as F
 import torch.nn as nn
 import torch_geometric.transforms as T
-from torch_geometric.datasets import Planetoid, Amazon
+from torch_geometric.datasets import Planetoid, Amazon, WikipediaNetwork, Actor, WebKB
 from torch_geometric.utils import to_dense_adj
 import numpy as np
 import yaml
@@ -32,11 +32,28 @@ def act(act_type='leakyrelu'):
 
 
 def get_dataset(path, name):
-    assert name in ['Cora', 'CiteSeer', 'PubMed', 'Computers', 'Photo']
-    if (name == 'Computers') | (name == 'Photo'):
+    assert name in ['Cora', 'CiteSeer', 'PubMed', 'Computers', 'Photo',
+                    'Chameleon', 'Squirrel', 'Actor', 'Texas']
+
+    # Amazon datasets
+    if name in ['Computers', 'Photo']:
         return Amazon(path, name, T.NormalizeFeatures())
-    else:
+
+    # Planetoid datasets (homophilic)
+    elif name in ['Cora', 'CiteSeer', 'PubMed']:
         return Planetoid(path, name, transform=T.NormalizeFeatures())
+
+    # WikipediaNetwork datasets (heterophilic)
+    elif name in ['Chameleon', 'Squirrel']:
+        return WikipediaNetwork(path, name, transform=T.NormalizeFeatures())
+
+    # Actor dataset (heterophilic)
+    elif name == 'Actor':
+        return Actor(path, transform=T.NormalizeFeatures())
+
+    # WebKB datasets (heterophilic)
+    elif name == 'Texas':
+        return WebKB(path, name, transform=T.NormalizeFeatures())
 
 
 def initialize_weights(m):
