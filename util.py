@@ -9,6 +9,15 @@ import numpy as np
 import yaml
 from yaml import SafeLoader
 
+# Fix for PyTorch 2.6+ weights_only default change
+# Add torch_geometric classes to safe globals for loading datasets
+try:
+    from torch_geometric.data.data import Data
+    from torch_geometric.data.storage import BaseStorage, GlobalStorage, NodeStorage, EdgeStorage
+    torch.serialization.add_safe_globals([Data, BaseStorage, GlobalStorage, NodeStorage, EdgeStorage])
+except Exception:
+    pass  # If imports fail or add_safe_globals not available, continue
+
 
 
 def mkdir(path):

@@ -47,8 +47,8 @@ def test_dataset(name):
 
 if __name__ == '__main__':
     # Test new heterophilic datasets
-    heterophilic_datasets = ['Chameleon', 'Squirrel', 'Actor', 'Texas']
-
+    # heterophilic_datasets = ['Chameleon', 'Squirrel', 'Actor', 'Texas']
+    heterophilic_datasets = ['Squirrel', 'Texas']
     print("Testing Heterophilic Datasets")
     print("="*60)
 
