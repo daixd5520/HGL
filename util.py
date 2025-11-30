@@ -1,4 +1,5 @@
 import os
+import shutil
 import torch
 import torch.nn.functional as F
 import torch.nn as nn
@@ -40,6 +41,33 @@ def act(act_type='leakyrelu'):
         return F.sigmoid
 
 
+def _ensure_wikipedia_raw_layout(path: str, name: str) -> None:
+    """Make WikipediaNetwork datasets work when stored in a geom-gcn layout.
+
+    Some users download the raw files using the geom-gcn repo, which places
+    them under ``<root>/<name>/geom_gcn/raw``. Torch Geometric's
+    ``WikipediaNetwork`` expects them in ``<root>/<name>/raw`` instead. If we
+    detect the former and the latter is missing, copy the files over so the
+    dataset doesn't attempt to re-download them.
+    """
+    name_lower = name.lower()
+    expected_raw = os.path.join(path, name_lower, 'raw')
+    alt_raw = os.path.join(path, name_lower, 'geom_gcn', 'raw')
+
+    if os.path.exists(expected_raw):
+        return
+    if not os.path.exists(alt_raw):
+        return
+
+    os.makedirs(expected_raw, exist_ok=True)
+    for fname in os.listdir(alt_raw):
+        src = os.path.join(alt_raw, fname)
+        dst = os.path.join(expected_raw, fname)
+        if os.path.isfile(src) and not os.path.exists(dst):
+            shutil.copy2(src, dst)
+    print(f"Detected geom-gcn layout for {name}; copied raw files into {expected_raw}.")
+
+
 def get_dataset(path, name):
     assert name in ['Cora', 'CiteSeer', 'PubMed', 'Computers', 'Photo',
                     'Chameleon', 'Squirrel', 'Actor', 'Texas']
@@ -54,6 +82,7 @@ def get_dataset(path, name):
 
     # WikipediaNetwork datasets (heterophilic)
     elif name in ['Chameleon', 'Squirrel']:
+        _ensure_wikipedia_raw_layout(path, name)
         return WikipediaNetwork(path, name, transform=T.NormalizeFeatures())
 
     # Actor dataset (heterophilic)
