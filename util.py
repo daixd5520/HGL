@@ -45,18 +45,24 @@ def _ensure_wikipedia_raw_layout(path: str, name: str) -> None:
     """Make WikipediaNetwork datasets work when stored in a geom-gcn layout.
 
     Some users download the raw files using the geom-gcn repo, which places
-    them under ``<root>/<name>/geom_gcn/raw``. Torch Geometric's
-    ``WikipediaNetwork`` expects them in ``<root>/<name>/raw`` instead. If we
-    detect the former and the latter is missing, copy the files over so the
-    dataset doesn't attempt to re-download them.
+    them under ``<root>/<name>/geom_gcn/raw`` (often with a lower-cased
+    ``<name>``). Torch Geometric's ``WikipediaNetwork`` expects them in
+    ``<root>/<Name>/raw`` where ``Name`` is the provided ``name`` argument. If
+    we detect a geom-gcn layout and the expected raw directory is missing, copy
+    the files over so the dataset doesn't attempt to re-download them.
     """
-    name_lower = name.lower()
-    expected_raw = os.path.join(path, name_lower, 'raw')
-    alt_raw = os.path.join(path, name_lower, 'geom_gcn', 'raw')
+    expected_raw = os.path.join(path, name, 'raw')
+    alt_candidates = [
+        os.path.join(path, name.lower(), 'geom_gcn', 'raw'),
+        os.path.join(path, name, 'geom_gcn', 'raw'),
+        os.path.join(path, name.lower(), 'raw'),
+    ]
 
     if os.path.exists(expected_raw):
         return
-    if not os.path.exists(alt_raw):
+
+    alt_raw = next((candidate for candidate in alt_candidates if os.path.exists(candidate)), None)
+    if alt_raw is None:
         return
 
     os.makedirs(expected_raw, exist_ok=True)
