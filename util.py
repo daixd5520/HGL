@@ -74,6 +74,43 @@ def _ensure_wikipedia_raw_layout(path: str, name: str) -> None:
     print(f"Detected geom-gcn layout for {name}; copied raw files into {expected_raw}.")
 
 
+def _load_wikipedia_network(path: str, name: str) -> WikipediaNetwork:
+    """Load a WikipediaNetwork dataset with geom-gcn compatibility and sanity checks.
+
+    A few users reported CUDA index errors when pretraining on Squirrel/Chameleon
+    even though the geom-gcn raw files already existed. These errors can happen
+    when a stale ``processed`` directory contains edge indices that point past
+    the number of nodes. To make the loader more robust, we validate the edge
+    indices and automatically reprocess the dataset if they are out of bounds.
+    """
+
+    _ensure_wikipedia_raw_layout(path, name)
+
+    def _needs_reprocess(ds: WikipediaNetwork) -> bool:
+        try:
+            data = ds[0]
+        except Exception:
+            return True
+
+        if data.edge_index.numel() == 0:
+            return True
+
+        max_idx = int(data.edge_index.max())
+        min_idx = int(data.edge_index.min())
+        return min_idx < 0 or max_idx >= data.num_nodes
+
+    dataset = WikipediaNetwork(path, name, transform=T.NormalizeFeatures())
+    processed_dir = os.path.join(path, name, 'processed')
+
+    if _needs_reprocess(dataset):
+        print(f"Detected invalid processed data for {name}; regenerating from raw files.")
+        if os.path.isdir(processed_dir):
+            shutil.rmtree(processed_dir)
+        dataset = WikipediaNetwork(path, name, transform=T.NormalizeFeatures())
+
+    return dataset
+
+
 def get_dataset(path, name):
     assert name in ['Cora', 'CiteSeer', 'PubMed', 'Computers', 'Photo',
                     'Chameleon', 'Squirrel', 'Actor', 'Texas']
@@ -88,8 +125,7 @@ def get_dataset(path, name):
 
     # WikipediaNetwork datasets (heterophilic)
     elif name in ['Chameleon', 'Squirrel']:
-        _ensure_wikipedia_raw_layout(path, name)
-        return WikipediaNetwork(path, name, transform=T.NormalizeFeatures())
+        return _load_wikipedia_network(path, name)
 
     # Actor dataset (heterophilic)
     elif name == 'Actor':
