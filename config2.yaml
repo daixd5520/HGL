@@ -59,6 +59,30 @@ public:
     l3: 0.2
     l4: 0.2
     num_epochs: 500
+  Squirrel:
+    wd1: 1e-2
+    wd2: 1e-3
+    wd3: 1e-1
+    lr1: 1e-3
+    lr2: 1e-1
+    lr3: 1e-5
+    l1: 1
+    l2: 2
+    l3: 0.5
+    l4: 5
+    num_epochs: 200
+  Texas:
+    wd1: 1e-2
+    wd2: 1e-3
+    wd3: 1e-1
+    lr1: 1e-3
+    lr2: 1e-1
+    lr3: 1e-5
+    l1: 1
+    l2: 2
+    l3: 0.5
+    l4: 5
+    num_epochs: 200
 10shot:
   PubMed:
     wd1: 1e-1
@@ -120,6 +144,30 @@ public:
     l3: 1
     l4: 0.2
     num_epochs: 500
+  Squirrel:
+    wd1: 1e-2
+    wd2: 1e-4
+    wd3: 1e-1
+    lr1: 5e-3
+    lr2: 1e-1
+    lr3: 1e-5
+    l1: 1
+    l2: 1
+    l3: 1
+    l4: 2
+    num_epochs: 100
+  Texas:
+    wd1: 1e-2
+    wd2: 1e-4
+    wd3: 1e-1
+    lr1: 5e-3
+    lr2: 1e-1
+    lr3: 1e-5
+    l1: 1
+    l2: 1
+    l3: 1
+    l4: 2
+    num_epochs: 100
 5shot:
   PubMed:
     wd1: 1e-1
@@ -181,3 +229,27 @@ public:
     l3: 1
     l4: 0.2
     num_epochs: 500
+  Squirrel:
+    wd1: 1e-2
+    wd2: 1e-4
+    wd3: 1e-1
+    lr1: 5e-3
+    lr2: 1e-1
+    lr3: 1e-5
+    l1: 1
+    l2: 1
+    l3: 1
+    l4: 2
+    num_epochs: 100
+  Texas:
+    wd1: 1e-2
+    wd2: 1e-4
+    wd3: 1e-1
+    lr1: 5e-3
+    lr2: 1e-1
+    lr3: 1e-5
+    l1: 1
+    l2: 1
+    l3: 1
+    l4: 2
+    num_epochs: 100

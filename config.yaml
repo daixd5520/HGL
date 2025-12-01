@@ -155,3 +155,51 @@ transfer:
   # 可选稳定参数：
   min_curvature: 1.0e-4
   max_curvature: 10.0
+Squirrel:
+  learning_rate: 0.0001
+  output_dim: 256
+  num_proj_dim: 256
+  activation: 'relu'
+  gnn_type: 'GAT'
+  num_layers: 2
+  drop_edge_rate: 0.4
+  drop_feature_rate: 0.1
+  tau: 0.5
+  num_epochs: 1000
+  weight_decay: 0
+  lr2: 0.01
+  wd2: 0.00001
+  epoch: 0
+  epoch1: 100
+  epoch2: 10000
+  decay_epoch: 1000
+  hyperbolic_backbone: true   # 预训练主干在 H^d
+  curvature: 1.0              # 全局曲率 c（LoRA 与主干共用）
+  learnable_curvature: true  # 设为可训练
+  # 可选稳定参数：
+  min_curvature: 0.7
+  max_curvature: 2.0
+Texas:
+  learning_rate: 0.0001
+  output_dim: 256
+  num_proj_dim: 256
+  activation: 'relu'
+  gnn_type: 'GAT'
+  num_layers: 2
+  drop_edge_rate: 0.4
+  drop_feature_rate: 0.1
+  tau: 0.5
+  num_epochs: 1000
+  weight_decay: 0
+  lr2: 0.01
+  wd2: 0.00001
+  epoch: 0
+  epoch1: 100
+  epoch2: 10000
+  decay_epoch: 1000
+  hyperbolic_backbone: true   # 预训练主干在 H^d
+  curvature: 1.0              # 全局曲率 c（LoRA 与主干共用）
+  learnable_curvature: true  # 设为可训练
+  # 可选稳定参数：
+  min_curvature: 0.7
+  max_curvature: 2.0

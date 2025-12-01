@@ -1,4 +1,5 @@
 import os
+import shutil
 import torch
 import torch.nn.functional as F
 import torch.nn as nn
@@ -40,6 +41,76 @@ def act(act_type='leakyrelu'):
         return F.sigmoid
 
 
+def _ensure_wikipedia_raw_layout(path: str, name: str) -> None:
+    """Make WikipediaNetwork datasets work when stored in a geom-gcn layout.
+
+    Some users download the raw files using the geom-gcn repo, which places
+    them under ``<root>/<name>/geom_gcn/raw`` (often with a lower-cased
+    ``<name>``). Torch Geometric's ``WikipediaNetwork`` expects them in
+    ``<root>/<Name>/raw`` where ``Name`` is the provided ``name`` argument. If
+    we detect a geom-gcn layout and the expected raw directory is missing, copy
+    the files over so the dataset doesn't attempt to re-download them.
+    """
+    expected_raw = os.path.join(path, name, 'raw')
+    alt_candidates = [
+        os.path.join(path, name.lower(), 'geom_gcn', 'raw'),
+        os.path.join(path, name, 'geom_gcn', 'raw'),
+        os.path.join(path, name.lower(), 'raw'),
+    ]
+
+    if os.path.exists(expected_raw):
+        return
+
+    alt_raw = next((candidate for candidate in alt_candidates if os.path.exists(candidate)), None)
+    if alt_raw is None:
+        return
+
+    os.makedirs(expected_raw, exist_ok=True)
+    for fname in os.listdir(alt_raw):
+        src = os.path.join(alt_raw, fname)
+        dst = os.path.join(expected_raw, fname)
+        if os.path.isfile(src) and not os.path.exists(dst):
+            shutil.copy2(src, dst)
+    print(f"Detected geom-gcn layout for {name}; copied raw files into {expected_raw}.")
+
+
+def _load_wikipedia_network(path: str, name: str) -> WikipediaNetwork:
+    """Load a WikipediaNetwork dataset with geom-gcn compatibility and sanity checks.
+
+    A few users reported CUDA index errors when pretraining on Squirrel/Chameleon
+    even though the geom-gcn raw files already existed. These errors can happen
+    when a stale ``processed`` directory contains edge indices that point past
+    the number of nodes. To make the loader more robust, we validate the edge
+    indices and automatically reprocess the dataset if they are out of bounds.
+    """
+
+    _ensure_wikipedia_raw_layout(path, name)
+
+    def _needs_reprocess(ds: WikipediaNetwork) -> bool:
+        try:
+            data = ds[0]
+        except Exception:
+            return True
+
+        if data.edge_index.numel() == 0:
+            return True
+
+        max_idx = int(data.edge_index.max())
+        min_idx = int(data.edge_index.min())
+        return min_idx < 0 or max_idx >= data.num_nodes
+
+    dataset = WikipediaNetwork(path, name, transform=T.NormalizeFeatures())
+    processed_dir = os.path.join(path, name, 'processed')
+
+    if _needs_reprocess(dataset):
+        print(f"Detected invalid processed data for {name}; regenerating from raw files.")
+        if os.path.isdir(processed_dir):
+            shutil.rmtree(processed_dir)
+        dataset = WikipediaNetwork(path, name, transform=T.NormalizeFeatures())
+
+    return dataset
+
+
 def get_dataset(path, name):
     assert name in ['Cora', 'CiteSeer', 'PubMed', 'Computers', 'Photo',
                     'Chameleon', 'Squirrel', 'Actor', 'Texas']
@@ -54,7 +125,7 @@ def get_dataset(path, name):
 
     # WikipediaNetwork datasets (heterophilic)
     elif name in ['Chameleon', 'Squirrel']:
-        return WikipediaNetwork(path, name, transform=T.NormalizeFeatures())
+        return _load_wikipedia_network(path, name)
 
     # Actor dataset (heterophilic)
     elif name == 'Actor':
